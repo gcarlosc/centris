@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  encoding: utf8
+  username: 
+  password: 
+
+test:
+  <<: *default
+  database: centris_test
+
+development:
+  <<: *default
+  database: centris_dev
+
+production:
+  <<: *default
+  database: centris_prod
