@@ -1,3 +1,5 @@
 class Product < ActiveRecord::Base
-  has_one :brand
+  belongs_to :description
+  belongs_to :category_products
+  belongs_to :classification
 end
