@@ -14,6 +14,9 @@ Rails.application.routes.draw do
 
   get 'products/update'
 
+  get 'category_products/new'
+
+  get 'category_products/index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
