@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+
+$(document).on('ready',function(){
+	$(".provider-list").click(function(){
+        $(".show-provider-list").toggle();
+    });
+})
