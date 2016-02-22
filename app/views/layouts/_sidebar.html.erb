@@ -1,0 +1,49 @@
+<div id="sidebar"  class="nav-collapse">
+            <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <li>
+                    	<%= link_to root_path, class: "active" do %>
+                    		<i class="fa fa-home"></i>
+                    		<span>Home</span>
+                    	<% end %>
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-tasks"></i>
+                            	<span>Movimiento almacen</span>
+                        </a> 
+                        <ul class="sub">
+                            <li><a href="">Entrada</a></li>
+                            <li><a href="">Entrada Interna</a></li>
+                            <li><a href="">Traspaso</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-ticket"></i>
+                            	<span>Productos</span>
+                        </a> 
+                        <ul class="sub">
+                            <li><a href="">Categoria Producto</a></li>
+                            <li><%= link_to 'Producto', products_new_path %></li>
+                        </ul>
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-male"></i>
+                            	<span>Proveedor</span>
+                        </a> 
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-bookmark"></i>
+                            	<span>Proyecto</span>
+                        </a> 
+                    </li>
+                </ul>
+            <!-- sidebar menu end-->
+        </div>
