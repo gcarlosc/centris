@@ -15,6 +15,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'pg'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem "font-awesome-rails"
+gem 'bootstrap-glyphicons'
 gem 'ffaker'
 gem 'pry'
 gem 'pry-rails'
