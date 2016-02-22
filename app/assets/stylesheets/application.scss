@@ -230,7 +230,7 @@ a, a:hover, a:focus {
     height:17px;
     width:17px;
     display:inline-block;
-    background-image: url('../images/nav-expand.png') no-repeat top;
+    background: image_url('nav-expand.png') no-repeat top;
     border-radius:3px;
     -moz-border-radius:3px;
     -webkit-border-radius:3px;
@@ -239,7 +239,7 @@ a, a:hover, a:focus {
     top:15px;
 }
 .active .dcjq-icon {
-    background: url('../images/nav-expand.png') no-repeat bottom;
+    background: image_url('nav-expand.png') no-repeat bottom;
     border-radius:3px;
     -moz-border-radius:3px;
     -webkit-border-radius:3px;
@@ -393,6 +393,7 @@ ul.sidebar-menu li a.active i {
     margin-top: 60px;
     padding: 15px;
     width: 100%;
+    min-height: 576px;
 }
 
 a.logo {
