@@ -18,6 +18,7 @@ gem 'pg'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem "font-awesome-rails"
 gem 'bootstrap-glyphicons'
+gem 'chosen-rails'
 gem 'ffaker'
 gem 'pry'
 gem 'pry-rails'

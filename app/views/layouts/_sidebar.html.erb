@@ -1,17 +1,17 @@
-<div id="sidebar"  class="nav-collapse">
+        <div id="sidebar"  class="nav-collapse">
             <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li>
-                    	<%= link_to root_path, class: "active" do %>
-                    		<i class="fa fa-home"></i>
-                    		<span>Home</span>
-                    	<% end %>
+                        <a href="<%= root_path %>" class="<%= active_class(root_path) %>">
+                            <i class="fa fa-home"></i>
+                            <span>Home</span>
+                        </a>
                     </li>
 
                     <li class="sub-menu">
-                        <a href="javascript:;">
+                        <a href="javascript:;" class="link">
                             <i class="fa fa-tasks"></i>
-                            	<span>Movimiento almacen</span>
+                            <span>Movimiento almacen</span>
                         </a> 
                         <ul class="sub">
                             <li><a href="">Entrada</a></li>
@@ -21,13 +21,15 @@
                     </li>
 
                     <li class="sub-menu">
-                        <a href="javascript:;">
+                        <a href="javascript:;" class="link">
                             <i class="fa fa-ticket"></i>
                             	<span>Productos</span>
                         </a> 
                         <ul class="sub">
-                            <li><%= link_to 'Categoria Producto', category_productos_new_path %></li>
-                            <li><%= link_to 'Producto', products_new_path %></li>
+                            <li class="<%= active_class(category_productos_new_path) %>">
+                                <%= link_to 'Categoria Producto', category_productos_new_path %>
+                            </li>
+                            <li class="<%= active_class(products_new_path) %>"><%= link_to 'Producto', products_new_path %></li>
                         </ul>
                     </li>
 

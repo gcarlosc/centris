@@ -20,4 +20,7 @@ $(document).on('ready',function(){
 	$(".provider-list").click(function(){
         $(".show-provider-list").toggle();
     });
+
+ 	var li = $('sidebar-menu').find('li a').hasClass('active');
+	li.parent('.sub-menu').hasClass('.link').addClass('active');
 })
