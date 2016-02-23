@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require chosen-jquery
 //= require_tree .
 
 
@@ -23,4 +24,7 @@ $(document).on('ready',function(){
 
  	var li = $('sidebar-menu').find('li a').hasClass('active');
 	li.parent('.sub-menu').hasClass('.link').addClass('active');
+
+	$('#myModal').modal('show');
+
 })
