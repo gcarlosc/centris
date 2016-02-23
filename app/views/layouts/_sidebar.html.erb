@@ -24,12 +24,10 @@
                         <a href="javascript:;" class="link">
                             <i class="fa fa-ticket"></i>
                             	<span>Productos</span>
-                        </a> 
+                        </a>
                         <ul class="sub">
-                            <li class="<%= active_class(category_productos_new_path) %>">
-                                <%= link_to 'Categoria Producto', category_productos_new_path %>
-                            </li>
-                            <li class="<%= active_class(products_new_path) %>"><%= link_to 'Producto', products_new_path %></li>
+                            <li class="<%= active_class(new_category_product_path) %>"><%= link_to 'Categoria Producto', new_category_product_path %></li>
+                            <li class="<%= active_class(new_product_path) %> "><%= link_to 'Producto', new_product_path %></li>
                         </ul>
                     </li>
 
@@ -37,14 +35,14 @@
                         <a href="javascript:;">
                             <i class="fa fa-male"></i>
                             	<span>Proveedor</span>
-                        </a> 
+                        </a>
                     </li>
 
                     <li class="sub-menu">
                         <a href="javascript:;">
                             <i class="fa fa-bookmark"></i>
                             	<span>Proyecto</span>
-                        </a> 
+                        </a>
                     </li>
                 </ul>
             <!-- sidebar menu end-->
