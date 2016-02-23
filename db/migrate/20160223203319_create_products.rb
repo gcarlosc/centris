@@ -6,6 +6,7 @@ class CreateProducts < ActiveRecord::Migration
       t.belongs_to :category_product
       t.belongs_to :description
       t.belongs_to :classification
+      t.belongs_to :unit
 
       t.timestamps null: false
     end
