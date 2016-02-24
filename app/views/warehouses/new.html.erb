@@ -1,0 +1,9 @@
+<section class="wrapper">
+  <%= simple_form_for @warehouse do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :location %>
+    <%= f.input :project_id, collection: Project.all, label_method: :name, value_method: :id, label: false, include_blank: 'Elija el proyecto...', label: 'Proyecto' %>
+    <%= submit_tag 'Crear' %>
+  <% end %>
+</section>

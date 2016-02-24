@@ -1,0 +1,8 @@
+<section class="wrapper">
+  <%= simple_form_for @project do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :organization_id, collection: Organization.all, label_method: :name, value_method: :id, label: false, include_blank: 'Elija la organizacion...', label: 'Organizacion' %>
+    <%= submit_tag 'Crear' %>
+  <% end %>
+</section>

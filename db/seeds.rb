@@ -33,5 +33,5 @@ Classification.create!([
 Organization.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('organizations')
 Organization.create!([
-  { name: 'Consumible', address: 'mi direccion 123', web: 'www.walkant.com' }
+  { name: 'Mi Organizacion', address: 'mi direccion 123', web: 'www.walkant.com' }
 ])
