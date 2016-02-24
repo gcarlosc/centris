@@ -26,15 +26,18 @@
                                 <label for="exampleInputName2">Unidad</label>
                                 <%= f.input :unit_id, collection: Unit.all, label_method: :name, value_method: :id, label: false, include_blank: 'Elija una unidad...', input_html: { class: 'form-control' } %>
                             </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-5 col-lg-offset-2 col-lg-5">
                             <div class="form-group">
                               <label for="exampleInputName2">Categoria</label>
                               <%= f.input :category_product_id, collection: CategoryProduct.all.categories, label_method: :name, value_method: :id, label: false, include_blank: 'Elija una categoria...', input_html: { class: 'form-control' } %>
                             </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-5 col-lg-offset-2 col-lg-5">
                             <div class="form-group">
                                 <label for="exampleInputName2">Clasificacion</label>
                                 <%= f.input :classification_id, collection: Classification.all, label_method: :name, value_method: :id, label: false, include_blank: 'Elija una clasificacion...', input_html: { class: 'form-control' } %>
+                            </div>
+                            <div class="form-group">
+                                <%= link_to "Descripcion", new_description_path, remote: true, class: "btn btn-primary" %>
                             </div>
                         </div>
                     </div>
