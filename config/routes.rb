@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   root to: 'guides#new'
 
+  get 'new_interno' => 'guides#new_interno'
+
+  get 'new_traspaso' => 'guides#new_traspaso'
+
   resources :products
   resources :category_products, only: [:create, :new, :index]
   resources :descriptions, only: [:create, :new, :index]

@@ -14,9 +14,15 @@
                             <span>Movimiento almacen</span>
                         </a>
                         <ul class="sub">
-                            <li class="<%= active_class(new_guide_path) %>"><%= link_to 'Entrada', new_guide_path %></li>
-                            <li><a href="">Entrada Interna</a></li>
-                            <li><a href="">Traspaso</a></li>
+                            <li class="<%= active_class(new_guide_path) %>">
+                                <%= link_to 'Entrada', new_guide_path %>
+                            </li>
+                            <li class="<%= active_class(new_interno_path) %>">
+                                <%= link_to 'Entrada Interna', new_interno_path %>
+                            </li>
+                            <li class="<%= active_class(new_traspaso_path) %>">
+                                <%= link_to 'Traspaso', new_traspaso_path %>
+                            </li>
                         </ul>
                     </li>
 
