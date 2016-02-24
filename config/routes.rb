@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'suppliers/index'
-
-  get 'suppliers/new'
-
-  get 'suppliers/create'
-
   root to: 'products#index'
 
   resources :products
