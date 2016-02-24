@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :warehouses, only: [:create, :new, :index]
   resources :suppliers, only: [:create, :new, :index]
   resources :storekeepers
+  resources :guides
 end
