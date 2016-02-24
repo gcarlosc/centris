@@ -5,4 +5,5 @@
     <%= f.input :organization_id, collection: Organization.all, label_method: :name, value_method: :id, label: false, include_blank: 'Elija la organizacion...', label: 'Organizacion' %>
     <%= submit_tag 'Crear' %>
   <% end %>
+  <%= link_to 'Listar', projects_path %>
 </section>

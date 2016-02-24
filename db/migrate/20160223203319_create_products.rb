@@ -4,7 +4,6 @@ class CreateProducts < ActiveRecord::Migration
       t.string :name
       t.integer :unit
       t.belongs_to :category_product
-      t.belongs_to :description
       t.belongs_to :classification
       t.belongs_to :unit
 

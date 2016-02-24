@@ -3,7 +3,7 @@
         <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-10">
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                    <h4>* Listado de Productos</h4>
+                    <h4>* Listado de Proyectos</h4>
                 </div>
             </div>
         </div>
@@ -11,22 +11,20 @@
         <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-9 col-lg-9">
             <table class="table table-bordered">
                 <thead>
-                  	<tr>
-                    	<th>Codigo Producto</th>
+                    <tr>
+                      <th>Codigo Proyecto</th>
                         <th>Nombre</th>
-                        <th>Categoria Producto</th>
-                        <th>Clasificacion</th>
-                        <th>*</th>
+                        <th>Direccion</th>
+                        <th>Organizacion</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <% @products.each do |product| %>
+                    <% @projects.each do |project| %>
                     <tr>
-                        <td><%= product.id %></td>
-                        <td><%= product.name %></td>
-                        <td><%= CategoryProduct.find(product.category_product_id).name %></td>
-                        <td><%= Classification.find(product.classification_id).name %></td>
-                        <td class="provider-list">+</td>
+                        <td><%= project.id %></td>
+                        <td><%= project.name %></td>
+                        <td><%= project.address %></td>
+                        <td><%= Organization.find(project.organization_id).name %></td>
                     </tr>
                     <% end %>
                 </tbody>

@@ -1,5 +1,9 @@
 class RemoveUnitFromProduct < ActiveRecord::Migration
-  def change
-    remove_column :products,:unit
+  def up
+    remove_column :products, :unit
+  end
+
+  def down
+    add_column :products, :unit, :string
   end
 end
