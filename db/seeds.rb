@@ -59,3 +59,10 @@ Supplier.create!([
   { name: 'Pepito SAC', address: 'mi direccion 123' },
   { name: 'Tia Veneno SA', address: 'mi direccion 123' }
 ])
+
+MovementType.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('movement_type')
+MovementType.create!([
+  { name: 'entrada', factor: '1' },
+  { name: 'salida', factor: '-1' },
+])
