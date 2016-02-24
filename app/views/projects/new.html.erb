@@ -28,7 +28,7 @@
                         </div>
                         <div class="form-group">
                             <label> Ancestro </label>
-                            <%= f.input :organization_id, collection: Organization.all, label_method: :name, value_method: :id, label: false, include_blank: 'Elija la organizacion...', input_html: { class: 'form-control'} %>
+                            <%= f.input :organization_id, collection: Organization.all, label_method: :name, value_method: :id, label: false, include_blank: 'Elija una organizacion...', input_html: { class: 'js-example-basic-single form-control' } %>
                         </div>
                     </div>
                 </div>
