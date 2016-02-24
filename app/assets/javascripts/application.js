@@ -27,7 +27,7 @@ $(document).on('ready',function(){
 	});
 
     $(document).ready(function(){ 
-    	$("#e1").select2(); 
+    	$(".js-example-basic-single").select2();
     });
  // 	var li = $('sidebar-menu').find('li a').hasClass('active');
 	// li.parent('.sub-menu').hasClass('.link').addClass('active');
