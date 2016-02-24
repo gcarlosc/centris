@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require chosen-jquery
+//= require select2
 //= require_tree .
 
 
@@ -22,6 +22,13 @@ $(document).on('ready',function(){
         $(".show-provider-list").toggle();
     });
 
+    $("#dropdown").select2({
+    	theme: "bootstrap"
+	});
+
+    $(document).ready(function(){ 
+    	$("#e1").select2(); 
+    });
  // 	var li = $('sidebar-menu').find('li a').hasClass('active');
 	// li.parent('.sub-menu').hasClass('.link').addClass('active');
 })

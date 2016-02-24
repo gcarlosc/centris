@@ -11,6 +11,8 @@
  * file per style scope.
  *
  *= require font-awesome
+ *= require select2
+ *= require select2-bootstrap
  *= require_tree .
  *= require_self
  */
@@ -37,6 +39,10 @@ body {
     text-rendering:optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
+}
+
+.select2-hidden-accessible{
+    border: 1px solid #e2e2e4;    
 }
 
 ul li {
