@@ -22,9 +22,6 @@ $(document).on('ready',function(){
         $(".show-provider-list").toggle();
     });
 
- 	var li = $('sidebar-menu').find('li a').hasClass('active');
-	li.parent('.sub-menu').hasClass('.link').addClass('active');
-
-	$('#myModal').modal('show');
-
+ // 	var li = $('sidebar-menu').find('li a').hasClass('active');
+	// li.parent('.sub-menu').hasClass('.link').addClass('active');
 })
