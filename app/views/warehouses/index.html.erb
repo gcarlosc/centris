@@ -3,7 +3,7 @@
         <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-10">
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                    <h4>* Listado de Productos</h4>
+                    <h4>* Listado de Almacenes</h4>
                 </div>
             </div>
         </div>
@@ -11,22 +11,22 @@
         <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-9 col-lg-9">
             <table class="table table-bordered">
                 <thead>
-                  	<tr>
-                    	<th>Codigo Producto</th>
+                    <tr>
+                      <th>Codigo Almacen</th>
                         <th>Nombre</th>
-                        <th>Categoria Producto</th>
-                        <th>Clasificacion</th>
-                        <th>*</th>
+                        <th>Direccion</th>
+                        <th>Locacion</th>
+                        <th>Proyecto</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <% @products.each do |product| %>
+                    <% @warehouses.each do |warehouse| %>
                     <tr>
-                        <td><%= product.id %></td>
-                        <td><%= product.name %></td>
-                        <td><%= CategoryProduct.find(product.category_product_id).name %></td>
-                        <td><%= Classification.find(product.classification_id).name %></td>
-                        <td class="provider-list">+</td>
+                        <td><%= warehouse.id %></td>
+                        <td><%= warehouse.name %></td>
+                        <td><%= warehouse.address %></td>
+                        <td><%= warehouse.location %></td>
+                        <td><%= Project.find(warehouse.project_id).name %></td>
                     </tr>
                     <% end %>
                 </tbody>

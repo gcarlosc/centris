@@ -1,0 +1,8 @@
+<section class="wrapper">
+  <%= simple_form_for @supplier do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= submit_tag 'Crear' %>
+  <% end %>
+  <%= link_to 'Listar', suppliers_path %>
+</section>

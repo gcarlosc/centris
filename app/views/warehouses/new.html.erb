@@ -6,4 +6,5 @@
     <%= f.input :project_id, collection: Project.all, label_method: :name, value_method: :id, label: false, include_blank: 'Elija el proyecto...', label: 'Proyecto' %>
     <%= submit_tag 'Crear' %>
   <% end %>
+  <%= link_to 'Listar', warehouses_path %>
 </section>
