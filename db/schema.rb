@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224055849) do
+ActiveRecord::Schema.define(version: 20160224175808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,29 @@ ActiveRecord::Schema.define(version: 20160224055849) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "guides", force: :cascade do |t|
+    t.integer  "creator_id"
+    t.integer  "responsable_id"
+    t.string   "status"
+    t.integer  "MovementType_id"
+    t.integer  "originable_id"
+    t.string   "originable_type"
+    t.integer  "destinable_id"
+    t.string   "destinable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "guides", ["destinable_type", "destinable_id"], name: "index_guides_on_destinable_type_and_destinable_id", using: :btree
+  add_index "guides", ["originable_type", "originable_id"], name: "index_guides_on_originable_type_and_originable_id", using: :btree
+
+  create_table "movement_types", force: :cascade do |t|
+    t.string   "name"
+    t.string   "factor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "organizations", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
@@ -48,7 +71,6 @@ ActiveRecord::Schema.define(version: 20160224055849) do
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.integer  "category_product_id"
-    t.integer  "description_id"
     t.integer  "classification_id"
     t.integer  "unit_id"
     t.datetime "created_at",          null: false
