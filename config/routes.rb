@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'suppliers/index'
-
-  get 'suppliers/new'
-
-  get 'suppliers/create'
-
   root to: 'products#index'
 
   resources :products
@@ -15,4 +9,5 @@ Rails.application.routes.draw do
   resources :projects, only: [:create, :new, :index]
   resources :warehouses, only: [:create, :new, :index]
   resources :suppliers, only: [:create, :new, :index]
+  resources :storekeepers
 end

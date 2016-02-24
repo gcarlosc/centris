@@ -1,0 +1,10 @@
+<section class="wrapper">
+<%= simple_form_for @storekeeper do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :email %>
+  <%= f.input :phone %>
+  <%= submit_tag 'Guardar' %>
+<% end %>
+<%= link_to 'Listar', storekeepers_path %>
+</section>
