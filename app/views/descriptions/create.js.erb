@@ -1,0 +1,7 @@
+<% if @description.errors.empty? %>
+  $('#myModal').modal('hide');
+  window.location.reload();
+<% else %>
+  // show first error
+  alert('<%= @description.errors.full_messages[0] %>');
+<% end %>

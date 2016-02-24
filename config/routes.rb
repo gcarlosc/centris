@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'products#index'
+  root to: 'guides#new'
 
   resources :products
   resources :category_products, only: [:create, :new, :index]

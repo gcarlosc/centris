@@ -5,11 +5,7 @@ class DescriptionsController < ApplicationController
 
   def create
     @description = Description.new(description_params)
-    if @description.save
-      redirect_to new_description_path
-    else
-      render :new
-    end
+    @description.save
   end
 
   private
