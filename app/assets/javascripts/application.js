@@ -12,9 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
 //= require select2
-//= require_tree .
+//= require jquery-migrate-1.2.1.min.js
+//= require bootstrap
+//= require jsacordion.js
+//= require jquery.scrollTo.min.js
+//= require jquery.nicescroll.js
+//= require jquery.dataTables.js
+//= require DT_bootstrap.js
+//= require respond.min.js
+//= require slidebars.min.js
+//= require common-scripts.js
+//= require editable-table.js
 
 
 $(document).on('ready',function(){
@@ -27,8 +36,10 @@ $(document).on('ready',function(){
 	});
 
     $(document).ready(function(){ 
-    	$("#e1").select2(); 
+    	$(".js-example-basic-single").select2();
     });
- // 	var li = $('sidebar-menu').find('li a').hasClass('active');
-	// li.parent('.sub-menu').hasClass('.link').addClass('active');
+
+    jQuery(document).ready(function() {
+        EditableTable.init();
+    });
 })
