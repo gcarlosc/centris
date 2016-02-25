@@ -9,18 +9,25 @@ class GuidesController < ApplicationController
 
   def create
     @guide = Guide.new(guide_params)
+    if @guide.save
+      redirect_to new_guide_path
+    else
+      render :new
+    end
+  end
+
+  def new_interno
+    @guide = Guide.new
+  end
+
+  def new_traspaso
+    @guide = Guide.new
   end
 
   private
 
   def guide_params
     params.require(:guide)
-    .permit(:creator_id, :responsable_id, :status, :movement_type_id, :origin_id, :origin_type, :destiny_id, :destiny_type)
-  end
-
-  def new_interno
-  end
-
-  def new_traspaso
+    .permit(:creator_id, :responsable_id, :status, :movement_type_id, :originable_id, :originable_type, :destinable_id, :destinable_type)
   end
 end

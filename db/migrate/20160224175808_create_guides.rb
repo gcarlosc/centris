@@ -4,7 +4,7 @@ class CreateGuides < ActiveRecord::Migration
       t.integer :creator_id
       t.integer :responsable_id
       t.string :status
-      t.belongs_to :MovementType
+      t.belongs_to :movement_type
 
       t.references :originable, polymorphic: true, index: true
       t.references :destinable, polymorphic: true, index: true

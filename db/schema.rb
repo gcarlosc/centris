@@ -40,13 +40,13 @@ ActiveRecord::Schema.define(version: 20160224175808) do
     t.integer  "creator_id"
     t.integer  "responsable_id"
     t.string   "status"
-    t.integer  "MovementType_id"
+    t.integer  "movement_type_id"
     t.integer  "originable_id"
     t.string   "originable_type"
     t.integer  "destinable_id"
     t.string   "destinable_type"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   add_index "guides", ["destinable_type", "destinable_id"], name: "index_guides_on_destinable_type_and_destinable_id", using: :btree
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20160224175808) do
     t.string   "name"
     t.integer  "category_product_id"
     t.integer  "classification_id"
+    t.integer  "description_id"
     t.integer  "unit_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
