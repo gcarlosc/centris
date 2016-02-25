@@ -31,12 +31,12 @@ $(document).on('ready',function(){
         $(".show-provider-list").toggle();
     });
 
-    $("#dropdown").select2({
-    	theme: "bootstrap"
-	});
-
     $(document).ready(function(){ 
-    	$(".js-example-basic-single").select2();
+    	$("select.js-example-basic-single").select2();
+    });
+
+    $("#dropdown").select2({
+        theme: "bootstrap"
     });
 
     jQuery(document).ready(function() {
