@@ -17,14 +17,17 @@
  *= require_self
  */
 
+@import "bootstrap";
+@import 'styles/bootstrap-reset';
 @import "font-awesome";
 @import "bootstrap-sprockets";
-@import "bootstrap";
-@import 'bootstrap/glyphicons';
 @import 'styles/slidebars';
+@import 'bootstrap/glyphicons';
 @import 'styles/style-responsive';
 @import 'styles/table-responsive';
 @import 'styles/bootstrap-reset';
+@import 'styles/bootstrap-theme';
+
 
 /* Import fonts */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
@@ -4380,6 +4383,10 @@ td.details table tr td, .dataTable tr:last-child {
 
 
 .editable-table .dataTables_filter {
+    width: 80%;
+}
+
+.form-inline .form-control{
     width: 80%;
 }
 
