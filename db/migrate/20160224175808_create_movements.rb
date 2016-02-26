@@ -1,6 +1,6 @@
-class CreateGuides < ActiveRecord::Migration
+class CreateMovements < ActiveRecord::Migration
   def change
-    create_table :guides do |t|
+    create_table :movements do |t|
       t.integer :creator_id
       t.integer :responsable_id
       t.string :status

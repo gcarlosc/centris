@@ -14,15 +14,23 @@
                             <span>Movimiento almacen</span>
                         </a>
                         <ul class="sub">
-                            <li class="<%= active_class(new_guide_path) %>">
-                                <%= link_to 'Entrada', new_guide_path %>
+                            <li class="<%= active_class(new_movement_type_movement_path(1)) %>">
+                                <%= link_to 'Ingreso Externo', new_movement_type_movement_path(1) %>
                             </li>
-                            <li class="<%= active_class(new_interno_guides_path) %>">
-                                <%= link_to 'Entrada Interna', new_interno_guides_path %>
+                            <li class="<%= active_class(new_movement_type_movement_path(2)) %>">
+                                <%= link_to 'Transferencia Interna', new_movement_type_movement_path(2) %>
                             </li>
-                            <li class="<%= active_class(new_traspaso_guides_path) %>">
-                                <%= link_to 'Traspaso', new_traspaso_guides_path %>
+                            <li class="<%= active_class(new_movement_type_movement_path(3)) %>">
+                                <%= link_to 'Prestamo Personal', new_movement_type_movement_path(3) %>
                             </li>
+                            <li class="<%= active_class(new_movement_type_movement_path(4)) %>">
+                                <%= link_to 'Devolucion Personal', new_movement_type_movement_path(4) %>
+                            </li>
+                            <li class="<%= active_class(new_movement_type_movement_path(5)) %>">
+                                <%= link_to 'Devolucion Externa', new_movement_type_movement_path(5) %>
+                            </li>
+
+
                         </ul>
                     </li>
 
