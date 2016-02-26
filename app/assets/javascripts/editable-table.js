@@ -18,10 +18,10 @@ var EditableTable = function () {
             function editRow(oTable, nRow) {
                 var aData = oTable.fnGetData(nRow);
                 var jqTds = $('>td', nRow);
-                jqTds[0].innerHTML = '<input type="text" class="form-control small" value="' + aData[0] + '">';
-                jqTds[1].innerHTML = '<input type="text" class="form-control small" value="' + aData[1] + '">';
+                jqTds[0].innerHTML = '<select class="form-control"><option>smartv</option></select>' + aData[0];
+                jqTds[1].innerHTML = '<select class="form-control"><option>tv</option><option>tv</option></select>' + aData[1];
                 jqTds[2].innerHTML = '<input type="text" class="form-control small" value="' + aData[2] + '">';
-                jqTds[3].innerHTML = '<input type="text" class="form-control small" value="' + aData[3] + '">';
+                jqTds[3].innerHTML = '<a href="/skus/new" data-remote="true" class="link_to btn btn-warning">Crear Serial</a>' + aData[3];
                 jqTds[4].innerHTML = '<a class="edit" href="">Save</a>';
                 jqTds[5].innerHTML = '<a class="cancel" href="">Cancel</a>';
             }

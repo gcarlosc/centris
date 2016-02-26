@@ -71,8 +71,8 @@ ActiveRecord::Schema.define(version: 20160224175808) do
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.integer  "category_product_id"
-    t.integer  "classification_id"
     t.integer  "description_id"
+    t.integer  "classification_id"
     t.integer  "unit_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
