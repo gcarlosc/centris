@@ -49,43 +49,56 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Categoria Prod.</th>
-                            <th>Producto</th>
-                            <th>Cantidad</th>
-                            <th>SKU</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="9" class="oe_form_field_one2many_list_row_add"><a href="#">Añadir un elemento</a></td>
-                        </tr>
-                        <tr class="tr-view">
-                            <td>
-                                <select class="form-control">
-                                    <option>Smartv</option>
-                                    <option>Smartv 1</option>
-                                    <option>Smartv 2</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select class="form-control">
-                                    <option>TV</option>
-                                    <option>TV 1</option>
-                                    <option>TV 2</option>
-                                </select>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control" id="exampleInputEmail2" placeholder="4">
-                            </td>
-                            <td>
-                                <button class="btn btn-warning" data-toggle="modal" data-target="#myModal">Crear Serial</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                  <div class="panel-body">
+                      <div class="adv-table editable-table ">
+                          <div class="clearfix">
+                              <div class="btn-group">
+                                  <button id="editable-sample_new" class="btn btn-warning">
+                                    Añadir un elemento <i class="fa fa-plus"></i>
+                                  </button>
+                              </div>
+                          </div>
+                          <table class="table" id="editable-sample">
+                              <thead>
+                                  <tr>
+                                      <th>Categoria Prod.</th>
+                                      <th>Producto</th>
+                                      <th>Cantidad</th>
+                                      <th>SKU</th>
+                                      <th>*</th>
+                                      <th>*</th>
+                                  </tr>
+                              </thead>
+
+                              <tbody>
+                                  <tr>
+                                      <td>
+                                        <select class="form-control">
+                                            <option>Smartv</option>
+                                            <option>Smartv 1</option>
+                                            <option>Smartv 2</option>
+                                        </select>
+                                      </td>
+                                      <td>
+                                        <select class="form-control">
+                                            <option>TV</option>
+                                            <option>TV 1</option>
+                                            <option>TV 2</option>
+                                        </select>
+                                      </td>
+                                      <td>
+                                        <input type="text" class="form-control" id="exampleInputEmail2" placeholder="4">
+                                      </td>
+                                      <td>
+                                        <button class="btn btn-warning" data-toggle="modal" data-target="#myModal">Crear Serial</button>
+                                      </td>
+                                      <td><a class="edit" href="javascript:;">Edit</a></td>
+                                      <td><a class="delete" href="javascript:;">Delete</a></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
             </div>
         </div>
       <% end %>
