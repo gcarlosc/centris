@@ -63,8 +63,11 @@ Supplier.create!([
 MovementType.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('movement_types')
 MovementType.create!([
-  { name: 'entrada', factor: '1' },
-  { name: 'salida', factor: '-1' }
+  { name: 'externo', factor: '1' },
+  { name: 'interno', factor: '-1' },
+  { name: 'prestamo', factor: '-1' },
+  { name: 'devolucion', factor: '-1' },
+  { name: 'devexterna', factor: '-1' }
 ])
 
 Storekeeper.destroy_all

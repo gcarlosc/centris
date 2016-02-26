@@ -36,7 +36,14 @@ ActiveRecord::Schema.define(version: 20160224175808) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "guides", force: :cascade do |t|
+  create_table "movement_types", force: :cascade do |t|
+    t.string   "name"
+    t.string   "factor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "movements", force: :cascade do |t|
     t.integer  "creator_id"
     t.integer  "responsable_id"
     t.string   "status"
@@ -49,15 +56,8 @@ ActiveRecord::Schema.define(version: 20160224175808) do
     t.datetime "updated_at",       null: false
   end
 
-  add_index "guides", ["destinable_type", "destinable_id"], name: "index_guides_on_destinable_type_and_destinable_id", using: :btree
-  add_index "guides", ["originable_type", "originable_id"], name: "index_guides_on_originable_type_and_originable_id", using: :btree
-
-  create_table "movement_types", force: :cascade do |t|
-    t.string   "name"
-    t.string   "factor"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  add_index "movements", ["destinable_type", "destinable_id"], name: "index_movements_on_destinable_type_and_destinable_id", using: :btree
+  add_index "movements", ["originable_type", "originable_id"], name: "index_movements_on_originable_type_and_originable_id", using: :btree
 
   create_table "organizations", force: :cascade do |t|
     t.string   "name"
