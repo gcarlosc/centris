@@ -1,5 +1,7 @@
 class Warehouse < ActiveRecord::Base
 
+  before_save { |warehouse| warehouse.name.downcase! }
+
   before_save :change_name
   validates :project_id, presence: true
 
