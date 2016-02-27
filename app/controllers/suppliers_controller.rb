@@ -1,4 +1,7 @@
 class SuppliersController < ApplicationController
+
+  before_action :require_login
+
   def index
     @suppliers = Supplier.all
   end

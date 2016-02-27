@@ -1,4 +1,7 @@
 class StorekeepersController < ApplicationController
+
+  before_action :require_login
+
   def index
     @storekeepers = Storekeeper.all
   end
