@@ -47,6 +47,14 @@ body {
     border: 1px solid #e2e2e4;
 }
 
+.in{
+    display: none;
+}
+
+.modal{
+    background: rgba(0, 0, 0, .6);
+}
+
 .row{
     display: none;
 }
@@ -785,6 +793,11 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 
 .sidebar-closed #sidebar {
     margin-left: -210px;
+}
+
+
+.modal-backdrop .fade .in{
+    display: none;
 }
 
 /*state overview*/
