@@ -1,66 +1,61 @@
-        <div id="sidebar"  class="nav-collapse">
-            <!-- sidebar menu start-->
-                <ul class="sidebar-menu" id="nav-accordion">
-                    <li>
-                        <a href="<%= root_path %>" class="<%= active_class(root_path) %>">
-                            <i class="fa fa-home"></i>
-                            <span>Home</span>
-                        </a>
-                    </li>
+<% if signed_in? %>
+    <div id="sidebar"  class="nav-collapse">
+        <!-- sidebar menu start-->
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li class="sub-menu">
+                    <a href="javascript:;" class="link">
+                        <i class="fa fa-tasks"></i>
+                        <span>Movimiento almacen</span>
+                    </a>
+                    <ul class="sub">
+                        <li class="<%= active_class(new_movement_type_movement_path(1)) %>">
+                            <%= link_to 'Ingreso Externo', new_movement_type_movement_path(1) %>
+                        </li>
+                        <li class="<%= active_class(new_movement_type_movement_path(2)) %>">
+                            <%= link_to 'Transferencia Interna', new_movement_type_movement_path(2) %>
+                        </li>
+                        <li class="<%= active_class(new_movement_type_movement_path(3)) %>">
+                            <%= link_to 'Prestamo Personal', new_movement_type_movement_path(3) %>
+                        </li>
+                        <li class="<%= active_class(new_movement_type_movement_path(4)) %>">
+                            <%= link_to 'Devolucion Personal', new_movement_type_movement_path(4) %>
+                        </li>
+                        <li class="<%= active_class(new_movement_type_movement_path(5)) %>">
+                            <%= link_to 'Devolucion Externa', new_movement_type_movement_path(5) %>
+                        </li>
+                    </ul>
+                </li>
 
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="link">
-                            <i class="fa fa-tasks"></i>
-                            <span>Movimiento almacen</span>
-                        </a>
-                        <ul class="sub">
-                            <li class="<%= active_class(new_movement_type_movement_path(1)) %>">
-                                <%= link_to 'Ingreso Externo', new_movement_type_movement_path(1) %>
-                            </li>
-                            <li class="<%= active_class(new_movement_type_movement_path(2)) %>">
-                                <%= link_to 'Transferencia Interna', new_movement_type_movement_path(2) %>
-                            </li>
-                            <li class="<%= active_class(new_movement_type_movement_path(3)) %>">
-                                <%= link_to 'Prestamo Personal', new_movement_type_movement_path(3) %>
-                            </li>
-                            <li class="<%= active_class(new_movement_type_movement_path(4)) %>">
-                                <%= link_to 'Devolucion Personal', new_movement_type_movement_path(4) %>
-                            </li>
-                            <li class="<%= active_class(new_movement_type_movement_path(5)) %>">
-                                <%= link_to 'Devolucion Externa', new_movement_type_movement_path(5) %>
-                            </li>
-                        </ul>
-                    </li>
+                <li class="sub-menu">
+                    <a href="javascript:;" class="link">
+                        <i class="fa fa-ticket"></i>
+                        	<span>Productos</span>
+                    </a>
+                    <ul class="sub">
+                        <li class="<%= active_class(new_category_product_path) %>"><%= link_to 'Categoria Producto', new_category_product_path %></li>
+                        <li class="<%= active_class(new_product_path) %> "><%= link_to 'Producto', new_product_path %></li>
+                    </ul>
+                </li>
 
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="link">
-                            <i class="fa fa-ticket"></i>
-                            	<span>Productos</span>
-                        </a>
-                        <ul class="sub">
-                            <li class="<%= active_class(new_category_product_path) %>"><%= link_to 'Categoria Producto', new_category_product_path %></li>
-                            <li class="<%= active_class(new_product_path) %> "><%= link_to 'Producto', new_product_path %></li>
-                        </ul>
-                    </li>
+                <li>
+                    <a href="<%= new_supplier_path %>" class="<%= active_class(new_supplier_path) %>">
+                        <i class="fa fa-street-view"></i>
+                        <span>Proveedor</span>
+                    </a>
+                </li>
 
-                    <li>
-                        <a href="<%= new_supplier_path %>" class="<%= active_class(new_supplier_path) %>">
-                            <i class="fa fa-street-view"></i>
-                            <span>Proveedor</span>
-                        </a>
-                    </li>
-
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="link">
-                            <i class="fa fa-group"></i>
-                            <span>Organización</span>
-                         </a>
-                        <ul class="sub">
-                            <li class="<%= active_class(new_project_path) %>"><%= link_to 'Crear Proyecto', new_project_path %></li>
-                            <li class="<%= active_class(new_warehouse_path) %> "><%= link_to 'Crear Almacen', new_warehouse_path %></li>
-                            <li class="<%= active_class(new_storekeeper_path)%> "><%= link_to 'Almacenero', new_storekeeper_path %></li>
-                        </ul>
-                    </li>
-                </ul>
-            <!-- sidebar menu end-->
-        </div>
+                <li class="sub-menu">
+                    <a href="javascript:;" class="link">
+                        <i class="fa fa-group"></i>
+                        <span>Organizacion</span>
+                     </a>
+                    <ul class="sub">
+                        <li class="<%= active_class(new_project_path) %>"><%= link_to 'Crear Proyecto', new_project_path %></li>
+                        <li class="<%= active_class(new_warehouse_path) %> "><%= link_to 'Crear Almacen', new_warehouse_path %></li>
+                        <li class="<%= active_class(new_storekeeper_path)%> "><%= link_to 'Almacenero', new_storekeeper_path %></li>
+                    </ul>
+                </li>
+            </ul>
+        <!-- sidebar menu end-->
+    </div>
+<% end %>
