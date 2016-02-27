@@ -23,8 +23,8 @@ gem 'ffaker'
 gem 'pry'
 gem 'pry-rails'
 gem 'simple_form'
-gem 'cloudinary'
-gem 'carrierwave'
+gem 'monban'
+gem 'monban-generators'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
