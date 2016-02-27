@@ -9,13 +9,13 @@
 </head>
 <body>
 <section id="container">
+    <%= render 'layouts/menu_header' %>
     <aside>
-    	<%= render 'layouts/menu_header' %>
-
       <%= render 'layouts/sidebar' %>
     </aside>
 
-    <section id="main-content"> 
+    <section id="main-content">
+      <%= render partial: "shared/flash_messages", flash: flash %> 
     	<%= yield %>
     </section>
 
