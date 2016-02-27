@@ -73,6 +73,6 @@ MovementType.create!([
 Storekeeper.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('storekeepers')
 Storekeeper.create!([
-  { first_name: 'Juan', last_name: 'Perez', email: 'juan@example.com', phone: '12345678' },
-  { first_name: 'Maria', last_name: 'Gonzales', email: 'maria@example.com', phone: '12345678' }
+  { first_name: 'Juan', last_name: 'Perez', email: 'juan@example.com', phone: '12345678', password_digest: 'asd' },
+  { first_name: 'Maria', last_name: 'Gonzales', email: 'maria@example.com', phone: '12345678', password_digest: 'asd' }
 ])

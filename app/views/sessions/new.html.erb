@@ -1,0 +1,19 @@
+<section class="wrapper">
+  <% if signed_in? %>
+    <div>
+      Ya se encuentra Logueado
+    </div>
+  <% else %>
+    <%= simple_form_for :session, url: session_path do |f| %>
+      <div>
+        <%= f.input :email %>
+      </div>
+      <div>
+        <%= f.input :password %>
+      </div>
+      <div>
+        <%= submit_tag "Sign in" %>
+      </div>
+    <% end %>
+  <% end %>
+</section>

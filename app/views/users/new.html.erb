@@ -1,0 +1,32 @@
+<section class="wrapper">
+  <%= simple_form_for @user do |f| %>
+
+    <% if @user.errors.any? %>
+      <%= pluralize(@user.errors.count, "error") %> prevented your account from being created:
+      <ul>
+        <% @user.errors.full_messages.each do |error_message| %>
+          <li><%= error_message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <div>
+      <%= f.input :first_name %>
+    </div>
+    <div>
+      <%= f.input :last_name %>
+    </div>
+    <div>
+      <%= f.input :phone %>
+    </div>
+    <div>
+      <%= f.input :email %>
+    </div>
+    <div>
+      <%= f.input :password %>
+    </div>
+    <div>
+      <%= submit_tag "Sign up" %>
+    </div>
+  <% end %>
+</section>
