@@ -1,19 +1,30 @@
 <section class="wrapper">
-  <% if signed_in? %>
-    <div>
-      Ya se encuentra Logueado
-    </div>
-  <% else %>
-    <%= simple_form_for :session, url: session_path do |f| %>
-      <div>
-        <%= f.input :email %>
+  <div class="margin-form">
+      <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+        <div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 border-form text-center">
+          <%  if signed_in? %>
+            <div class="label label-success">
+              Ya se encuentra Logueado
+            </div>
+          <% else %>
+            <%= simple_form_for :session ,url: session_path do |f| %>
+              <h2 class="form-signin-heading">Ingresa ahora</h2>
+              <br>
+              <div class="form-group">
+                <%= f.input :email, input_html: { class: 'form-control' } %>
+              </div>
+              <div class="form-group">
+                <%= f.input :password, input_html: { class: 'form-control' } %>
+              </div>
+              <div class="form-group">
+                <%= submit_tag "Entrar", class: 'btn btn-block btn-success' %>
+              </div>
+            <% end %>
+              <div>
+                <%= link_to "Sign up", new_user_path %>
+              </div>
+          <% end %>
+        </div>
       </div>
-      <div>
-        <%= f.input :password %>
-      </div>
-      <div>
-        <%= submit_tag "Sign in" %>
-      </div>
-    <% end %>
-  <% end %>
+  </div>
 </section>

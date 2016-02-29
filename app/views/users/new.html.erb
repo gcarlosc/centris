@@ -1,32 +1,35 @@
 <section class="wrapper">
-  <%= simple_form_for @user do |f| %>
-
-    <% if @user.errors.any? %>
-      <%= pluralize(@user.errors.count, "error") %> prevented your account from being created:
-      <ul>
-        <% @user.errors.full_messages.each do |error_message| %>
-          <li><%= error_message %></li>
+  <div class="">
+    <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-lg-offset-2 col-lg-6 border-form">  
+      <%= simple_form_for @user do |f| %>
+        <% if @user.errors.any? %>
+          <%= pluralize(@user.errors.count, "error") %> prevented your account from being created:
+          <ul>
+            <% @user.errors.full_messages.each do |error_message| %>
+              <li><%= error_message %></li>
+            <% end %>
+          </ul>
         <% end %>
-      </ul>
-    <% end %>
 
-    <div>
-      <%= f.input :first_name %>
+        <div class="form-group">
+          <%= f.input :first_name, input_html: { class: 'form-control'} %>
+        </div>
+        <div class="form-group">
+          <%= f.input :last_name, input_html: { class: 'form-control'} %>
+        </div>
+        <div class="form-group">
+          <%= f.input :phone, input_html: { class: 'form-control'} %>
+        </div>
+        <div class="form-group">
+          <%= f.input :email, input_html: { class: 'form-control'} %>
+        </div>
+        <div class="form-group">
+          <%= f.input :password, input_html: { class: 'form-control'} %>
+        </div>
+        <div class="form-group">
+          <%= submit_tag "Crear", class: 'btn btn-block btn-success' %>
+        </div>
+      <% end %>
     </div>
-    <div>
-      <%= f.input :last_name %>
-    </div>
-    <div>
-      <%= f.input :phone %>
-    </div>
-    <div>
-      <%= f.input :email %>
-    </div>
-    <div>
-      <%= f.input :password %>
-    </div>
-    <div>
-      <%= submit_tag "Sign up" %>
-    </div>
-  <% end %>
+  </div>
 </section>
