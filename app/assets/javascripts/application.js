@@ -69,4 +69,13 @@ $(document).on('ready',function(){
         $('link').addClass('active');
     });
 
+    // $(".aldo").click(function (){
+    // //saco el valor accediendo al class del input = nombre   
+    //     console.log($(".nombre").val());
+    //     var n = $(".nombre").val();
+
+    //     if(n == n){ 
+    //         $('.numeros').append('<input type="text" value="">');
+    //     }
+    // });
 })
