@@ -14,6 +14,7 @@ class WarehousesController < ApplicationController
     @project = Project.find(params[:warehouse][:project_id])
     @warehouse = @project.warehouses.new(warehouse_params)
     if @warehouse.save
+      flash[:notice] = "Se guardo satisfactoriamente"
       redirect_to new_warehouse_path
     else
       render :new
