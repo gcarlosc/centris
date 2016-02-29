@@ -25,16 +25,14 @@
                         <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
                         <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
                         <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li>
-                        <li><i class="fa fa-key"></i><%= link_to "Log out", session_path, method: :delete %></a></li>
+                        <li><%= link_to "Log out", session_path, method: :delete %></li>
                 </ul>
             </li>
             <!-- user login dropdown end -->
         </ul>
         <!--search & user info end-->
-    </div>
+      </div>
     <% else %>
-      <%#= link_to "Sign in", new_session_path %>
-      <%#= link_to "Sign up", new_user_path %>
     <% end %>
     <!--logo end-->
 

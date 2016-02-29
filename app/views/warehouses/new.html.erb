@@ -33,8 +33,8 @@
                           <%= f.input :location, label: false, input_html: { class: 'form-control' } %>
                         </div>
                         <div class="form-group">
-                          <label>Proyecto</label>
-                          <%= f.input :project_id, collection: Project.all, label_method: :name, value_method: :id, label: false, include_blank: 'Elija el proyecto...', input_html: { class: 'form-control' } %>
+                        	<label>Proyecto</label>
+                        	<%= f.input :project_id, collection: Project.all, label_method: :name, value_method: :id, label: false, include_blank: 'Elija el proyecto...', input_html: { class: 'form-control js-example-basic-single' } %>
                         </div>
                     </div>
                 </div>
