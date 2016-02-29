@@ -1,5 +1,7 @@
 class MovementsController < ApplicationController
 
+  before_action :require_login
+
   before_action :set_movement, only: [:edit, :update]
   before_action :set_movement_type, only: [:new, :edit, :update, :create]
 

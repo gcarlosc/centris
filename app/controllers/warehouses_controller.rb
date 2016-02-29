@@ -1,4 +1,7 @@
 class WarehousesController < ApplicationController
+
+  before_action :require_login
+
   def index
     @warehouses = Warehouse.all
   end
@@ -8,7 +11,8 @@ class WarehousesController < ApplicationController
   end
 
   def create
-    @warehouse = Warehouse.new(warehouse_params)
+    @project = Project.find(params[:warehouse][:project_id])
+    @warehouse = @project.warehouses.new(warehouse_params)
     if @warehouse.save
       redirect_to new_warehouse_path
     else

@@ -1,5 +1,7 @@
 class CategoryProductsController < ApplicationController
 
+  before_action :require_login
+
   def index
     @category_products = CategoryProduct.all
   end
