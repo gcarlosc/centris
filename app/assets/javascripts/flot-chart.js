@@ -201,7 +201,7 @@ var Script = function () {
 
         update();
     });
-    
+
 //    support chart
 
     $(function () {
@@ -418,5 +418,5 @@ var Script = function () {
         alert(''+obj.series.label+': '+percent+'%');
     }
 
-    
+
 }();
