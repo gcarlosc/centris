@@ -27,12 +27,12 @@
 
 
 $(document).on('ready',function(){
-	$(".provider-list").click(function(){
+  $(".provider-list").click(function(){
         $(".show-provider-list").toggle();
     });
 
-    $(document).ready(function(){ 
-    	$("select.js-example-basic-single").select2();
+    $(document).ready(function(){
+      $("select.js-example-basic-single").select2();
     });
 
     $("#dropdown").select2({

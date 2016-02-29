@@ -7,6 +7,7 @@ CategoryProduct.create!([
   { name: 'servidor', ancestry: 1 }
 ])
 
+
 Unit.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('units')
 Unit.create!([
