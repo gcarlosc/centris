@@ -47,6 +47,10 @@ body {
     border: 1px solid #e2e2e4;
 }
 
+.select2-container--default .select2-selection--multiple{
+    border: solid #e2e2e4 1px;
+}
+
 .in{
     display: none;
 }
