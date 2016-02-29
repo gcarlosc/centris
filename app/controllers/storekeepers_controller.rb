@@ -13,6 +13,7 @@ class StorekeepersController < ApplicationController
   def create
     @storekeeper = Storekeeper.new(storekeeper_params)
     if @storekeeper.save
+      flash[:notice] = "Se guardo satisfactoriamente"
       redirect_to new_storekeeper_path
     else
       render :new

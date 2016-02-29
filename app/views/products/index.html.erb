@@ -1,4 +1,3 @@
-<section class="wrapper">
     <div class="col-xs-12 col-md-12 col-md-12 col-lg-12 size-adaptable">
         <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-10">
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
@@ -24,8 +23,8 @@
                     <tr>
                         <td><%= product.id %></td>
                         <td><%= product.name %></td>
-                        <td><%= CategoryProduct.find(product.category_product_id).name %></td>
-                        <td><%= Classification.find(product.classification_id).name %></td>
+                        <td><%= product.category_product.name %></td>
+                        <td><%= product.classification.name %></td>
                         <td class="provider-list">+</td>
                     </tr>
                     <% end %>
@@ -33,4 +32,3 @@
             </table>
         </div>
     </div>
-</section>

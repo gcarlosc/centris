@@ -17,6 +17,7 @@ class MovementsController < ApplicationController
     @movement = Movement.new(movement_params)
     @movement.movement_type_id = @movement_type.id
     if @movement.save
+      flash[:notice] = "Se guardo satisfactoriamente"
       redirect_to edit_movement_type_movement_path(@movement_type, @movement)
     else
       render :new
@@ -28,6 +29,7 @@ class MovementsController < ApplicationController
 
   def update
     if @movement.update(movement_params)
+      flash[:notice] = "Se actualizo satisfactoriamente"
       redirect_to root_path
     else
       render :edit

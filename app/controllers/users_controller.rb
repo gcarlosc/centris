@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
     if @user.valid?
       sign_in(@user)
+      flash[:notice] = "Ingreso satisfactoriamente"
       redirect_to root_path
     else
       render :new
