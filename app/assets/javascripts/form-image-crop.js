@@ -53,7 +53,7 @@ var FormImageCrop = function () {
 
             xsize = $pcnt.width(),
             ysize = $pcnt.height();
-        
+
             console.log('init',[xsize,ysize]);
 
         $('#demo3').Jcrop({
@@ -92,7 +92,7 @@ var FormImageCrop = function () {
     return {
         //main function to initiate the module
         init: function () {
-            
+
             if (!jQuery().Jcrop) {;
                 return;
             }

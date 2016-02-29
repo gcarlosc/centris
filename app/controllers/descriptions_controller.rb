@@ -3,7 +3,7 @@ class DescriptionsController < ApplicationController
   before_action :require_login
 
   def new
-  	@description = Description.new
+    @description = Description.new
   end
 
   def create

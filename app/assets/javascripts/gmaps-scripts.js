@@ -170,7 +170,7 @@ var GoogleMaps = function () {
                 });
               }
             });
-         });   
+         });
      }
 
     return {

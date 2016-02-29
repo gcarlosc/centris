@@ -3,28 +3,30 @@ class MovementsController < ApplicationController
   before_action :require_login
 
   before_action :set_movement, only: [:edit, :update]
-  before_action :set_movement_type, only: [:new, :edit, :update, :create]
+  before_action :set_movement_type, only: [:new, :create]
 
   def index
     @movements = Movement.all
   end
 
   def new
-    @movement = Movement.new
+    @movement = current_user.movements.new
   end
 
   def create
-    @movement = Movement.new(movement_params)
+    @movement = current_user.movements.new(movement_params)
     @movement.movement_type_id = @movement_type.id
     if @movement.save
       flash[:notice] = "Se guardo satisfactoriamente"
-      redirect_to edit_movement_type_movement_path(@movement_type, @movement)
+      redirect_to edit_movement_path(@movement, type: @movement_type)
     else
       render :new
     end
   end
 
   def edit
+    @movement_type = MovementType.find(params[:type])
+    @movement.line_items.build
   end
 
   def update
@@ -40,7 +42,7 @@ class MovementsController < ApplicationController
 
   def movement_params
     params.require(:movement)
-    .permit(:creator_id, :responsable_id, :status, :movement_type_id, :originable_id, :originable_type, :destinable_id, :destinable_type)
+    .permit(:responsable_id, :status, :movement_type_id, :originable_id, :originable_type, :destinable_id, :destinable_type, line_items_attributes: [:id, :quantity, :movement_id, :product_id])
   end
 
   def set_movement
