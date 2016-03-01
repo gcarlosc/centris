@@ -74,13 +74,13 @@ $(document).on('ready',function(){
     }, 2000);
 
 
-    // $(".aldo").click(function (){
-    // //saco el valor accediendo al class del input = nombre   
-    //     console.log($(".nombre").val());
-    //     var n = $(".nombre").val();
+    $(".aldo").click(function (){
+    //saco el valor accediendo al class del input = nombre   
+        console.log($(".nombre").val());
+        var n = $(".nombre").val();
 
-    //     if(n == n){ 
-    //         $('.numeros').append('<input type="text" value="">');
-    //     }
-    // });
+        if(n == n){ 
+            $('.numeros').append('<input type="text" value="">');
+        }
+    });
 })
