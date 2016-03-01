@@ -1,5 +1,5 @@
   <div>
-    <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-lg-offset-2 col-lg-6 border-form">  
+    <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-lg-offset-2 col-lg-6 border-form">
       <%= simple_form_for @user do |f| %>
         <% if @user.errors.any? %>
           <%= pluralize(@user.errors.count, "error") %> prevented your account from being created:
@@ -10,10 +10,7 @@
           </ul>
         <% end %>
         <div class="form-group">
-          <%= f.input :first_name, input_html: { class: 'form-control'} %>
-        </div>
-        <div class="form-group">
-          <%= f.input :last_name, input_html: { class: 'form-control'} %>
+          <%= f.input :fullname, input_html: { class: 'form-control'} %>
         </div>
         <div class="form-group">
           <%= f.input :phone, input_html: { class: 'form-control'} %>
