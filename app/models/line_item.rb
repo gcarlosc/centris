@@ -6,4 +6,5 @@ class LineItem < ActiveRecord::Base
 
   belongs_to :product
   belongs_to :movement
+  has_many :skus
 end

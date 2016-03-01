@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160227155203) do
+ActiveRecord::Schema.define(version: 20160301163633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 20160227155203) do
     t.datetime "updated_at",       null: false
   end
 
-  add_index "movements", ["destinable_type", "destinable_id"], name: "index_guides_on_destinable_type_and_destinable_id", using: :btree
-  add_index "movements", ["originable_type", "originable_id"], name: "index_guides_on_originable_type_and_originable_id", using: :btree
+  add_index "movements", ["destinable_type", "destinable_id"], name: "index_movements_on_destinable_type_and_destinable_id", using: :btree
+  add_index "movements", ["originable_type", "originable_id"], name: "index_movements_on_originable_type_and_originable_id", using: :btree
 
   create_table "organizations", force: :cascade do |t|
     t.string   "name"
@@ -82,8 +82,8 @@ ActiveRecord::Schema.define(version: 20160227155203) do
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.integer  "category_product_id"
-    t.integer  "description_id"
     t.integer  "classification_id"
+    t.integer  "description_id"
     t.integer  "unit_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
@@ -96,6 +96,20 @@ ActiveRecord::Schema.define(version: 20160227155203) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
+
+  create_table "skus", force: :cascade do |t|
+    t.string   "sku"
+    t.string   "status"
+    t.integer  "product_id"
+    t.integer  "warehouse_id"
+    t.integer  "line_item_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "skus", ["line_item_id"], name: "index_skus_on_line_item_id", using: :btree
+  add_index "skus", ["product_id"], name: "index_skus_on_product_id", using: :btree
+  add_index "skus", ["warehouse_id"], name: "index_skus_on_warehouse_id", using: :btree
 
   create_table "suppliers", force: :cascade do |t|
     t.string   "name"
@@ -133,4 +147,7 @@ ActiveRecord::Schema.define(version: 20160227155203) do
 
   add_foreign_key "line_items", "movements"
   add_foreign_key "line_items", "products"
+  add_foreign_key "skus", "line_items"
+  add_foreign_key "skus", "products"
+  add_foreign_key "skus", "warehouses"
 end
