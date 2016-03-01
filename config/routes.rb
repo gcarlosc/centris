@@ -20,4 +20,7 @@ Rails.application.routes.draw do
   resources :movements, only: [:edit, :update] do
     resources :line_items
   end
+  resources :line_items do
+    resources :skus
+  end
 end

@@ -42,7 +42,7 @@ class MovementsController < ApplicationController
 
   def movement_params
     params.require(:movement)
-    .permit(:responsable_id, :status, :movement_type_id, :originable_id, :originable_type, :destinable_id, :destinable_type, line_items_attributes: [:id, :quantity, :movement_id, :product_id])
+    .permit(:responsable_id, :status, :movement_type_id, :originable_id, :originable_type, :destinable_id, :destinable_type)
   end
 
   def set_movement
