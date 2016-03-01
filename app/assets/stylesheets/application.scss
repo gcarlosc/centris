@@ -51,6 +51,15 @@ body {
     border: solid #e2e2e4 1px;
 }
 
+.select2-container--default .select2-selection--single{
+    border: solid #e2e2e4 1px;
+    height: 34px;
+}
+
+.form-control{
+    border-radius: 4px;
+}
+
 .modal{
     background: rgba(0, 0, 0, .6);
 }
