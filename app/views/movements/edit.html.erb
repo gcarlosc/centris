@@ -1,5 +1,6 @@
 <section class="wrapper">
   <%= simple_form_for @movement do |f| %>
+
     <div class="col-xs-12 col-md-12 col-md-12 col-lg-12 size-adaptable">
 
       <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-10">
@@ -30,6 +31,57 @@
     </div>
   <% end %>
 
+<<<<<<< HEAD
   <%= render 'line_items/form' %>
 
 </section>
+=======
+      <%= f.simple_fields_for :line_items do |l| %>
+        <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-11 col-lg-11">
+          <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <h4>* Productos</h4>
+            </div>
+          </div>
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+              <div class="panel-body">
+                  <div class="adv-table editable-table ">
+                      <div class="clearfix">
+                          <div class="btn-group">
+                              <button id="editable-sample_new" class="btn btn-warning">
+                                Añadir un elemento <i class="fa fa-plus"></i>
+                              </button>
+                          </div>
+                      </div>
+                    <table class="table" id="editable-sample">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>SKU</th>
+                                <th>*</th>
+                                <th>*</th>
+                            </tr>
+                        </thead>
+
+                      <tbody>
+                        <tr>
+                          <td>
+                            <%= l.input :product_id, collection: Product.all, label_method: lambda { |product| "#{product.name} / #{product.description.brand} - #{product.description.sub_brand}" }, value_method: :id, include_blank: 'Elija producto...', label: false %>
+                          </td>
+                          <td>
+                            <%= l.input :quantity, label: false %>
+                          </td>
+                          <td>
+                            <%= link_to "Crear Serial", new_sku_path, remote: true, class: "btn btn-warning" %>
+                          </td>
+                          <td><a class="edit" href="javascript:;">Edit</a></td>
+                          <td><a class="delete" href="javascript:;">Delete</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+            </div>
+        </div>
+>>>>>>> master

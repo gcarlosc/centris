@@ -69,6 +69,11 @@ $(document).on('ready',function(){
         $('link').addClass('active');
     });
 
+    setTimeout(function(){
+        $('#flash').fadeOut("slow");
+    }, 2000);
+
+
     // $(".aldo").click(function (){
     // //saco el valor accediendo al class del input = nombre   
     //     console.log($(".nombre").val());

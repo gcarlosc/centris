@@ -13,6 +13,7 @@ class SuppliersController < ApplicationController
   def create
     @supplier = Supplier.new(supplier_params)
     if @supplier.save
+      flash[:notice] = "Se guardo satisfactoriamente"
       redirect_to new_supplier_path
     else
       render :new
