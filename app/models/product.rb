@@ -7,5 +7,11 @@ class Product < ActiveRecord::Base
   belongs_to :classification
   belongs_to :description
   belongs_to :unit
+  has_many :line_items, dependent: :destroy
+
+  validates :name, presence: true
+  validates :category_product_id, presence: true
+  validates :description_id, presence: true
+  validates :classification_id, presence: true
 
 end

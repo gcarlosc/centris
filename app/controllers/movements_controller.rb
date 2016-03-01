@@ -25,7 +25,7 @@ class MovementsController < ApplicationController
 
   def edit
     @movement_type = MovementType.find(params[:type])
-    @movement.line_items.build
+    @line_item = @movement.line_items.build
   end
 
   def update

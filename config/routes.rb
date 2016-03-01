@@ -18,6 +18,6 @@ Rails.application.routes.draw do
     resources :movements, only: [:new, :create, :edit]
   end
   resources :movements, only: [:edit, :update] do
-    resources :line_items, only: [:new]
+    resources :line_items
   end
 end
