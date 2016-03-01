@@ -9,15 +9,16 @@
         <div class="size-adaptable border-form size-skus">
           <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-11 col-lg-11">
             <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
-              <div class="panel-body">      
+              <div class="panel-body">
                 <table class="table">
                   <thead>
                     <tr>
-                      <th class="text-center">Serials</th>
-                      <th class="text-center">*</th>
+                      <th>Producto</th>
+                      <th>SKU</th>
+                      <th>*</th>
                     </tr>
-                  </thead>    
-                  <tbody class="form-horizontal">
+                  </thead>
+                  <tbody>
                     <% @line_item.quantity.times do %>
                       <%= render 'skus/form' %>
                     <% end %>

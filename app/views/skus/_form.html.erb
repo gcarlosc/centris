@@ -1,16 +1,11 @@
-  <%= simple_form_for [@line_item, @sku], remote: true do |l| %>
-    <tr>
-      <td>
-        <input type="text" class="form-control">
-      </td>
-      <!-- <td>
-      %#= l.input :quantity, label: false %>
-      </td>
-      <td>
-      <%#= link_to "Crear Serial", new_sku_path, remote: true, class: "btn btn-warning" %>
-      </td> -->
-      <td>
-        <%= submit_tag 'Guardar linea', class: 'btn btn-danger' %>
-      </td>
-    </tr>
-  <% end %>          
+<%= simple_form_for [@line_item, @sku], remote: true do |f| %>
+  <tr>
+    <td>
+      <%= f.input :product, input_html: { value: @line_item.product.name, disabled: 'disabled' }, label: false %>
+    </td>
+    <td>
+      <%= f.input :sku, label: false %>
+    </td>
+    <td><%= submit_tag 'Guardar SKU', class: 'btn btn-danger' %></td>
+  </tr>
+</tbody>
