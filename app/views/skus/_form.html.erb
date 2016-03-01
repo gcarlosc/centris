@@ -1,3 +1,4 @@
+<tbody>
 <%= simple_form_for [@line_item, @sku], remote: true do |f| %>
   <tr>
     <td>
@@ -8,4 +9,5 @@
     </td>
     <td><%= submit_tag 'Guardar SKU', class: 'btn btn-danger' %></td>
   </tr>
+<% end %>
 </tbody>
