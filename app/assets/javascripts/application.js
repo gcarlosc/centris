@@ -11,25 +11,19 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap
 //= require jquery_ujs
 //= require select2
-//= require jquery-migrate-1.2.1.min.js
-//= require bootstrap
+//= require jquery.dcjqaccordion.2.7.js
 //= require jsacordion.js
 //= require jquery.scrollTo.min.js
 //= require jquery.nicescroll.js
-//= require jquery.dataTables.js
-//= require DT_bootstrap.js
 //= require respond.min.js
 //= require slidebars.min.js
 //= require common-scripts.js
-//= require editable-table.js
 
 
 $(document).on('ready',function(){
-  $(".provider-list").click(function(){
-        $(".show-provider-list").toggle();
-    });
 
     $(document).ready(function(){
       $("select.js-example-basic-single").select2();
@@ -37,10 +31,6 @@ $(document).on('ready',function(){
 
     $("#dropdown").select2({
         theme: "bootstrap"
-    });
-
-    jQuery(document).ready(function() {
-        EditableTable.init();
     });
 
     $('.fa-bars').click(function () {
@@ -65,22 +55,27 @@ $(document).on('ready',function(){
         }
     });
 
-    $('li.active').click(function(){
-        $('link').addClass('active');
-    });
-
     setTimeout(function(){
         $('#flash').fadeOut("slow");
     }, 2000);
 
+    // $('ola').bind('click',function(){
+    //     console.log("hola");
+    // });
 
-    $(".aldo").click(function (){
-    //saco el valor accediendo al class del input = nombre   
-        console.log($(".nombre").val());
-        var n = $(".nombre").val();
-
-        if(n == n){ 
-            $('.numeros').append('<input type="text" value="">');
-        }
-    });
+    // jQuery(function($) {
+    //     $('.aldo').click(function(){
+    //     var columns = $(".numeros");
+    //     var a = $(".nombre").val();
+    //     var positions = new Array(parseInt(a));
+    //     console.log(parseInt($('.nombre').val()));
+  
+    //   jQuery.each( positions, function(players) {
+    //     var playerNotesContent = document.createElement('div');
+    //     playerNotesContent.innerHTML = "<input type='text' class='form-control'>";
+    //     playerNotesContent.id = 'player_stats_block'+this;
+    //     columns.append(playerNotesContent);
+    //     });  
+    //   });
+    // });
 })
