@@ -5,7 +5,7 @@ class SkusController < ApplicationController
   def create
     @line_item = LineItem.find params[:line_item_id]
     @sku = @line_item.skus.create(sku_params)
-    redirect edit_line_item_path(@line_item)
+    redirect_to edit_line_item_path(@line_item)
   end
 
   def update
@@ -17,7 +17,7 @@ class SkusController < ApplicationController
 
   private
 
-  def skus_params
+  def sku_params
     params.require(:sku).permit(:sku, :status, :product_id, :warehouse_id, :line_item_id)
   end
 end
