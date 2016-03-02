@@ -9,6 +9,7 @@ class LineItemsController < ApplicationController
     @movement = Movement.find params[:movement_id]
     @movement_type = @movement.movement_type
     @line_item = @movement.line_items.create(line_item_params)
+    @line_item.check_type
     redirect_to edit_movement_path(@movement, type: @movement_type)
   end
 

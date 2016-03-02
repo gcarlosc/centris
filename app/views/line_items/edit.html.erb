@@ -1,4 +1,4 @@
-<div id="myModal" class="modal fade in">
+<!-- <div id="myModal" class="modal fade in">
   <div class="modal-dialog">
     <div class="modal-content">
        <div class="modal-header">
@@ -7,8 +7,8 @@
         </div>
       <div class="modal-body">
         <div class="size-adaptable border-form">
-          <div class="panel-body">
-            <table class="table">
+          <div class="panel-body"> -->
+            <table class="table show-message">
               <thead>
                   <tr>
                       <th>Producto</th>
@@ -16,13 +16,19 @@
                       <th>*</th>
                   </tr>
               </thead>
-              <% @line_item.quantity.times do %>
-                <%= render 'skus/form' %>
+              <% if @line_item.movement.movement_type_id == 1 %>
+                <% @line_item.skus.each do |sku| %>
+                  <%= render partial: 'skus/form_externo', locals: {line_item: @line_item, sku: sku} unless sku.new_record? %>
+                <% end %>
+              <% else %>
+                <% @line_item.quantity.times do %>
+                  <%= render 'skus/form_interno' %>
+                <% end %>
               <% end %>
             </table>
-          </div>
+          <!-- </div>
         </div>
       </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+    </div>
+  </div>
+</div> -->

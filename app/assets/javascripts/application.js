@@ -58,7 +58,6 @@ $(document).on('ready',function(){
     setTimeout(function(){
         $('#flash').fadeOut("slow");
     }, 2000);
-
     // $('ola').bind('click',function(){
     //     console.log("hola");
     // });
@@ -69,13 +68,13 @@ $(document).on('ready',function(){
     //     var a = $(".nombre").val();
     //     var positions = new Array(parseInt(a));
     //     console.log(parseInt($('.nombre').val()));
-  
+
     //   jQuery.each( positions, function(players) {
     //     var playerNotesContent = document.createElement('div');
     //     playerNotesContent.innerHTML = "<input type='text' class='form-control'>";
     //     playerNotesContent.id = 'player_stats_block'+this;
     //     columns.append(playerNotesContent);
-    //     });  
+    //     });
     //   });
     // });
 })

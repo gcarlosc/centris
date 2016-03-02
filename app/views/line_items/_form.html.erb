@@ -5,12 +5,18 @@
       <%= l.input :product_id, collection: Product.all, label_method: lambda { |product| "#{product.name} / #{product.description.brand} - #{product.description.sub_brand}" }, value_method: :id, include_blank: 'Elija producto...', label: false %>
     </td>
     <td>
-      <%= l.input :quantity, label: false %>
+      <% if line_item.skus.empty? %>
+        <%= l.input :quantity, label: false %>
+      <% else %>
+        <%= l.input :quantity, label: false, input_html: { disabled: 'disabled' } %>
+      <% end %>
     </td>
     <td><%= submit_tag 'Guardar linea', class: 'btn btn-danger' %></td>
   <% end %>
     <td>
-      <%= link_to "Crear Serial", edit_line_item_path(line_item), class: 'btn btn-success' ,remote: true unless line_item.new_record? %>
+
+      <%= link_to "Crear Serial", edit_line_item_path(line_item) unless line_item.new_record? %>
+      <%#= link_to "Crear Serial", edit_line_item_path(line_item), class: 'btn btn-success' ,remote: true unless line_item.new_record? %>
     </td>
   </tr>
 </tbody>
