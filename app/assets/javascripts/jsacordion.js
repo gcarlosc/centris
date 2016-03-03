@@ -115,7 +115,7 @@
       // Set up accordion
       function setUpAccordion(){
 
-        $arrow = '<span class="'+defaults.classArrow+'"></span>';
+        $arrow = '<span class="'+defaults.classArrow+'"> + </span>';
         var classParentLi = defaults.classParent+'-li';
         $('> ul',obj).show();
         $('li',obj).each(function(){

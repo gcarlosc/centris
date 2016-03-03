@@ -21,9 +21,12 @@
 //= require respond.min.js
 //= require slidebars.min.js
 //= require common-scripts.js
+//= require cocoon
 
 
 $(document).on('ready',function(){
+
+
 
     $(document).ready(function(){
       $("select.js-example-basic-single").select2();

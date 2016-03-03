@@ -17,6 +17,8 @@ class LineItemsController < ApplicationController
     @movement = Movement.find params[:movement_id]
     @movement_type = @movement.movement_type
     @line_item = LineItem.find params[:id]
+    # @line_item.quantity_changed?
+    # @line_item.quantity
     @line_item.update_attributes(line_item_params)
     redirect_to edit_movement_path(@movement, type: @movement_type)
   end

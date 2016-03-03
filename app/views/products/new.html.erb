@@ -26,7 +26,7 @@
                                 <%= f.input :unit_id, collection: Unit.all, label_method: :name, value_method: :id, label: false, include_blank: 'Elija una unidad...', input_html: { class: 'js-example-basic-single' } %>
                             </div>
                             <div class="form-group">
-                                <label>Descripcion</label>
+                                <label>Marca / Modelo</label>
                                 <%= f.input :description_id, collection: Description.all, label_method: lambda { |description| "#{description.brand} / #{description.sub_brand}" }, value_method: :id, label: false, include_blank: 'Elija una categoria...', input_html: { class: 'js-example-basic-single' } %>
                             </div>
                         </div>
@@ -40,7 +40,7 @@
                                 <%= f.input :classification_id, collection: Classification.all, label_method: :name, value_method: :id, label: false, include_blank: 'Elija una clasificacion...', input_html: { class: 'js-example-basic-single' } %>
                             </div>
                             <div class="form-group">
-                                <%= link_to "Descripcion", new_description_path, remote: true, class: "btn btn-primary" %>
+                                <%= link_to "Marca / Modelo", new_description_path, remote: true, class: "btn btn-primary" %>
                             </div>
                         </div>
                     </div>

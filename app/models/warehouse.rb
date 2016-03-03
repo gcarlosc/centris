@@ -4,6 +4,9 @@ class Warehouse < ActiveRecord::Base
 
   before_save :change_name
   validates :project_id, presence: true
+  validates :name, presence: true
+  validates :location, presence: true
+  validates :address, presence: true
 
   belongs_to :project
   has_many :in_movements, as: :originable, class_name: 'Movement'

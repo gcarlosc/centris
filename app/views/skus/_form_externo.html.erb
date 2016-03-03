@@ -1,14 +1,12 @@
-<%= simple_form_for [line_item, sku] do |f| %>
+<table class="table">
   <tbody>
     <tr>
       <td>
-        <%= f.input :product, input_html: { value: @line_item.product.name, disabled: 'disabled' }, label: false %>
+        <%= f.input :product_id, collection: Product.all, label_method: lambda { |product| "#{product.name} / #{product.description.brand} - #{product.description.sub_brand}" }, value_method: :id, include_blank: 'Elija producto...', label: false %>
       </td>
       <td>
         <%= f.input :sku, label: false %>
       </td>
-      <td><%= submit_tag 'Guardar SKU', class: 'btn btn-danger  ' %></td>
     </tr>
   </tbody>
-<% end %>
-
+</table>

@@ -1,6 +1,8 @@
 class Movement < ActiveRecord::Base
 
-  has_many :line_items, dependent: :destroy
+  # has_many :line_items, dependent: :destroy
+  has_many :skus, dependent: :destroy
+  accepts_nested_attributes_for :skus, reject_if: :all_blank, allow_destroy: true
   belongs_to :movement_type
 
   validates :creator_id, presence: true
