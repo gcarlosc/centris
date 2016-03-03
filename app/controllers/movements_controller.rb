@@ -26,7 +26,7 @@ class MovementsController < ApplicationController
 
   def edit
     @movement_type = MovementType.find(params[:type])
-    @line_item = @movement.line_items.build
+    @skus = @movement.skus.build
   end
 
   def update
@@ -42,7 +42,7 @@ class MovementsController < ApplicationController
 
   def movement_params
     params.require(:movement)
-    .permit(:responsable_id, :status, :movement_type_id, :originable_id, :originable_type, :destinable_id, :destinable_type)
+    .permit(:responsable_id, :status, :movement_type_id, :originable_id, :originable_type, :destinable_id, :destinable_type, skus_attributes: [:id, :sku, :status, :product_id, :warehouse_id, :movement_id, :_destroy])
   end
 
   def set_movement
