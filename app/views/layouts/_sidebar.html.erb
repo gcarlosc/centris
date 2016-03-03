@@ -2,14 +2,17 @@
     <div id="sidebar"  class="nav-collapse">
         <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
-                <li class="sub-menu">
-                    <a href="javascript:;" class="link">
+                <li class="sub-menu active">
+                    <a href="javascript:;" class="active">
                         <i class="fa fa-tasks"></i>
                         <span>Movimiento almacen</span>
                     </a>
                     <ul class="sub">
                         <li class="<%= active_class(new_movement_type_movement_path(1)) %>">
                             <%= link_to 'Ingreso Externo', new_movement_type_movement_path(1) %>
+                        </li>
+                        <li class="<%= active_class(new_movement_type_movement_path(5)) %>">
+                            <%= link_to 'Devolucion Externa', new_movement_type_movement_path(5) %>
                         </li>
                         <li class="<%= active_class(new_movement_type_movement_path(2)) %>">
                             <%= link_to 'Transferencia Interna', new_movement_type_movement_path(2) %>
@@ -20,14 +23,11 @@
                         <li class="<%= active_class(new_movement_type_movement_path(4)) %>">
                             <%= link_to 'Devolucion Personal', new_movement_type_movement_path(4) %>
                         </li>
-                        <li class="<%= active_class(new_movement_type_movement_path(5)) %>">
-                            <%= link_to 'Devolucion Externa', new_movement_type_movement_path(5) %>
-                        </li>
                     </ul>
                 </li>
 
-                <li class="sub-menu">
-                    <a href="javascript:;" class="link">
+                <li class="sub-menu active">
+                    <a href="javascript:;" class="active">
                         <i class="fa fa-ticket"></i>
                           <span>Productos</span>
                     </a>
@@ -37,15 +37,20 @@
                     </ul>
                 </li>
 
-                <li>
-                    <a href="<%= new_supplier_path %>" class="<%= active_class(new_supplier_path) %>">
-                        <i class="fa fa-street-view"></i>
-                        <span>Proveedor</span>
+                <li class="sub-menu active">
+                    <a href="javascript:;" class="active">
+                        <i class="fa fa-street-view"></i> 
+                        <span>Proveedor</span>   
                     </a>
+                    <ul class="sub">
+                        <li class="<%= active_class(new_supplier_path) %>">
+                            <%= link_to 'Crear Proveedor', new_supplier_path %>
+                        </li>    
+                    </ul>
                 </li>
 
-                <li class="sub-menu">
-                    <a href="javascript:;" class="link">
+                <li class="sub-menu active">
+                    <a href="javascript:;" class="active">
                         <i class="fa fa-group"></i>
                         <span>Organizacion</span>
                      </a>
