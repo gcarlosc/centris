@@ -2,7 +2,7 @@
     <div id="sidebar"  class="nav-collapse">
         <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
-                <li class="sub-menu">
+                <li class="sub-menu active">
                     <a href="javascript:;" class="active">
                         <i class="fa fa-tasks"></i>
                         <span>Movimiento almacen</span>
@@ -10,6 +10,9 @@
                     <ul class="sub">
                         <li class="<%= active_class(new_movement_type_movement_path(1)) %>">
                             <%= link_to 'Ingreso Externo', new_movement_type_movement_path(1) %>
+                        </li>
+                        <li class="<%= active_class(new_movement_type_movement_path(5)) %>">
+                            <%= link_to 'Devolucion Externa', new_movement_type_movement_path(5) %>
                         </li>
                         <li class="<%= active_class(new_movement_type_movement_path(2)) %>">
                             <%= link_to 'Transferencia Interna', new_movement_type_movement_path(2) %>
@@ -20,13 +23,10 @@
                         <li class="<%= active_class(new_movement_type_movement_path(4)) %>">
                             <%= link_to 'Devolucion Personal', new_movement_type_movement_path(4) %>
                         </li>
-                        <li class="<%= active_class(new_movement_type_movement_path(5)) %>">
-                            <%= link_to 'Devolucion Externa', new_movement_type_movement_path(5) %>
-                        </li>
                     </ul>
                 </li>
 
-                <li class="sub-menu">
+                <li class="sub-menu active">
                     <a href="javascript:;" class="active">
                         <i class="fa fa-ticket"></i>
                           <span>Productos</span>
