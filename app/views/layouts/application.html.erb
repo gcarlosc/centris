@@ -16,7 +16,9 @@
 
     <section id="main-content">      
       <section class="wrapper">
-        <%= render 'shared/breadcrumbs' %>
+        <%  if signed_in? %>
+          <%= render 'shared/breadcrumbs' %>
+        <% end %>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-container"> 
             <div class="col-xs-12 col-sm-12 col-md-offset-7 col-md-4 col-lg-offset-7 col-lg-4 size-flash-messages">

@@ -1,5 +1,5 @@
   <div>
-    <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-lg-offset-2 col-lg-6 border-form">
+    <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-lg-offset-2 col-lg-6 border-login">
       <%= simple_form_for @user do |f| %>
         <% if @user.errors.any? %>
           <%= pluralize(@user.errors.count, "error") %> prevented your account from being created:
