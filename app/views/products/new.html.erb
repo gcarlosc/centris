@@ -2,11 +2,8 @@
             <%= simple_form_for @product do |f| %>
                 <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-10">
                     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <h4>Nuevo Producto</h4>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-6">
-                            <%= submit_tag 'Guardar', class: 'btn btn-info' %>
                         </div>
                      </div>
                      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -14,7 +11,7 @@
                      </div>
                  </div>
 
-                <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-9 col-lg-9 border-form">
+                <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-10 border-form">
                     <div class="form-horizontal col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                             <div class="form-group">
@@ -26,7 +23,7 @@
                                 <%= f.input :unit_id, collection: Unit.all, label_method: :name, value_method: :id, label: false, include_blank: 'Elija una unidad...', input_html: { class: 'js-example-basic-single' } %>
                             </div>
                             <div class="form-group">
-                                <label>Descripcion</label>
+                                <label>Marca / Modelo</label>
                                 <%= f.input :description_id, collection: Description.all, label_method: lambda { |description| "#{description.brand} / #{description.sub_brand}" }, value_method: :id, label: false, include_blank: 'Elija una categoria...', input_html: { class: 'js-example-basic-single' } %>
                             </div>
                         </div>
@@ -40,8 +37,11 @@
                                 <%= f.input :classification_id, collection: Classification.all, label_method: :name, value_method: :id, label: false, include_blank: 'Elija una clasificacion...', input_html: { class: 'js-example-basic-single' } %>
                             </div>
                             <div class="form-group">
-                                <%= link_to "Descripcion", new_description_path, remote: true, class: "btn btn-primary" %>
+                                <%= link_to "Marca / Modelo", new_description_path, remote: true, class: "btn btn-primary" %>
                             </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <%= submit_tag 'Guardar', class: 'btn btn-lg btn-block btn-info' %>
                         </div>
                     </div>
                 </div>

@@ -25,6 +25,7 @@ gem 'pry-rails'
 gem 'simple_form'
 gem 'monban'
 gem 'monban-generators'
+gem 'cocoon'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

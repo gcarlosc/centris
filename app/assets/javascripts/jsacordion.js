@@ -101,6 +101,7 @@
       }
 
       // Set up accordion
+
       // function setUpAccordion(){
 
       //   $arrow = '<span class="'+defaults.classArrow+'"></span>';
