@@ -58,6 +58,7 @@ $(document).on('ready',function(){
     setTimeout(function(){
         $('#flash').fadeOut("slow");
     }, 2000);
+
     // $('ola').bind('click',function(){
     //     console.log("hola");
     // });

@@ -56,6 +56,11 @@ body {
     height: 34px;
 }
 
+.center-container{
+    background: #fff;
+    border-radius: 6px;
+}
+
 .size-skus{
     min-height: 500px;    
 }
@@ -105,6 +110,11 @@ a, a:hover, a:focus {
 
 .size-adaptable{
     margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.size-flash-messages{
+    margin-top: 30px;
     margin-bottom: 10px;
 }
 
@@ -114,7 +124,7 @@ a, a:hover, a:focus {
 }
 
 .border-form{
-    border: 1px solid;
+    border: 1px solid #e2e2e4;
     border-radius: 8px;
     padding: 40px;
     margin-top: 25px;
