@@ -72,6 +72,10 @@ body {
     display: none;
 }
 
+.new_sku{
+    background: red;
+}
+
 .row{
     display: none;
 }
@@ -312,7 +316,6 @@ ul.sidebar-menu {
 }
 
 ul.sidebar-menu li ul.sub li{
-    background: #35404D;
     margin-bottom: 0;
     margin-left: 0;
     margin-right: 0;
@@ -376,7 +379,6 @@ ul.sidebar-menu li a{
 }
 
 ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
-    background: #35404d;
     color: #fff;
     display: block;
     border-radius: 4px;

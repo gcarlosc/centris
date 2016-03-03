@@ -1,0 +1,7 @@
+<% if @sku.errors.empty? %>
+  $('#myModal').modal('hide');
+  window.location.reload();
+<% else %>
+  // show first error
+  alert('<%= @sku.errors.full_messages[0] %>');
+<% end %>

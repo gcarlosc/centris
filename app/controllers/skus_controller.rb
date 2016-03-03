@@ -1,14 +1,16 @@
 class SkusController < ApplicationController
 
   before_action :require_login
-
+  def create
+    @line_item = LineItem.find params[:line_item_id]
+    @sku = @line_item.skus.create(sku_params)
   # def create
   #   @line_item = LineItem.find params[:line_item_id]
   #   @sku = @line_item.skus.create(sku_params)
   #   @sku.product = @line_item.product
   #   @sku.warehouse = @line_item.movement.destinable_id
   #   redirect_to edit_line_item_path(@line_item)
-  # end
+  end
 
   def edit
     @sku= Sku.find params[:id]

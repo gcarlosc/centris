@@ -19,8 +19,6 @@
       classArrow	 : 'dcjq-icon',
       classCount	 : 'dcjq-count',
       classExpand	 : 'dcjq-current-parent',
-      eventType	 : 'click',
-      hoverDelay	 : 300,
       menuClose     : true,
       autoClose    : true,
       autoExpand	 : false,
