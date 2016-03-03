@@ -5,14 +5,12 @@ class SkusController < ApplicationController
   def create
     @line_item = LineItem.find params[:line_item_id]
     @sku = @line_item.skus.create(sku_params)
-    redirect_to edit_line_item_path(@line_item)
   end
 
   def update
     @line_item = LineItem.find params[:line_item_id]
     @sku = Sku.find params[:id]
     @sku.update_attributes(sku_params)
-    redirect_to edit_line_item_path(@line_item)
   end
 
   private

@@ -1,13 +1,13 @@
-<tbody>
-<%= simple_form_for [@line_item, @sku], remote: true do |f| %>
-  <tr>
-    <td>
-      <%= f.input :product, input_html: { value: @line_item.product.name, disabled: 'disabled' }, label: false %>
-    </td>
-    <td>
-      <%= f.input :sku, label: false %>
-    </td>
-    <td><%= submit_tag 'Guardar SKU', class: 'btn btn-danger' %></td>
-  </tr>
+<% @line_item.quantity.times do %>
+	<%= simple_form_for [@line_item, @sku], remote: true do |f| %>
+	  <tr>
+	    <td>
+	      <%= f.input :product, input_html: { value: @line_item.product.name, disabled: 'disabled' }, label: false %>
+	    </td>
+	    <td>
+	      <%= f.input :sku, label: false %>
+	    </td>
+	    <td><%= submit_tag 'Guardar SKU', class: 'btn btn-danger' %></td>
+	  </tr>
+	<% end %>
 <% end %>
-</tbody>

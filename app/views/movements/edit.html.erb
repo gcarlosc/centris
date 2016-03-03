@@ -40,16 +40,16 @@
       <div class="panel-body">
         <table class="table">
           <thead>
-              <tr>
-                  <th>Producto</th>
-                  <th>Cantidad</th>
-                  <th>*</th>
-              </tr>
+            <tr>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>*</th>
+            </tr>
           </thead>
-        <% @movement.line_items.each do |line_item| %>
-          <%= render partial: 'line_items/form', locals: { movement: @movement, line_item: line_item } %>
-        <% end %>
-          </table>
+          <% @movement.line_items.each do |line_item| %>
+            <%= render partial: 'line_items/form', locals: { movement: @movement, line_item: line_item } %>
+          <% end %>
+        </table>
       </div>
     </div>
   </div>

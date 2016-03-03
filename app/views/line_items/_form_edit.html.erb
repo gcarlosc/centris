@@ -8,17 +8,29 @@
       <div class="modal-body">
         <div class="size-adaptable border-form">
           <div class="panel-body">
-            <table class="table">
+            <table class="table show-message">
               <thead>
-                  <tr>
-                      <th>Producto</th>
-                      <th>SKU</th>
-                      <th>*</th>
-                  </tr>
+                <tr>
+                  <th>Producto</th>
+                  <th>SKU</th>
+                  <th>*</th>
+                </tr>
               </thead>
-              <% @line_item.quantity.times do %>
-                <%= render 'skus/form' %>
-              <% end %>
+              <tbody>
+                <% @line_item.quantity.times do %>                  
+                  <tr>
+                    <%= simple_form_for [@line_item, @sku], remote: true do |f| %>
+                      <td>
+                        <%= f.input :product, input_html: { value: @line_item.product.name, disabled: 'disabled' }, label: false %>
+                      </td>
+                      <td>
+                        <%= f.input :sku, label: false %>
+                      </td>
+                      <td><%= submit_tag 'Guardar SKU', class: 'btn btn-danger btn-message' %></td>
+                    <% end %>
+                  </tr>
+                <% end %>
+              </tbody>
             </table>
           </div>
         </div>
