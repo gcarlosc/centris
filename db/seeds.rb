@@ -1,3 +1,9 @@
+ActiveRecord::Base.connection.tables.each do |t|
+  ActiveRecord::Base.connection.reset_pk_sequence!(t)
+end
+
+Movement.destroy_all
+
 CategoryProduct.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('category_products')
 CategoryProduct.create!([
@@ -34,8 +40,7 @@ Classification.create!([
 Organization.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('organizations')
 Organization.create!([
-  { name: 'Mi Organizacion', address: 'mi direccion 123', web: 'www.walkant.com' },
-  { name: 'Mi Empresa', address: 'mi direccion 123', web: 'www.empresa.com' }
+  { name: 'Mi Organizacion', address: 'mi direccion 123', web: 'www.walkant.com' }
 ])
 
 Project.destroy_all
@@ -51,7 +56,8 @@ ActiveRecord::Base.connection.reset_pk_sequence!('warehouses')
 Warehouse.create!([
   { name: 'Almacen 1', address: 'mi direccion 123', location: 'locacion 1', project_id: 1 },
   { name: 'Almacen 2', address: 'mi direccion 123', location: 'locacion 2', project_id: 2 },
-  { name: 'Almacen 3', address: 'mi direccion 123', location: 'locacion 3', project_id: 3 }
+  { name: 'Almacen 3', address: 'mi direccion 123', location: 'locacion 3', project_id: 3 },
+  { name: 'Almacen 4', address: 'mi direccion 123', location: 'locacion 3', project_id: 3 }
 ])
 
 Supplier.destroy_all
@@ -71,10 +77,3 @@ MovementType.create!([
   { name: 'devexterna', factor: '-1' }
 ])
 
-User.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('users')
-User.create!([
-  { fullname: 'Juan Perez', email: 'juan@example.com', phone: '12345678', password_digest: 'asd' },
-  { fullname: 'Maria Sanchez', email: 'maria@example.com', phone: '12345678', password_digest: 'asd' },
-  { fullname: 'Pepe Rodriguez', email: 'pepe@example.com', phone: '12345678', password_digest: 'asd' }
-])

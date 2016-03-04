@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = authenticate_session(session_params)
 
     if sign_in(user)
-      redirect_to new_product_path
+      redirect_to new_movement_type_movement_path(1)
     else
       render :new
     end
