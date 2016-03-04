@@ -19,6 +19,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem "font-awesome-rails"
 gem 'bootstrap-glyphicons'
 gem "select2-rails"
+gem "breadcrumbs_on_rails"
 gem 'ffaker'
 gem 'pry'
 gem 'pry-rails'
