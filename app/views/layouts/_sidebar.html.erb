@@ -32,8 +32,8 @@
                           <span>Productos</span>
                     </a>
                     <ul class="sub">
-                        <li class="<%= active_class(category_products_path) %>"><%= link_to 'Categoria Producto', category_products_path %></li>
-                        <li class="<%= active_class(products_path) %> "><%= link_to 'Producto',products_path %></li>
+                        <li class="<%= active_main_class('category_products') %>"><%= link_to 'Categoria Producto', category_products_path %></li>
+                        <li class="<%= active_main_class('products') %> "><%= link_to 'Producto',products_path %></li>
                     </ul>
                 </li>
 
@@ -43,7 +43,7 @@
                         <span>Proveedores</span>   
                     </a>
                     <ul class="sub">
-                        <li class="<%= active_class(suppliers_path) %>">
+                        <li class="<%= active_main_class('suppliers') %>">
                             <%= link_to 'Proveedor', suppliers_path %>
                         </li>    
                     </ul>
@@ -55,8 +55,8 @@
                         <span>Organizacion</span>
                      </a>
                     <ul class="sub">
-                        <li class="<%= active_class(projects_path) %>"><%= link_to 'Crear Proyecto', projects_path %></li>
-                        <li class="<%= active_class(warehouses_path) %> "><%= link_to 'Crear Almacen', warehouses_path %></li>
+                        <li class="<%= active_main_class('projects') %>"><%= link_to 'Crear Proyecto', projects_path %></li>
+                        <li class="<%= active_main_class('warehouses') %> "><%= link_to 'Crear Almacen', warehouses_path %></li>
                     </ul>
                 </li>
             </ul>
