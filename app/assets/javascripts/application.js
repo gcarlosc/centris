@@ -18,8 +18,11 @@
 //= require jsacordion.js
 //= require jquery.scrollTo.min.js
 //= require jquery.nicescroll.js
+//= require jquery.dataTables.js
+//= require DT_bootstrap.js
 //= require respond.min.js
 //= require slidebars.min.js
+//= require dynamic_table_init.js
 //= require common-scripts.js
 //= require cocoon
 
