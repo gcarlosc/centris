@@ -21,20 +21,17 @@
 //= require respond.min.js
 //= require slidebars.min.js
 //= require common-scripts.js
-//= require cocoon
-
+//= require movements.js.coffee
 
 $(document).on('ready',function(){
 
-
-
     $(document).ready(function(){
       $("select.js-example-basic-single").select2();
-    });
+    })
 
     $("#dropdown").select2({
-        theme: "bootstrap"
-    });
+      theme: "bootstrap"
+    })
 
     $('.fa-bars').click(function () {
         if ($('#sidebar > ul').is(":visible") === true) {

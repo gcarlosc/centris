@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303155255) do
+ActiveRecord::Schema.define(version: 20160304172934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,21 +43,8 @@ ActiveRecord::Schema.define(version: 20160303155255) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "movements", force: :cascade do |t|
-    t.integer  "creator_id"
-    t.integer  "responsable_id"
-    t.string   "status"
-    t.integer  "movement_type_id"
-    t.integer  "originable_id"
-    t.string   "originable_type"
-    t.integer  "destinable_id"
-    t.string   "destinable_type"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  add_index "movements", ["destinable_type", "destinable_id"], name: "index_movements_on_destinable_type_and_destinable_id", using: :btree
-  add_index "movements", ["originable_type", "originable_id"], name: "index_movements_on_originable_type_and_originable_id", using: :btree
+# Could not dump table "movements" because of following StandardError
+#   Unknown type 'status' for column 'status'
 
   create_table "organizations", force: :cascade do |t|
     t.string   "name"

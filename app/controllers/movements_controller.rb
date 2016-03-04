@@ -30,6 +30,7 @@ class MovementsController < ApplicationController
   end
 
   def update
+    # return redirect_to root_path unless @movement.pending?
     if @movement.update(movement_params)
       flash[:notice] = "Se actualizo satisfactoriamente"
       redirect_to root_path

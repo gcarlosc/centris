@@ -1,12 +1,21 @@
-<table class="table">
-  <tbody>
-    <tr>
-      <td>
-        <%= f.input :product_id, collection: Product.all, label_method: lambda { |product| "#{product.name} / #{product.description.brand} - #{product.description.sub_brand}" }, value_method: :id, include_blank: 'Elija producto...', label: false %>
-      </td>
-      <td>
-        <%= f.input :sku, label: false %>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<fieldset>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>
+          <%= f.input :product_id, collection: Product.all, label_method: lambda { |product| "#{product.name} / #{product.description.brand} - #{product.description.sub_brand}" }, value_method: :id, include_blank: 'Elija producto...', label: false %>
+        </td>
+        <td>
+          <%= f.input :warehouse_id, :input_html => { value: @movement.destinable_id }, as: :hidden %>
+          <%= f.input :_destroy, as: :hidden %>
+        </td>
+        <td>
+          <%= f.input :sku, label: false %>
+        </td>
+        <td>
+          <%= link_to 'quitar', '#', class: "remove_fields" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</fieldset>

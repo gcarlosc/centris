@@ -1,15 +1,10 @@
-<%= simple_form_for [@line_item, @sku], remote: true do |f| %>
+<%= simple_form_for @movement do |f| %>
   <tbody>
     <tr>
       <td>
-        <%= f.input :product_id, collection: Sku.where(product_id: @line_item.product_id, warehouse_id: @line_item.movement.originable_id).all, label_method: :sku, value_method: :id, include_blank: 'Elija sku...', label: false %>
+        <%#= f.input :product_id, collection: Sku.where(product_id: @movement.product_id, warehouse_id: @movement.originable_id).all, label_method: :sku, value_method: :id, include_blank: 'Elija sku...', label: false %>
       </td>
       <td><%= submit_tag 'Guardar SKU', class: 'btn btn-danger' %></td>
     </tr>
   </tbody>
 <% end %>
-
-
-<%# Sku.where(product_id: @line_item.product_id, warehouse_id: @line_item.movement.originable_id).find_each do |sku| %>
-  <%#= sku.sku %>
-<%# end %>

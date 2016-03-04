@@ -11,7 +11,6 @@
             <table class="table table-bordered">
                 <thead>
                   	<tr>
-                    	<th>Codigo Producto</th>
                         <th>Nombre</th>
                         <th>Categoria Producto</th>
                         <th>Clasificacion</th>
@@ -21,11 +20,10 @@
                 <tbody>
                     <% @products.each do |product| %>
                     <tr>
-                        <td><%= product.id %></td>
                         <td><%= product.name %></td>
                         <td><%= product.category_product.name %></td>
                         <td><%= product.classification.name %></td>
-                        <td class="provider-list">+</td>
+                        <td><%= link_to 'Editar', edit_product_path(product) %></td>
                     </tr>
                     <% end %>
                 </tbody>

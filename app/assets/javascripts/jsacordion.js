@@ -102,29 +102,29 @@
 
       // Set up accordion
 
-      // function setUpAccordion(){
+      function setUpAccordion(){
 
-      //   $arrow = '<span class="'+defaults.classArrow+'"></span>';
-      //   var classParentLi = defaults.classParent+'-li';
-      //   $('> ul',obj).show();
-      //   $('li',obj).each(function(){
-      //     if($('> ul',this).length > 0){
-      //       $(this).addClass(classParentLi);
-      //       $('> a',this).addClass(defaults.classParent).append($arrow);
-      //     }
-      //   });
-      //   $('> ul',obj).hide();
-      //   if(defaults.showCount == true){
-      //     $('li.'+classParentLi,obj).each(function(){
-      //       if(defaults.disableLink == true){
-      //         var getCount = parseInt($('ul a:not(.'+defaults.classParent+')',this).length);
-      //       } else {
-      //         var getCount = parseInt($('ul a',this).length);
-      //       }
-      //       $('> a',this).append(' <span class="'+defaults.classCount+'">'+getCount+'</span>');
-      //     });
-      //   }
-      // }
+        $arrow = '<span class="'+defaults.classArrow+'"></span>';
+        var classParentLi = defaults.classParent+'-li';
+        $('> ul',obj).show();
+        $('li',obj).each(function(){
+          if($('> ul',this).length > 0){
+            $(this).addClass(classParentLi);
+            $('> a',this).addClass(defaults.classParent).append($arrow);
+          }
+        });
+        $('> ul',obj).hide();
+        if(defaults.showCount == true){
+          $('li.'+classParentLi,obj).each(function(){
+            if(defaults.disableLink == true){
+              var getCount = parseInt($('ul a:not(.'+defaults.classParent+')',this).length);
+            } else {
+              var getCount = parseInt($('ul a',this).length);
+            }
+            $('> a',this).append(' <span class="'+defaults.classCount+'">'+getCount+'</span>');
+          });
+        }
+      }
 
       function linkOver(){
 
