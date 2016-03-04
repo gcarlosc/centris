@@ -32,19 +32,19 @@
                           <span>Productos</span>
                     </a>
                     <ul class="sub">
-                        <li class="<%= active_class(new_category_product_path) %>"><%= link_to 'Categoria Producto', new_category_product_path %></li>
-                        <li class="<%= active_class(new_product_path) %> "><%= link_to 'Producto', new_product_path %></li>
+                        <li class="<%= active_class(category_products_path) %>"><%= link_to 'Categoria Producto', category_products_path %></li>
+                        <li class="<%= active_class(products_path) %> "><%= link_to 'Producto',products_path %></li>
                     </ul>
                 </li>
 
                 <li class="sub-menu active">
                     <a href="javascript:;" class="active">
                         <i class="fa fa-street-view"></i> 
-                        <span>Proveedor</span>   
+                        <span>Proveedores</span>   
                     </a>
                     <ul class="sub">
-                        <li class="<%= active_class(new_supplier_path) %>">
-                            <%= link_to 'Crear Proveedor', new_supplier_path %>
+                        <li class="<%= active_class(suppliers_path) %>">
+                            <%= link_to 'Proveedor', suppliers_path %>
                         </li>    
                     </ul>
                 </li>
@@ -55,8 +55,8 @@
                         <span>Organizacion</span>
                      </a>
                     <ul class="sub">
-                        <li class="<%= active_class(new_project_path) %>"><%= link_to 'Crear Proyecto', new_project_path %></li>
-                        <li class="<%= active_class(new_warehouse_path) %> "><%= link_to 'Crear Almacen', new_warehouse_path %></li>
+                        <li class="<%= active_class(projects_path) %>"><%= link_to 'Crear Proyecto', projects_path %></li>
+                        <li class="<%= active_class(warehouses_path) %> "><%= link_to 'Crear Almacen', warehouses_path %></li>
                     </ul>
                 </li>
             </ul>

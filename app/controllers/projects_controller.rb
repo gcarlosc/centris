@@ -2,12 +2,15 @@ class ProjectsController < ApplicationController
 
   before_action :require_login
 
+  add_breadcrumb "Proyecto", :projects_path
+
   def index
     @projects = Project.all
   end
 
   def new
     @project = Project.new
+    add_breadcrumb "Nuevo Proyecto", new_project_path
   end
 
   def create
