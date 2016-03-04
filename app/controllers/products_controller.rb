@@ -2,12 +2,15 @@ class ProductsController < ApplicationController
 
   before_action :require_login
 
+  add_breadcrumb "Producto", :products_path
+
   def index
     @products = Product.all
   end
 
   def new
     @product = Product.new
+    add_breadcrumb "Nuevo producto", new_product_path
   end
 
   def create

@@ -11,6 +11,7 @@ class Product < ActiveRecord::Base
   has_many :skus, dependent: :destroy
 
   validates :name, presence: true
+  validates :unit_id, presence: true
   validates :category_product_id, presence: true
   validates :description_id, presence: true
   validates :classification_id, presence: true

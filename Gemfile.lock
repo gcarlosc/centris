@@ -49,6 +49,7 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    breadcrumbs_on_rails (2.3.1)
     builder (3.2.2)
     byebug (8.2.2)
     coderay (1.1.0)
@@ -180,6 +181,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-glyphicons
   bootstrap-sass (~> 3.3, >= 3.3.6)
+  breadcrumbs_on_rails
   byebug
   coffee-rails (~> 4.1.0)
   ffaker

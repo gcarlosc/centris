@@ -2,12 +2,15 @@ class SuppliersController < ApplicationController
 
   before_action :require_login
 
+  add_breadcrumb "Proveedor", :suppliers_path
+
   def index
     @suppliers = Supplier.all
   end
 
   def new
     @supplier = Supplier.new
+    add_breadcrumb "Nuevo Proveedor", new_supplier_path
   end
 
   def create

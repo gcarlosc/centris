@@ -2,12 +2,16 @@ class WarehousesController < ApplicationController
 
   before_action :require_login
 
+  add_breadcrumb "Almacen", :warehouses_path
+
+
   def index
     @warehouses = Warehouse.all
   end
 
   def new
     @warehouse = Warehouse.new
+    add_breadcrumb "Nuevo Almacen", new_warehouse_path
   end
 
   def create

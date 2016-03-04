@@ -5,12 +5,15 @@ class MovementsController < ApplicationController
   before_action :set_movement, only: [:edit, :update]
   before_action :set_movement_type, only: [:new, :create]
 
+  add_breadcrumb "Movimiento Almacen"
+
   def index
     @movements = Movement.all
   end
 
   def new
     @movement = current_user.movements.new
+    add_breadcrumb "Nuevo Movimiento", new_movement_type_movement_path
   end
 
   def create

@@ -20,6 +20,58 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 es:
+  activerecord:
+    errors:
+      models:
+        product:
+          attributes:
+            name:
+              blank: "Porfavor ingrese un nombre"
+            category_product_id:
+              blank: "Porfavor eliga una categoria"
+            description_id:
+              blank: "Porfavor eliga una marca/modelo"
+            classification_id:
+              blank: "Porfavor eliga una clasificacion"
+            unit_id:
+              blank: "Porfavor eliga tipo de unidad"
+        category_product:
+          attributes:
+            name:
+              blank: "Porfavor ingrese un nombre"
+            ancestry:
+              blank: "Porfavor eliga el tipo de producto"
+        supplier:
+          attributes:
+            name:
+              blank: "Porfavor ingrese un nombre"
+            address:
+              blank: "Porfavor ingresa un direccion"
+        project:
+          attributes:
+            name: 
+              blank: "Porfavor ingrese un nombre"
+            address:
+              blank: "Porfavor ingrese una direccion"
+        warehouse:
+          attributes:
+            name:
+              blank: "Porfavor ingrese un nombre"
+            address:
+              blank: "Porfavor ingrese una direccion"
+            location:
+              blank: "Porfavor ingrese una locacion"
+            project_id:
+              blank: "Porfavor eliga un proyecto"
+        movement:
+          attributes:
+            originable_id:
+              blank: "Porfavor eliga un proveedor"
+            destinable_id:
+              blank: "Porfavor eliga un almacen"
+            responsable_id:
+              blank: "Porfavor eliga un responsable"
+
   products:
     create:
       message: "Se creo satisfactoriamente"

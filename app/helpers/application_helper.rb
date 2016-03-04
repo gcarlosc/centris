@@ -4,6 +4,10 @@ module ApplicationHelper
     link_path == request.original_fullpath ? 'active' : ''
   end
 
+  def active_main_class(controller)
+    controller_name == controller ? 'active' : ''
+  end
+
   def bootstrap_class_for(flash_type)
     case flash_type
     when 'success'
