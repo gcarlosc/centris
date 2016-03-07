@@ -10,5 +10,5 @@ class Sku < ActiveRecord::Base
   validates :status, presence: true
   validates :product_id, presence: true
 
-  scope :by_statuses, ->(list_status) { where(status: list_status) }
+  scope :by_status, ->(sku_status) { where(status: sku_status) }
 end

@@ -34,7 +34,7 @@ class MovementsController < ApplicationController
   def edit
     @movement_type = MovementType.find(params[:type])
     @sku = @movement.skus.build
-    @skus = Sku.where(warehouse_id: @movement.originable_id).all.by_statuses([:active ])
+    @skus = Sku.where(warehouse_id: @movement.originable_id).all.by_status([:active])
     add_breadcrumb "Editar Movimiento #{@movement.id}"
   end
 
@@ -42,7 +42,7 @@ class MovementsController < ApplicationController
     return redirect_to root_path unless @movement.pending?
     @movement.saved!
     if @movement.update(movement_params)
-      flash[:notice] = "Se actualizo satisfactoriamente"
+      flash[:notice] = "Se guardo satisfactoriamente"
       redirect_to root_path
     else
       render :edit
