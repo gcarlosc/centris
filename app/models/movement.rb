@@ -25,7 +25,7 @@ class Movement < ActiveRecord::Base
   def add_skus(skus)
     skus.each do |id|
       sku = Sku.find(id)
-      self.skus << sku
+      self.skus.push(sku)
     end
   end
 end
