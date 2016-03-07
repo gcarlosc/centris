@@ -27,15 +27,15 @@
                             </thead>
                             <tbody>
                               <% @products.each do |product| %>
-                              <tr>
-                                <td></td>
-                                <td><%= product.name %></td>
-                                <td><%= product.description.brand %></td>
-                                <td><%= product.description.sub_brand %></td>
-                                <td><%= product.unit.name %></td>
-                                <td><%= product.category_product.name  %></td>
-                                <td><%= link_to 'Editar', edit_product_path(product) %></td>
-                              </tr>
+                                  <tr>
+                                    <td><%= product.id %></td>
+                                    <td><%= product.name %></td>
+                                    <td><%= product.description.brand %></td>
+                                    <td><%= product.description.sub_brand %></td>
+                                    <td><%= product.unit.name %></td>
+                                    <td><%= product.category_product.name  %></td>
+                                    <td><%= link_to 'Editar', edit_product_path(product), class: 'btn btn-info' %></td>
+                                  </tr>
                               <% end %>
                             </tbody>
                         </table>

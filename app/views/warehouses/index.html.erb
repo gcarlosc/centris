@@ -20,21 +20,22 @@
                                     <th>Nombre</th>
                                     <th>Proyecto</th>
                                     <th>Responsable</th>
-                                    <th class="hidden-phone">Ubicación</th>
-                                    <th class="hidden-phone">Dirección</th>
+                                    <th>Ubicación</th>
+                                    <th>Dirección</th>
                                     <th>Estado</th>
                                 </tr>
                             </thead>
                             <tbody>
-                              <tr class="gradeX">
-                                  <td>Trident</td>
-                                  <td>Internet
-                                      Explorer 4.0</td>
-                                  <td>Win 95+</td>
-                                  <td class="center hidden-phone">4</td>
-                                  <td class="center hidden-phone">X</td>
-                                  <td>madafaqa</td>
-                              </tr> 
+                              <% @warehouses.each do |warehouse| %>
+                                  <tr>
+                                    <td><%= warehouse.name %></td>
+                                    <td><%= warehouse.project.name %></td>
+                                    <td><%= "Responsable" %></td>
+                                    <td><%= warehouse.location %></td>
+                                    <td><%= warehouse.address %></td>
+                                    <td><%= "status" %></td>
+                                  </tr>
+                              <% end %> 
                             </tbody>
                         </table>
                     </div>

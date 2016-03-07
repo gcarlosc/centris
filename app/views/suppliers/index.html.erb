@@ -20,120 +20,20 @@
                                     <th>Nombre</th>
                                     <th>Dirección</th>
                                     <th>Nombre Contacto</th>
-                                    <th class="hidden-phone">Correo</th>
-                                    <th class="hidden-phone">Celular</th>
+                                    <th>Correo</th>
+                                    <th>Celular</th>
                                 </tr>
                             </thead>
                             <tbody>
-                              <tr class="gradeX">
-                                  <td>Trident</td>
-                                  <td>Internet
-                                      Explorer 4.0</td>
-                                  <td>Win 95+</td>
-                                  <td class="center hidden-phone">4</td>
-                                  <td class="center hidden-phone">X</td>
-                              </tr>
-                              <tr class="gradeC">
-                                  <td>Trident</td>
-                                  <td>Internet
-                                      Explorer 5.0</td>
-                                  <td>Win 95+</td>
-                                  <td class="center hidden-phone">5</td>
-                                  <td class="center hidden-phone">C</td>
-                              </tr>
-                              <tr class="gradeA">
-                                  <td>Trident</td>
-                                  <td>Internet
-                                      Explorer 5.5</td>
-                                  <td>Win 95+</td>
-                                  <td class="center hidden-phone">5.5</td>
-                                  <td class="center hidden-phone">A</td>
-                              </tr>
-                              <tr class="gradeA">
-                                  <td>Trident</td>
-                                  <td>Internet
-                                      Explorer 6</td>
-                                  <td>Win 98+</td>
-                                  <td class="center hidden-phone">6</td>
-                                  <td class="center hidden-phone">A</td>
-                              </tr>
-                              <tr class="gradeA">
-                                  <td>Trident</td>
-                                  <td>Internet Explorer 7</td>
-                                  <td>Win XP SP2+</td>
-                                  <td class="center hidden-phone">7</td>
-                                  <td class="center hidden-phone">A</td>
-                              </tr>
-                              <tr class="gradeA">
-                                  <td>Trident</td>
-                                  <td>AOL browser (AOL desktop)</td>
-                                  <td>Win XP</td>
-                                  <td class="center hidden-phone">6</td>
-                                  <td class="center hidden-phone">A</td>
-                              </tr>
-                              <tr class="gradeA">
-                                  <td>Gecko</td>
-                                  <td>Firefox 1.0</td>
-                                  <td>Win 98+ / OSX.2+</td>
-                                  <td class="center hidden-phone">1.7</td>
-                                  <td class="center hidden-phone">A</td>
-                              </tr>
-                              <tr class="gradeA">
-                                  <td>Gecko</td>
-                                  <td>Firefox 1.5</td>
-                                  <td>Win 98+ / OSX.2+</td>
-                                  <td class="center hidden-phone">1.8</td>
-                                  <td class="center hidden-phone">A</td>
-                              </tr>
-                              <tr class="gradeA">
-                                  <td>Gecko</td>
-                                  <td>Firefox 2.0</td>
-                                  <td>Win 98+ / OSX.2+</td>
-                                  <td class="center hidden-phone">1.8</td>
-                                  <td class="center hidden-phone">A</td>
-                              </tr>
-                              <tr class="gradeA">
-                                  <td>Gecko</td>
-                                  <td>Firefox 3.0</td>
-                                  <td>Win 2k+ / OSX.3+</td>
-                                  <td class="center hidden-phone">1.9</td>
-                                  <td class="center hidden-phone">A</td>
-                              </tr>
-                              <tr class="gradeA">
-                                  <td>Gecko</td>
-                                  <td>Camino 1.0</td>
-                                  <td>OSX.2+</td>
-                                  <td class="center hidden-phone">1.8</td>
-                                  <td class="center hidden-phone">A</td>
-                              </tr>
-                              <tr class="gradeA">
-                                  <td>Gecko</td>
-                                  <td>Camino 1.5</td>
-                                  <td>OSX.3+</td>
-                                  <td class="center hidden-phone">1.8</td>
-                                  <td class="center hidden-phone">A</td>
-                              </tr>
-                              <tr class="gradeA">
-                                  <td>Gecko</td>
-                                  <td>Netscape 7.2</td>
-                                  <td>Win 95+ / Mac OS 8.6-9.2</td>
-                                  <td class="center hidden-phone">1.7</td>
-                                  <td class="center hidden-phone">A</td>
-                              </tr>
-                              <tr class="gradeA">
-                                  <td>Gecko</td>
-                                  <td>Netscape Browser 8</td>
-                                  <td>Win 98SE+</td>
-                                  <td class="center hidden-phone">1.7</td>
-                                  <td class="center hidden-phone">A</td>
-                              </tr>
-                              <tr class="gradeA">
-                                  <td>Gecko</td>
-                                  <td>Netscape Navigator 9</td>
-                                  <td>Win 98+ / OSX.2+</td>
-                                  <td class="center hidden-phone">1.8</td>
-                                  <td class="center hidden-phone">A</td>
-                              </tr> 
+                              <% @suppliers.each do |supplier| %>
+                                <tr>
+                                  <td><%= supplier.name %></td>
+                                  <td><%= supplier.address %></td>
+                                  <td><%= supplier.name %></td>
+                                  <td><%= supplier.email %></td>
+                                  <td><%= supplier.phone %></td>
+                                </tr>
+                              <% end %>
                             </tbody>
                         </table>
                     </div>

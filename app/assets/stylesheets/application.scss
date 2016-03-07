@@ -72,6 +72,10 @@ body {
     border-radius: 4px;
 }
 
+.fontBolder{
+    font-weight: bold;
+}
+
 .modal{
     background: rgba(0, 0, 0, .6);
 }
@@ -114,6 +118,10 @@ a, a:hover, a:focus {
 .size-adaptable{
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+.size-bottom{
+    margin-bottom: 30px;    
 }
 
 .size-flash-messages{
