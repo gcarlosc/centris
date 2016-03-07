@@ -15,9 +15,17 @@ class SkusController < ApplicationController
     Sku.where(id: params[:sku_ids]).update_all(warehouse_id: @movement.destinable_id)
     @movement.saved!
     @movement.add_skus(params[:sku_ids])
-    binding.pry
     redirect_to root_path, notice: "Se guardo satisfactoriamente"
   end
+
+  def return_products
+    @movement = Movement.find params[:movement_id]
+    Sku.where(id: params[:sku_ids]).update_all(status: 'inactive')
+    @movement.saved!
+    @movement.add_skus(params[:sku_ids])
+    redirect_to root_path, notice: "Se guardo satisfactoriamente"
+  end
+
 
   private
 
