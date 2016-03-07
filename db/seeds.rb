@@ -63,8 +63,9 @@ Warehouse.create!([
 Supplier.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('suppliers')
 Supplier.create!([
-  { name: 'Pepito SAC', address: 'mi direccion 123' },
-  { name: 'Tia Veneno SA', address: 'mi direccion 123' }
+  { name: 'Pepito SAC', address: 'mi direccion 123', contact_name: 'Jose Martinez', email: 'pepito@gmail.com', phone: '123456798' },
+  { name: 'Tia Veneno SA', address: 'mi direccion 123', contact_name: 'Maria Poison', email: 'poison@gmail.com', phone: '123456798' },
+  { name: 'Condorito SA', address: 'mi direccion 123', contact_name: 'Ungenio Gonzales', email: 'unge@gmail.com', phone: '123456798' }
 ])
 
 MovementType.destroy_all

@@ -369,7 +369,10 @@ CREATE TABLE suppliers (
     name character varying,
     address character varying,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    contact_name character varying,
+    email character varying,
+    phone integer
 );
 
 
@@ -814,4 +817,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160303155255');
 INSERT INTO schema_migrations (version) VALUES ('20160304172934');
 
 INSERT INTO schema_migrations (version) VALUES ('20160307010018');
+
+INSERT INTO schema_migrations (version) VALUES ('20160307155727');
 
