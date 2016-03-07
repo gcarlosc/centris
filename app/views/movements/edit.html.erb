@@ -4,12 +4,10 @@
 
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-              <h4><%= @movement_type.name %></h4>
+              <h4><%= @movement.movement_type.name.capitalize %></h4>
             </div>
         </div>
-
       </div>
-
       <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-10 border-form">
 
         <%= render @movement_type.name, f: f %>
@@ -22,9 +20,6 @@
           <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-5 col-lg-offset-2 col-lg-5">
             <%= f.input :responsable_id, collection: User.all, label_method: :fullname, value_method: :id, include_blank: 'Elija responsable...' %>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
-            <%= submit_tag 'Guardar', class: 'btn btn-lg btn-block btn-info' %>
-          </div>
         </div>
       </div>
     </div>
@@ -35,35 +30,33 @@
           <h4>* Productos</h4>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
-      <div class="panel-body">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Producto</th>
-              <th>Cantidad</th>
-              <th>*</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <%= f.simple_fields_for :skus do |builder| %>
-              <%= render 'skus/form_externo', f: builder %>
-            <% end %>
-            <%= link_to_add_fields_externo "Nuevo elemento", f, :skus %>
-          </tbody>
-        </table>
-
-
-
-        <%# if @movement.movement_type_id == 1 %>
-          <!-- <div class="allocated-products">
-            <%#= link_to_add_association 'Nuevo elemento', f, :skus, partial: 'skus/form_externo', class: 'btn btn-danger' %>
-          </div> -->
-        <%# else %>
-          <%#= link_to_add_association 'Nuevo elemento', f, :skus, partial: 'skus/form_interno', class: 'btn btn-danger' %>
-        <%# end %>
+    <% if @movement.movement_type_id == 1 %>
+      <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+        <div class="panel-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>*</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= f.simple_fields_for :skus do |sku| %>
+                <%= render 'skus/form_externo', f: sku %>
+              <% end %>
+              <%= link_to_add_fields_externo "Nuevo item", f, :skus %>
+              </tbody>
+          </table>
+        </div>
       </div>
-    </div>
+      <div class="col-xs-6 col-sm-6 col-md-offset-12 col-md-6 col-lg-offset-8 col-lg-6">
+        <%= submit_tag 'Guardar', class: 'btn btn-lg btn-info' %>
+      </div>
+    <% end %>
   </div>
 <% end %>
+<% if @movement.movement_type_id != 1 %>
+  <%= render 'skus/form_interno', movement: @movement %>
+<% end %>
+

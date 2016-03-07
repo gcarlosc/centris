@@ -21,7 +21,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Marca / Modelo</label>
-                                <%= f.input :description_id, collection: Description.all, label_method: lambda { |description| "#{description.brand} / #{description.sub_brand}" }, value_method: :id, label: false, include_blank: 'Elija una categoria...', input_html: { class: 'js-example-basic-single' } %>
+                                <%= f.input :description_id, collection: Description.all, label_method: lambda { |description| "#{description.brand} / #{description.sub_brand}" }, value_method: :id, label: false, include_blank: 'Elija marca y modelo...', input_html: { class: 'js-example-basic-single' } %>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-5 col-lg-offset-2 col-lg-5">

@@ -21,4 +21,11 @@ class Movement < ActiveRecord::Base
   belongs_to :originable, polymorphic: true
   belongs_to :destinable, polymorphic: true
   belongs_to :creator, class_name: 'User'
+
+  def add_skus(skus)
+    skus.each do |id|
+      sku = Sku.find(id)
+      self.skus << sku
+    end
+  end
 end

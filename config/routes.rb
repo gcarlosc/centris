@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   resources :movement_types, only: [:new] do
     resources :movements, only: [:new, :create, :edit]
   end
-  resources :movements, only: [:edit, :update] do
-    resources :skus
+  resources :movements do
+    resources :skus do
+      put :update_warehouse, on: :collection
+    end
   end
 end
