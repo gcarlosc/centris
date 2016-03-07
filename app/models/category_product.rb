@@ -4,8 +4,7 @@ class CategoryProduct < ActiveRecord::Base
   has_many :products
 
   validates :name, presence: true
-  validates :ancestry, presence: true
-  
+
   def self.with_parent(ancestry)
     where ancestry: ancestry
   end

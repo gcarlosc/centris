@@ -1,10 +1,55 @@
-<%= simple_form_for @movement do |f| %>
+<div class="col-xs-12 col-md-12 col-md-12 col-lg-12 size-adaptable">
+  <div class="panel-body">
+    <%= form_tag update_warehouse_movement_skus_path(movement), method: :put do %>
+      <section class="panel">
+        <div class="adv-table">
+          <table class="table display table-bordered table-striped" id="dynamic-table">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Sku</th>
+                <th>Seleccionar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @skus.each do |sku| %>
+                <tr>
+                  <td><%= sku.product.name %></td>
+                  <td><%= sku.sku %></td>
+                  <td><%= check_box_tag "sku_ids[]", sku.id %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <div class="col-xs-6 col-sm-6 col-md-offset-12 col-md-6 col-lg-offset-8 col-lg-6">
+        <%= submit_tag 'Guardar', class: 'btn btn-lg btn-info' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+<%#= select_tag "list[]", options_from_collection_for_select(@skus, "id", "sku"), :multiple=>true
+ %>
+
+
+<!-- <%#= simple_form_for [@movement, @Sku] do |f| %>
   <tbody>
     <tr>
       <td>
         <%#= f.input :product_id, collection: Sku.where(product_id: @movement.product_id, warehouse_id: @movement.originable_id).all, label_method: :sku, value_method: :id, include_blank: 'Elija sku...', label: false %>
       </td>
-      <td><%= submit_tag 'Guardar SKU', class: 'btn btn-danger' %></td>
+      <td>
+        <%#= f.select(:TYPE, Sku.where(product_id: @movement.product_id, warehouse_id: @movement.originable_id).collect {|s| [s.name, s.id]}, {prompt: 'seleccionar'}, {multiple: true}, label: false) %>
+      </td>
+      <td><%#= submit_tag 'Guardar SKU', class: 'btn btn-danger' %></td>
     </tr>
   </tbody>
-<% end %>
+<%# end %> -->

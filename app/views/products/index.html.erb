@@ -13,28 +13,28 @@
                 </header>
                 <div class="panel-body">
                     <div class="adv-table">
-                        <table  class="display table table-bordered table-striped" id="dynamic-table">
+                        <table class="display table table-bordered table-striped" id="dynamic-table">
                             <thead>
                                 <tr>
                                     <th>Codigo Interno</th>
                                     <th>Nombre</th>
                                     <th>Marca</th>
-                                    <th class="hidden-phone">Modelo</th>
+                                    <th>Modelo</th>
                                     <th>Unidad de Medida</th>
-                                    <th class="hidden-phone">Categoria</th>
+                                    <th>Categoria</th>
                                     <th>*</th>
                                 </tr>
                             </thead>
                             <tbody>
                               <% @products.each do |product| %>
                               <tr>
-                                <td><%= product.id %></td>
+                                <td></td>
                                 <td><%= product.name %></td>
                                 <td><%= product.description.brand %></td>
                                 <td><%= product.description.sub_brand %></td>
-                                <td><%= product.unit_id %></td>
+                                <td><%= product.unit.name %></td>
                                 <td><%= product.category_product.name  %></td>
-                                <td>editar</td>
+                                <td><%= link_to 'Editar', edit_product_path(product) %></td>
                               </tr>
                               <% end %>
                             </tbody>
