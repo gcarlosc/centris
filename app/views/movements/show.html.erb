@@ -1,1 +1,62 @@
 
+    <div class="col-xs-12 col-md-12 col-md-12 col-lg-12 size-adaptable">
+      <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-10">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+          <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            <h4>Tipo de Movimiento: <%= @movement.movement_type.name.capitalize %></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div><%= @movement.creator.fullname %></div>
+      <div><%= User.find(@movement.responsable_id).fullname.capitalize %></div>
+      <div><%= @movement.movement_type.name %></div>
+      <div>
+        <% if @movement.movement_type_id == 1 %>
+          <%= Supplier.find(@movement.originable_id).name.capitalize %></div>
+        <% else %>
+          <%= Warehouse.find(@movement.originable_id).name.capitalize %></div>
+        <% end %>
+      </div>
+      <div>
+        <% if @movement.movement_type_id == 5 %>
+          <%= Supplier.find(@movement.destinable_id).name.capitalize %></div>
+        <% else %>
+          <%= Warehouse.find(@movement.destinable_id).name.capitalize %></div>
+        <% end %>
+      </div>
+      <div><%= @movement.created_at.to_date %></div>
+    <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-11 col-lg-11">
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <h4>* Productos</h4>
+      </div>
+    </div>
+      <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+        <div class="panel-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>sku</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @movement.skus.each do |sku| %>
+                <tr>
+                  <td><%= sku.product.name %></td>
+                  <td><%= sku.product.description.brand %></td>
+                  <td><%= sku.product.description.sub_brand %></td>
+                  <td><%= sku.sku %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+
+
+
