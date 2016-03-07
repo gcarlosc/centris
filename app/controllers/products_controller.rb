@@ -25,6 +25,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find params[:id]
+    add_breadcrumb "Editar producto"
   end
 
   def update
