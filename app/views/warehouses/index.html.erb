@@ -1,4 +1,4 @@
-    <div class="col-xs-12 col-md-12 col-md-12 col-lg-12 size-adaptable">   
+    <div class="col-xs-12 col-md-12 col-md-12 col-lg-12 size-adaptable">
       <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <h4>* Listado de Almacen</h4>
@@ -19,22 +19,19 @@
                                 <tr>
                                     <th>Nombre</th>
                                     <th>Proyecto</th>
-                                    <th>Responsable</th>
-                                    <th class="hidden-phone">Ubicación</th>
-                                    <th class="hidden-phone">Dirección</th>
-                                    <th>Estado</th>
+                                    <th>Dirección</th>
+                                    <th>Ubicación</th>
                                 </tr>
                             </thead>
                             <tbody>
-                              <tr class="gradeX">
-                                  <td>Trident</td>
-                                  <td>Internet
-                                      Explorer 4.0</td>
-                                  <td>Win 95+</td>
-                                  <td class="center hidden-phone">4</td>
-                                  <td class="center hidden-phone">X</td>
-                                  <td>madafaqa</td>
-                              </tr> 
+                              <% @warehouses.each do |warehouse| %>
+                                <tr class="gradeX">
+                                    <td><%= warehouse.name %></td>
+                                    <td><%= warehouse.project.name %></td>
+                                    <td><%= warehouse.address %></td>
+                                    <td><%= warehouse.location %></td>
+                                </tr>
+                              <% end %>
                             </tbody>
                         </table>
                     </div>

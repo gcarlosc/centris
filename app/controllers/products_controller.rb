@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   add_breadcrumb "Producto", :products_path
 
   def index
-    @products = Product.all
+    @products = Product.all.order(created_at: :asc)
   end
 
   def new

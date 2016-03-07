@@ -6,7 +6,7 @@ class WarehousesController < ApplicationController
 
 
   def index
-    @warehouses = Warehouse.all
+    @warehouses = Warehouse.all.order(created_at: :asc)
   end
 
   def new

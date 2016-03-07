@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   add_breadcrumb "Proyecto", :projects_path
 
   def index
-    @projects = Project.all
+    @projects = Project.all.order(created_at: :asc)
   end
 
   def new
@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.organization_id = 1
     if  @project.save
       flash[:notice] = "Se guardo satisfactoriamente"
       redirect_to new_project_path

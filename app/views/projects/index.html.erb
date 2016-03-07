@@ -1,4 +1,4 @@
-    <div class="col-xs-12 col-md-12 col-md-12 col-lg-12 size-adaptable">   
+    <div class="col-xs-12 col-md-12 col-md-12 col-lg-12 size-adaptable">
       <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <h4>* Listado de Proyectos</h4>
@@ -19,10 +19,7 @@
                                 <tr>
                                     <th>Codigo Proyecto</th>
                                     <th>Nombre</th>
-                                    <th>Ubicación</th>
-                                    <th class="hidden-phone">Dirección</th>
-                                    <th class="hidden-phone">Responsable</th>
-                                    <th>Estado</th>
+                                    <th>Dirección</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -31,11 +28,8 @@
                                     <td><%= project.id %></td>
                                     <td><%= project.name %></td>
                                     <td><%= project.address %></td>
-                                    <td><%= project.address %></td>
-                                    <td><%= puts "Responsable" %></td>
-                                    <td><%= puts "Estado" %></td>
                                   </tr>
-                                <% end %> 
+                                <% end %>
                               </tr>
                             </tbody>
                         </table>
