@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :movements do
     resources :skus do
       put :update_warehouse, on: :collection
+      put :return_products, on: :collection
     end
   end
 end

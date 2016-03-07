@@ -35,6 +35,16 @@ CREATE TYPE status AS ENUM (
 );
 
 
+--
+-- Name: statussku; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE statussku AS ENUM (
+    'active',
+    'inactive'
+);
+
+
 SET default_tablespace = '';
 
 SET default_with_oids = false;
@@ -322,12 +332,12 @@ CREATE TABLE schema_migrations (
 CREATE TABLE skus (
     id integer NOT NULL,
     sku character varying,
-    status character varying,
     product_id integer,
     warehouse_id integer,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    movement_id integer
+    movement_id integer,
+    status statussku DEFAULT 'active'::statussku
 );
 
 
@@ -802,4 +812,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160301230803');
 INSERT INTO schema_migrations (version) VALUES ('20160303155255');
 
 INSERT INTO schema_migrations (version) VALUES ('20160304172934');
+
+INSERT INTO schema_migrations (version) VALUES ('20160307010018');
 

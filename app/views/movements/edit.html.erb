@@ -37,7 +37,7 @@
             <thead>
               <tr>
                 <th>Producto</th>
-                <th>Cantidad</th>
+                <th>Sku</th>
                 <th>*</th>
               </tr>
             </thead>
@@ -56,7 +56,10 @@
     <% end %>
   </div>
 <% end %>
-<% if @movement.movement_type_id != 1 %>
+<% if @movement.movement_type_id == 2 %>
   <%= render 'skus/form_interno', movement: @movement %>
+<% end %>
+<% if @movement.movement_type_id == 5 %>
+  <%= render 'skus/form_devexterna', movement: @movement %>
 <% end %>
 

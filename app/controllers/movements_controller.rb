@@ -34,7 +34,7 @@ class MovementsController < ApplicationController
   def edit
     @movement_type = MovementType.find(params[:type])
     @sku = @movement.skus.build
-    @skus = Sku.where(warehouse_id: @movement.originable_id).all
+    @skus = Sku.where(warehouse_id: @movement.originable_id).all.by_statuses([:active ])
     add_breadcrumb "Editar Movimiento #{@movement.id}"
   end
 
