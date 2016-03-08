@@ -3,6 +3,13 @@ ActiveRecord::Base.connection.tables.each do |t|
 end
 
 Movement.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('movements')
+
+Sku.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('skus')
+
+Item.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('items')
 
 CategoryProduct.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('category_products')

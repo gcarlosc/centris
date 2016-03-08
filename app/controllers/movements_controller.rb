@@ -8,7 +8,7 @@ class MovementsController < ApplicationController
   add_breadcrumb "Movimiento Almacen"
 
   def index
-    @movements = Movement.all.order(created_at: :asc)
+    @movements = Movement.all.order('id ASC')
     add_breadcrumb "Historial de Movimientos"
   end
 
@@ -34,6 +34,7 @@ class MovementsController < ApplicationController
   def edit
     @movement_type = MovementType.find(params[:type])
     @sku = @movement.skus.build
+    @item = @movement.items.build
     @skus = Sku.where(warehouse_id: @movement.originable_id).all.by_status([:active])
     add_breadcrumb "Editar Movimiento #{@movement.id}"
   end

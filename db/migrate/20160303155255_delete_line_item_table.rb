@@ -1,6 +1,5 @@
 class DeleteLineItemTable < ActiveRecord::Migration
   def up
-    remove_column :skus, :line_item_id
     drop_table :line_items
     add_column :skus, :movement_id, :integer
     add_index :skus, :movement_id

@@ -5,8 +5,10 @@ class Movement < ActiveRecord::Base
     saved: 'saved'
   }
 
-  # has_many :line_items, dependent: :destroy
-  has_many :skus, dependent: :destroy
+  has_many :items
+  has_many :skus, through: :items, dependent: :destroy
+
+  accepts_nested_attributes_for :items, allow_destroy: true
   accepts_nested_attributes_for :skus, allow_destroy: true
   belongs_to :movement_type
 
@@ -22,10 +24,9 @@ class Movement < ActiveRecord::Base
   belongs_to :destinable, polymorphic: true
   belongs_to :creator, class_name: 'User'
 
-  def add_skus(skus)
-    skus.each do |id|
-      sku = Sku.find(id)
-      self.skus.push(sku)
+  def change_warehouse
+    self.skus.each do |sku|
+      sku.update_attribute( :warehouse_id, self.destinable_id )
     end
   end
 end

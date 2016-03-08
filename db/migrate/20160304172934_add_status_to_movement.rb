@@ -10,7 +10,7 @@ class AddStatusToMovement < ActiveRecord::Migration
 
   def down
     remove_column :movements, :status
-    add_column :movements, :status
+    add_column :movements, :status, :string
 
     execute <<-SQL
       DROP TYPE status;
