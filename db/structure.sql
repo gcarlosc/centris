@@ -41,7 +41,8 @@ CREATE TYPE status AS ENUM (
 
 CREATE TYPE statussku AS ENUM (
     'active',
-    'inactive'
+    'inactive',
+    'borrowed'
 );
 
 

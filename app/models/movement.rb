@@ -29,4 +29,15 @@ class Movement < ActiveRecord::Base
       sku.update_attribute( :warehouse_id, self.destinable_id )
     end
   end
+
+  def change_status(skus)
+    case self.movement_type_id
+      when 3
+        Sku.where(id: skus).update_all(status: 'borrowed')
+      when 4
+        Sku.where(id: skus).update_all(status: 'active')
+      when 5
+        Sku.where(id: skus).update_all(status: 'inactive')
+    end
+  end
 end

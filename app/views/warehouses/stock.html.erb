@@ -14,10 +14,10 @@
         <% warehouse.products.each do |product| %>
           <tr>
             <td>
-              <%= product.name.upcase %> | Stock: <%= Sku.filtered_skus(warehouse, product).by_status([:active]).size %>
+              <%= product.name.upcase %> | Stock: <%= Sku.filtered_skus(warehouse, product).by_status([:active, :borrowed]).size %>
             </td>
           </tr>
-          <% Sku.filtered_skus(warehouse, product).by_status([:active]).each do |sku| %>
+          <% Sku.filtered_skus(warehouse, product).by_status([:active, :borrowed]).each do |sku| %>
             <tr>
               <td><%= sku.sku %></td>
               <td><%= sku.status %></td>

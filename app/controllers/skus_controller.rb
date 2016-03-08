@@ -1,7 +1,7 @@
 class SkusController < ApplicationController
 
   before_action :require_login
-  before_action :set_movement, only: [:update_warehouse, :return_products]
+  before_action :set_movement, only: [:update_warehouse, :update_status]
 
   def update_warehouse
     return redirect_to root_path unless @movement.pending?
@@ -12,10 +12,11 @@ class SkusController < ApplicationController
     redirect_to root_path
   end
 
-  def return_products
+  def update_status
+
     return redirect_to root_path unless @movement.pending?
     @movement.sku_ids = params[:sku_ids]
-    Sku.where(id: params[:sku_ids]).update_all(status: 'inactive')
+    @movement.change_status(params[:sku_ids])
     @movement.saved!
     flash[:notice] = "Se guardo satisfactoriamente"
     redirect_to root_path

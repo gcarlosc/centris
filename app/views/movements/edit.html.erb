@@ -57,9 +57,9 @@
   </div>
 <% end %>
 <% case @movement.movement_type_id %>
-<% when 2, 3, 4 %>
+<% when 2 %>
   <%= render 'skus/form_interno', movement: @movement %>
-<% when 5 %>
+<% when 3, 4, 5 %>
   <%= render 'skus/form_devexterna', movement: @movement %>
 <% end %>
 
