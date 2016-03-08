@@ -56,10 +56,10 @@
     <% end %>
   </div>
 <% end %>
-<% if @movement.movement_type_id == 2 %>
+<% case @movement.movement_type_id %>
+<% when 2, 3, 4 %>
   <%= render 'skus/form_interno', movement: @movement %>
-<% end %>
-<% if @movement.movement_type_id == 5 %>
+<% when 5 %>
   <%= render 'skus/form_devexterna', movement: @movement %>
 <% end %>
 
