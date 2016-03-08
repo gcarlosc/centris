@@ -16,10 +16,10 @@
                  <p><span class="fontBolder"> Tipo: </span><%= @movement.movement_type.name %></p>
               </div>
               <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                 <p><span class="fontBolder">Fecha de creacion: </span><%= @movement.created_at.to_date %></p> 
-                 <p> 
+                 <p><span class="fontBolder">Fecha de creacion: </span><%= @movement.created_at.to_date %></p>
+                 <p>
                     <span class="fontBolder">
-                      Organizacion:
+                      Origen:
                     </span>
                     <% if @movement.movement_type_id == 1 %>
                       <%= Supplier.find(@movement.originable_id).name.capitalize %></div>
@@ -29,7 +29,7 @@
                  </p>
                  <p>
                     <span class="fontBolder">
-                    Proyecto:
+                    Destino:
                     </span>
                     <% if @movement.movement_type_id == 5 %>
                       <%= Supplier.find(@movement.destinable_id).name.capitalize %></div>
@@ -38,7 +38,7 @@
                     <% end %>
                  </p>
               </div>
-          </div>  
+          </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-11 col-lg-11 size-bottom">
@@ -71,13 +71,13 @@
               </table>
             </div>
           </div>
-        </div> 
+        </div>
       </div>
   </div>
 
 
 
-    
+
 
 
 

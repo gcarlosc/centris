@@ -4,13 +4,13 @@ class AddStatusToSku < ActiveRecord::Migration
       CREATE TYPE statussku AS ENUM ('active', 'inactive');
     SQL
 
-    remove_column :skus, :status
+    remove_column :skus, :status, :string
     add_column :skus, :status, :statussku, index: true, default: 'active'
   end
 
   def down
     remove_column :skus, :status
-    add_column :skus, :status
+    add_column :skus, :status, :string
 
     execute <<-SQL
       DROP TYPE statussku;

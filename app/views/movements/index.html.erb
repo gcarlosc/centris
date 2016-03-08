@@ -1,4 +1,4 @@
-    <div class="col-xs-12 col-md-12 col-md-12 col-lg-12 size-adaptable">   
+    <div class="col-xs-12 col-md-12 col-md-12 col-lg-12 size-adaptable">
       <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <h4>* Historial de movimientos</h4>
@@ -11,7 +11,7 @@
                 </header>
                 <div class="panel-body">
                     <div class="adv-table">
-                        <table  class="display table table-bordered table-striped" id="dynamic-table">
+                        <table  class="display table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>Creador</th>
@@ -53,11 +53,11 @@
                                       <td><%= link_to 'editar', edit_movement_path(movement, type: movement.movement_type_id), class: 'btn btn-success' %></td>
                                       <td><%= link_to 'eliminar', movement, method: 'delete', data: { confirm: 'Desea eliminar el movimiento?' }, class: 'btn btn-danger' %></td>
                                     <% else %>
-                                      <td><%= link_to 'editar', edit_movement_path(movement, type: movement.movement_type_id), class: 'btn btn-success disabled' %></td>
-                                      <td><%= link_to 'eliminar', movement, method: 'delete', data: { confirm: 'Desea eliminar el movimiento?' }, class: 'btn btn-danger disabled' %></td>
+                                      <td><%= link_to 'editar', edit_movement_path(movement, type: movement.movement_type_id), class: 'btn btn-default disabled' %></td>
+                                      <td><%= link_to 'eliminar', movement, method: 'delete', data: { confirm: 'Desea eliminar el movimiento?' }, class: 'btn btn-default disabled' %></td>
                                     <% end %>
                                   </tr>
-                              <% end %> 
+                              <% end %>
                             </tbody>
                         </table>
                     </div>

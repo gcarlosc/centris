@@ -13,9 +13,9 @@ class SkusController < ApplicationController
   def update_warehouse
     @movement = Movement.find params[:movement_id]
     return redirect_to root_path unless @movement.pending?
-    Sku.where(id: params[:sku_ids]).update_all(warehouse_id: @movement.destinable_id)
+    @movement.sku_ids = params[:sku_ids]
+    @movement.change_warehouse
     @movement.saved!
-    @movement.add_skus(params[:sku_ids])
     flash[:notice] = "Se guardo satisfactoriamente"
     redirect_to root_path
   end
@@ -23,9 +23,9 @@ class SkusController < ApplicationController
   def return_products
     @movement = Movement.find params[:movement_id]
     return redirect_to root_path unless @movement.pending?
+    @movement.sku_ids = params[:sku_ids]
     Sku.where(id: params[:sku_ids]).update_all(status: 'inactive')
     @movement.saved!
-    @movement.add_skus(params[:sku_ids])
     flash[:notice] = "Se guardo satisfactoriamente"
     redirect_to root_path
   end
