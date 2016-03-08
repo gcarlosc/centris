@@ -25,6 +25,10 @@ class WarehousesController < ApplicationController
     end
   end
 
+  def stock
+    @warehouses = Warehouse.all
+  end
+
   private
 
   def warehouse_params

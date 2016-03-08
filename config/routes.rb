@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   resources :descriptions, only: [:create, :new, :index]
   resources :skus, only: [:create, :new, :index]
   resources :projects, only: [:new, :index]
-  resources :warehouses, only: [:new, :index]
+  resources :warehouses, only: [:new, :index] do
+    get :stock, on: :collection
+  end
   resources :suppliers, only: [:new, :index]
   resources :storekeepers
   resources :movement_types, only: [:new] do
