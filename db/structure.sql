@@ -51,6 +51,39 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: accounts; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE accounts (
+    id integer NOT NULL,
+    organization_name character varying,
+    web character varying,
+    subdomain character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: accounts_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE accounts_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: accounts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE accounts_id_seq OWNED BY accounts.id;
+
+
+--
 -- Name: category_products; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -531,6 +564,13 @@ ALTER SEQUENCE warehouses_id_seq OWNED BY warehouses.id;
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY accounts ALTER COLUMN id SET DEFAULT nextval('accounts_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY category_products ALTER COLUMN id SET DEFAULT nextval('category_products_id_seq'::regclass);
 
 
@@ -623,6 +663,14 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 --
 
 ALTER TABLE ONLY warehouses ALTER COLUMN id SET DEFAULT nextval('warehouses_id_seq'::regclass);
+
+
+--
+-- Name: accounts_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY accounts
+    ADD CONSTRAINT accounts_pkey PRIMARY KEY (id);
 
 
 --
@@ -804,7 +852,7 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 -- PostgreSQL database dump complete
 --
 
-SET search_path TO "$user",public;
+SET search_path TO "public";
 
 INSERT INTO schema_migrations (version) VALUES ('20160219205929');
 
@@ -851,4 +899,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160307010018');
 INSERT INTO schema_migrations (version) VALUES ('20160307155727');
 
 INSERT INTO schema_migrations (version) VALUES ('20160307214619');
+
+INSERT INTO schema_migrations (version) VALUES ('20160309052147');
 
