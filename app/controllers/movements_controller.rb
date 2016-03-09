@@ -41,12 +41,12 @@ class MovementsController < ApplicationController
 
   def update
     return redirect_to root_path unless @movement.pending?
-    @movement.saved!
     if @movement.update(movement_params)
+      @movement.saved!
       flash[:notice] = "Se guardo satisfactoriamente"
-      redirect_to root_path
+      redirect_to movements_path
     else
-      render :edit
+      render :edit, locals: { movement_type: @movement_type = @movement.movement_type }
     end
   end
 

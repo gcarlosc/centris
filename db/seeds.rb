@@ -55,7 +55,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!('projects')
 Project.create!([
   { name: 'Proyecto 1', address: 'mi direccion 123', organization_id: 1 },
   { name: 'Proyecto 2', address: 'mi direccion 123', organization_id: 1 },
-  { name: 'Proyecto 3', address: 'mi direccion 123', organization_id: 2 }
+  { name: 'Proyecto 3', address: 'mi direccion 123', organization_id: 1 }
 ])
 
 Warehouse.destroy_all

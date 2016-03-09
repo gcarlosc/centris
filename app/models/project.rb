@@ -4,6 +4,7 @@ class Project < ActiveRecord::Base
 
   validates :name, presence: true
   validates :address, presence: true
+  validates :code, presence: true, uniqueness: true
 
   has_many :warehouses, foreign_key: :project_id
 
