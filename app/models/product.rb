@@ -16,5 +16,6 @@ class Product < ActiveRecord::Base
   validates :category_product_id, presence: true
   validates :description_id, presence: true
   validates :classification_id, presence: true
+  validates :code, presence: true, uniqueness: true
 
 end
