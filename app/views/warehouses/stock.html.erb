@@ -1,11 +1,51 @@
 <div class="col-xs-12 col-md-12 col-md-12 col-lg-12 size-adaptable">
-  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-      <h4>* Stock Por Producto</h4>
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <h4>* Stock Por Producto</h4>
+        </div>
     </div>
-  </div>
+    <div class="col-sm-12 col-md-12">
+        <section class="panel">
+            <header class="panel-heading">
+            </header>
+            <div class="panel-body">
+                <div class="adv-table">
+                    <table class="display table table-bordered table-striped" id="dynamic-table">
+                        <thead>
+                            <tr>
+                                <th>Almacen</th>
+                                <th>Product - Stock</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <% @warehouses.each do |warehouse| %>
+                            <tr>                    
+                              <td><%= warehouse.name %></td>
+                              <td>
+                                <table>
+                                  <tbody>
+                                    <% warehouse.products.each do |product| %>
+                                      <tr>
+                                        <td>
+                                          <%= product.name.upcase %> | Stock: <%= Sku.filtered_skus(warehouse, product).by_status([:active, :borrowed]).size %> | <%= link_to "ver skus", skus_show_warehouses_path(warehouse: warehouse,product: product), remote: true, class: 'label label-success' %>
+                                        </td>
+                                      </tr>
+                                    <% end %>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
 
-  <% @warehouses.each do |warehouse| %>
+<!-- 
+<% @warehouses.each do |warehouse| %>
     <table class="display table table-bordered table-striped">
       <tbody>
         <tr>
@@ -26,6 +66,5 @@
         <% end %>
       </tbody>
     </table>
-  <% end %>
+  <% end %> -->
 
-</div>

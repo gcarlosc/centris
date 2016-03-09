@@ -14,6 +14,10 @@ class WarehousesController < ApplicationController
     add_breadcrumb "Nuevo Almacen", new_warehouse_path
   end
 
+  def skus_show
+    
+  end
+
   def create
     @project = Project.find(params[:warehouse][:project_id])
     @warehouse = @project.warehouses.new(warehouse_params)
@@ -27,6 +31,7 @@ class WarehousesController < ApplicationController
 
   def stock
     @warehouses = Warehouse.all
+    add_breadcrumb "Stock Almacen", stock_warehouses_path
   end
 
   private

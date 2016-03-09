@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :projects, only: [:new, :index]
     resources :warehouses, only: [:new, :index] do
       get :stock, on: :collection
+      get :skus_show, on: :collection
     end
     resources :suppliers, only: [:new, :index]
     resources :storekeepers
