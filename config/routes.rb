@@ -15,15 +15,15 @@ Rails.application.routes.draw do
     root to: 'sessions#new'
 
     resources :products
-    resources :category_products, only: [:new, :index]
+    resources :category_products, only: [:new, :create, :index]
     resources :descriptions, only: [:create, :new, :index]
     resources :skus, only: [:create, :new, :index]
-    resources :projects, only: [:new, :index]
-    resources :warehouses, only: [:new, :index] do
+    resources :projects
+    resources :warehouses do
       get :stock, on: :collection
       get :skus_show, on: :collection
     end
-    resources :suppliers, only: [:new, :index]
+    resources :suppliers
     resources :storekeepers
     resources :movement_types, only: [:new] do
       resources :movements, only: [:new, :create, :edit]

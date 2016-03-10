@@ -10,22 +10,17 @@
           <table class="table">
           	<thead>
           		<tr>
-          			<th>Skus</th>
+                <th>Skus</th>
+          			<th>Status</th>
           		</tr>
           	</thead>
           	<tbody>
-          		<tr>
-          			<td>X00000001</td>
-          		</tr>
-          		<tr>
-          			<td>X00000002</td>
-          		</tr>
-          		<tr>
-          			<td>X00000003</td>
-          		</tr>
-          		<tr>
-          			<td>X00000004</td>
-          		</tr>
+              <% Sku.filtered_skus(warehouse, product).by_status([:active, :borrowed]).each do |sku| %>
+                <tr>
+                  <td><%= sku.sku %></td>
+                  <td><%= sku.status %></td>
+                </tr>
+              <% end %>
           	</tbody>
           </table>
         </div>

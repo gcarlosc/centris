@@ -16,5 +16,6 @@ class Sku < ActiveRecord::Base
   validates :product_id, presence: true
 
   scope :by_status, ->(sku_status) { where(status: sku_status) }
-  scope :filtered_skus, -> (warehouse, product) { where(warehouse_id: warehouse.id, product_id: product.id) }
+  scope :filtered_skus, -> (warehouse, product) { where(warehouse: warehouse, product: product) }
+  scope :by_warehouse, ->(warehouse) { where(warehouse: warehouse) if warehouse.present? }
 end

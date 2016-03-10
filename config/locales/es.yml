@@ -20,6 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 es:
+  active: 'Activo'
+  borrowed: 'Prestado'
+  inactive: 'Inactivo'
+  saved: 'Realizado'
+  pending: 'Pendiente'
   activerecord:
     errors:
       messages:

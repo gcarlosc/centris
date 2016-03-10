@@ -4,6 +4,7 @@ class Supplier < ActiveRecord::Base
 
   validates :name, presence: true
   validates :address, presence: true
+  validates :contact_name, presence: true
 
   has_many :in_movements, as: :originable, class_name: 'Movement'
   has_many :out_movements, as: :destinable, class_name: 'Movement'

@@ -17,7 +17,7 @@ class CategoryProductsController < ApplicationController
     @category_product = CategoryProduct.new(category_product_params)
     if @category_product.save
       flash[:notice] = "Se guardo satisfactoriamente"
-      redirect_to new_category_product_path
+      redirect_to category_products_path
     else
       render :new
     end
