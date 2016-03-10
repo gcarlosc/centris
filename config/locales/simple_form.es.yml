@@ -14,11 +14,35 @@ es:
     labels:
       defaults:
         password: 'Password'
-      product:
-        email: 'E-mail to sign in.'
       supplier:
+        name: 'Nombre (Empresa)'
+        address: 'Dirección'
+        email: 'Correo'
+        contact_name: 'Contacto'
+        phone: 'Telefono'
+      project:
+        code: 'Código'
         name: 'Nombre'
-        address: 'Direccion'
+        address: 'Dirección'
+      warehouse:
+        name: 'Nombre'
+        location: 'Ubicación'
+        address: 'Dirección'
+        project: 'Proyecto'
+      category_product:
+        name: 'Nombre'
+        ancestry: 'Categoria Principal'
+      product:
+        unit: 'Unidad de medida'
+        name: 'Nombre'
+        code: 'Codigo'
+        category_product: 'Categoria'
+        description: 'Descripción'
+        classification: 'Clasificación'
+      movement:
+        new:
+          creator: 'Creador'
+
 
     # hints:
     #   defaults:

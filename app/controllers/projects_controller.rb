@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
     @project.organization_id = 1
     if  @project.save
       flash[:notice] = "Se guardo satisfactoriamente"
-      redirect_to new_project_path
+      redirect_to projects_path
     else
       render :new
     end
@@ -27,6 +27,6 @@ class ProjectsController < ApplicationController
 private
 
   def project_params
-    params.require(:project).permit(:name, :address, :organization_id)
+    params.require(:project).permit(:name, :code, :address, :organization_id)
   end
 end

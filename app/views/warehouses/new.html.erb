@@ -11,24 +11,12 @@
             <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-10 border-form">
                 <div class="form-horizontal col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-                        <div class="form-group">
-                            <label for="exampleInputName2">Nombre</label>
-                            <%= f.input :name, label: false %>
-                        </div>
-                        <div class="form-group">
-                          <label>Direccion</label>
-                          <%= f.input :address, label: false %>
-                        </div>
+                      <%= f.input :name %>
+                      <%= f.input :address %>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-5 col-lg-offset-2 col-lg-5">
-                        <div class="form-group">
-                            <label>Locacion</label>
-                          <%= f.input :location, label: false %>
-                        </div>
-                        <div class="form-group">
-                        	<label>Proyecto</label>
-                        	<%= f.input :project_id, collection: Project.all, label_method: :name, value_method: :id, label: false, include_blank: 'Elija el proyecto...', input_html: { class: 'js-example-basic-single' } %>
-                        </div>
+                      <%= f.input :location %>
+                      <%= f.association :project, collection: Project.all, include_blank: 'Elija el proyecto...', input_html: { class: 'js-example-basic-single' } %>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <%= submit_tag 'Guardar', class: 'btn btn-lg btn-block btn-info' %>

@@ -48,7 +48,7 @@
                                 </td>
                                 <td><%= User.find(movement.responsable_id).fullname.capitalize %></td>
                                 <td><%= movement.created_at.to_date %></td>
-                                <td><%= movement.status.capitalize %></td>
+                                <td><%= t(movement.status).capitalize %></td>
                                 <td><%= link_to 'ver', movement, class: 'btn btn-info' %></td>
                                 <% if movement.pending? %>
                                   <td><%= link_to 'editar', edit_movement_path(movement, type: movement.movement_type_id), class: 'btn btn-success' %></td>

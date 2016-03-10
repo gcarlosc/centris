@@ -4,7 +4,6 @@ class WarehousesController < ApplicationController
 
   add_breadcrumb "Almacen", :warehouses_path
 
-
   def index
     @warehouses = Warehouse.all.order(created_at: :asc)
   end
@@ -15,15 +14,15 @@ class WarehousesController < ApplicationController
   end
 
   def skus_show
-    
+    @warehouse = Warehouse.find(params[:warehouse])
+    @product = Product.find(params[:product])
   end
 
   def create
-    @project = Project.find(params[:warehouse][:project_id])
-    @warehouse = @project.warehouses.new(warehouse_params)
+    @warehouse = Warehouse.new(warehouse_params)
     if @warehouse.save
       flash[:notice] = "Se guardo satisfactoriamente"
-      redirect_to new_warehouse_path
+      redirect_to warehouses_path
     else
       render :new
     end
@@ -39,4 +38,5 @@ class WarehousesController < ApplicationController
   def warehouse_params
     params.require(:warehouse).permit(:name, :location, :address, :project_id)
   end
+
 end
