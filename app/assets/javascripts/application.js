@@ -25,12 +25,20 @@
 //= require dynamic_table_init.js
 //= require common-scripts.js
 //= require movements.js.coffee
+//= require geolocation.js
 
 $(document).on('ready',function(){
 
-    $(document).ready(function(){
-      $("select.js-example-basic-single").select2();
-    })
+    var input = document.getElementById('autocomplete');
+    google.maps.event.addDomListener(input, 'keydown', function(e) {
+    if (e.keyCode == 13) {
+        e.preventDefault();
+    }
+    });
+
+    initAutocomplete(); //for google maps autocomplete
+
+    $("select.js-example-basic-single").select2();
 
     $("#dropdown").select2({
       theme: "bootstrap"
