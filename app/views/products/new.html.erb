@@ -14,14 +14,14 @@
                           <%= f.input :name %>
                           <%= f.input :unit_id, collection: Unit.all, include_blank: 'Elija una unidad...' %>
                           <%= f.input :description_id, collection: Description.all, label_method: lambda { |description| "#{description.brand} / #{description.sub_brand}" }, value_method: :id, include_blank: 'Elija marca y modelo...', input_html: { class: 'js-example-basic-single' } %>
-                          <div class="form-group">
-                            <%= link_to "Marca / Modelo", new_description_path, remote: true, class: "btn btn-primary" %>
-                            </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-5 col-lg-offset-2 col-lg-5">
                           <%= f.input :code %>
                           <%= f.input :category_product_id, collection: CategoryProduct.all.categories, include_blank: 'Elija una categoria...', input_html: { class: 'js-example-basic-single' } %>
                           <%= f.input :classification_id, collection: Classification.all, include_blank: 'Elija una clasificacion...', input_html: { class: 'js-example-basic-single' } %>
+                          <div class="form-group">
+                            <%= link_to "Marca / Modelo", new_description_path, remote: true, class: "btn btn-primary" %>
+                          </div><br>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <%= submit_tag 'Guardar', class: 'btn btn-lg btn-block btn-info' %>
