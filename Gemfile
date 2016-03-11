@@ -27,7 +27,8 @@ gem 'simple_form'
 gem 'monban'
 gem 'monban-generators'
 gem 'apartment'
-# gem 'gmaps-autocomplete-rails', github: "kristianmandrup/gmaps-autocomplete-rails"
+gem 'prawn'
+gem 'prawn-table'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
