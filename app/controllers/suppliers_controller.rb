@@ -17,7 +17,7 @@ class SuppliersController < ApplicationController
     @supplier = Supplier.new(supplier_params)
     if @supplier.save
       flash[:notice] = "Se guardo satisfactoriamente"
-      redirect_to new_supplier_path
+      redirect_to suppliers_path
     else
       render :new
     end
@@ -26,6 +26,6 @@ class SuppliersController < ApplicationController
   private
 
   def supplier_params
-    params.require(:supplier).permit(:name, :address)
+    params.require(:supplier).permit(:name, :address, :contact_name, :email, :phone)
   end
 end

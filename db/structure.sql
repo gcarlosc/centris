@@ -2,16 +2,12 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.5.0
--- Dumped by pg_dump version 9.5.0
-
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
-SET row_security = off;
 
 --
 -- Name: miempresa; Type: SCHEMA; Schema: -; Owner: -
@@ -87,12 +83,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
-
-
--- Name: accounts; Type: TABLE; Schema: miempresa; Owner: -; Tablespace:
-
--- Name: accounts; Type: TABLE; Schema: public; Owner: -
-
+-- Name: accounts; Type: TABLE; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE TABLE accounts (
@@ -125,8 +116,7 @@ ALTER SEQUENCE accounts_id_seq OWNED BY accounts.id;
 
 
 --
--- Name: category_products; Type: TABLE; Schema: miempresa; Owner: -; Tablespace:
--- Name: category_products; Type: TABLE; Schema: public; Owner: -
+-- Name: category_products; Type: TABLE; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE TABLE category_products (
@@ -158,11 +148,7 @@ ALTER SEQUENCE category_products_id_seq OWNED BY category_products.id;
 
 
 --
-
--- Name: classifications; Type: TABLE; Schema: miempresa; Owner: -; Tablespace:
-
--- Name: classifications; Type: TABLE; Schema: public; Owner: -
-
+-- Name: classifications; Type: TABLE; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE TABLE classifications (
@@ -193,11 +179,7 @@ ALTER SEQUENCE classifications_id_seq OWNED BY classifications.id;
 
 
 --
-
--- Name: descriptions; Type: TABLE; Schema: miempresa; Owner: -; Tablespace:
-
--- Name: descriptions; Type: TABLE; Schema: public; Owner: -
-
+-- Name: descriptions; Type: TABLE; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE TABLE descriptions (
@@ -229,11 +211,7 @@ ALTER SEQUENCE descriptions_id_seq OWNED BY descriptions.id;
 
 
 --
-
--- Name: items; Type: TABLE; Schema: miempresa; Owner: -; Tablespace:
-
--- Name: items; Type: TABLE; Schema: public; Owner: -
-
+-- Name: items; Type: TABLE; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE TABLE items (
@@ -265,11 +243,7 @@ ALTER SEQUENCE items_id_seq OWNED BY items.id;
 
 
 --
-
--- Name: movement_types; Type: TABLE; Schema: miempresa; Owner: -; Tablespace:
-
--- Name: movement_types; Type: TABLE; Schema: public; Owner: -
-
+-- Name: movement_types; Type: TABLE; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE TABLE movement_types (
@@ -301,11 +275,7 @@ ALTER SEQUENCE movement_types_id_seq OWNED BY movement_types.id;
 
 
 --
-
--- Name: movements; Type: TABLE; Schema: miempresa; Owner: -; Tablespace:
-
--- Name: movements; Type: TABLE; Schema: public; Owner: -
-
+-- Name: movements; Type: TABLE; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE TABLE movements (
@@ -343,11 +313,7 @@ ALTER SEQUENCE movements_id_seq OWNED BY movements.id;
 
 
 --
-
--- Name: organizations; Type: TABLE; Schema: miempresa; Owner: -; Tablespace:
-
--- Name: organizations; Type: TABLE; Schema: public; Owner: -
-
+-- Name: organizations; Type: TABLE; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE TABLE organizations (
@@ -381,19 +347,15 @@ ALTER SEQUENCE organizations_id_seq OWNED BY organizations.id;
 
 
 --
-
--- Name: products; Type: TABLE; Schema: miempresa; Owner: -; Tablespace:
-
--- Name: products; Type: TABLE; Schema: public; Owner: -
-
+-- Name: products; Type: TABLE; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE TABLE products (
     id integer NOT NULL,
     name character varying,
     category_product_id integer,
-    description_id integer,
     classification_id integer,
+    description_id integer,
     unit_id integer,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
@@ -421,11 +383,7 @@ ALTER SEQUENCE products_id_seq OWNED BY products.id;
 
 
 --
-
--- Name: projects; Type: TABLE; Schema: miempresa; Owner: -; Tablespace:
-
--- Name: projects; Type: TABLE; Schema: public; Owner: -
-
+-- Name: projects; Type: TABLE; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE TABLE projects (
@@ -434,7 +392,8 @@ CREATE TABLE projects (
     address character varying,
     organization_id integer,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    code character varying
 );
 
 
@@ -458,11 +417,7 @@ ALTER SEQUENCE projects_id_seq OWNED BY projects.id;
 
 
 --
-
--- Name: schema_migrations; Type: TABLE; Schema: miempresa; Owner: -; Tablespace:
-
--- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
-
+-- Name: schema_migrations; Type: TABLE; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE TABLE schema_migrations (
@@ -471,11 +426,7 @@ CREATE TABLE schema_migrations (
 
 
 --
-
--- Name: skus; Type: TABLE; Schema: miempresa; Owner: -; Tablespace:
-
--- Name: skus; Type: TABLE; Schema: public; Owner: -
-
+-- Name: skus; Type: TABLE; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE TABLE skus (
@@ -509,11 +460,7 @@ ALTER SEQUENCE skus_id_seq OWNED BY skus.id;
 
 
 --
-
--- Name: suppliers; Type: TABLE; Schema: miempresa; Owner: -; Tablespace:
-
--- Name: suppliers; Type: TABLE; Schema: public; Owner: -
-
+-- Name: suppliers; Type: TABLE; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE TABLE suppliers (
@@ -548,11 +495,7 @@ ALTER SEQUENCE suppliers_id_seq OWNED BY suppliers.id;
 
 
 --
-
--- Name: units; Type: TABLE; Schema: miempresa; Owner: -; Tablespace:
-
--- Name: units; Type: TABLE; Schema: public; Owner: -
-
+-- Name: units; Type: TABLE; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE TABLE units (
@@ -583,11 +526,7 @@ ALTER SEQUENCE units_id_seq OWNED BY units.id;
 
 
 --
-
--- Name: users; Type: TABLE; Schema: miempresa; Owner: -; Tablespace:
-
--- Name: users; Type: TABLE; Schema: public; Owner: -
-
+-- Name: users; Type: TABLE; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE TABLE users (
@@ -597,7 +536,7 @@ CREATE TABLE users (
     type character varying,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    password_digest character varying NOT NULL,
+    password_digest character varying,
     fullname character varying
 );
 
@@ -622,11 +561,7 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
-
--- Name: warehouses; Type: TABLE; Schema: miempresa; Owner: -; Tablespace:
-
--- Name: warehouses; Type: TABLE; Schema: public; Owner: -
-
+-- Name: warehouses; Type: TABLE; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE TABLE warehouses (
@@ -662,7 +597,7 @@ ALTER SEQUENCE warehouses_id_seq OWNED BY warehouses.id;
 SET search_path = public, pg_catalog;
 
 --
--- Name: accounts; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: accounts; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE accounts (
@@ -695,7 +630,7 @@ ALTER SEQUENCE accounts_id_seq OWNED BY accounts.id;
 
 
 --
--- Name: category_products; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: category_products; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE category_products (
@@ -727,7 +662,7 @@ ALTER SEQUENCE category_products_id_seq OWNED BY category_products.id;
 
 
 --
--- Name: classifications; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: classifications; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE classifications (
@@ -758,7 +693,7 @@ ALTER SEQUENCE classifications_id_seq OWNED BY classifications.id;
 
 
 --
--- Name: descriptions; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: descriptions; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE descriptions (
@@ -790,7 +725,7 @@ ALTER SEQUENCE descriptions_id_seq OWNED BY descriptions.id;
 
 
 --
--- Name: items; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: items; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE items (
@@ -822,11 +757,7 @@ ALTER SEQUENCE items_id_seq OWNED BY items.id;
 
 
 --
-
--- Name: movement_types; Type: TABLE; Schema: public; Owner: -; Tablespace:
-
--- Name: accounts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
-
+-- Name: movement_types; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE movement_types (
@@ -839,11 +770,7 @@ CREATE TABLE movement_types (
 
 
 --
-
 -- Name: movement_types_id_seq; Type: SEQUENCE; Schema: public; Owner: -
-
--- Name: category_products_pkey; Type: CONSTRAINT; Schema: public; Owner: -
-
 --
 
 CREATE SEQUENCE movement_types_id_seq
@@ -855,22 +782,14 @@ CREATE SEQUENCE movement_types_id_seq
 
 
 --
-
 -- Name: movement_types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
-
--- Name: classifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
-
 --
 
 ALTER SEQUENCE movement_types_id_seq OWNED BY movement_types.id;
 
 
 --
-
--- Name: movements; Type: TABLE; Schema: public; Owner: -; Tablespace:
-
--- Name: descriptions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
-
+-- Name: movements; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE movements (
@@ -889,11 +808,7 @@ CREATE TABLE movements (
 
 
 --
-
 -- Name: movements_id_seq; Type: SEQUENCE; Schema: public; Owner: -
-
--- Name: items_pkey; Type: CONSTRAINT; Schema: public; Owner: -
-
 --
 
 CREATE SEQUENCE movements_id_seq
@@ -905,19 +820,14 @@ CREATE SEQUENCE movements_id_seq
 
 
 --
-
 -- Name: movements_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
-
--- Name: movement_types_pkey; Type: CONSTRAINT; Schema: public; Owner: -
-
 --
 
 ALTER SEQUENCE movements_id_seq OWNED BY movements.id;
 
 
 --
-
--- Name: organizations; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: organizations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE organizations (
@@ -951,7 +861,7 @@ ALTER SEQUENCE organizations_id_seq OWNED BY organizations.id;
 
 
 --
--- Name: products; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: products; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE products (
@@ -987,7 +897,7 @@ ALTER SEQUENCE products_id_seq OWNED BY products.id;
 
 
 --
--- Name: projects; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: projects; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE projects (
@@ -1021,7 +931,7 @@ ALTER SEQUENCE projects_id_seq OWNED BY projects.id;
 
 
 --
--- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE schema_migrations (
@@ -1030,7 +940,7 @@ CREATE TABLE schema_migrations (
 
 
 --
--- Name: skus; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: skus; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE skus (
@@ -1064,7 +974,7 @@ ALTER SEQUENCE skus_id_seq OWNED BY skus.id;
 
 
 --
--- Name: suppliers; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: suppliers; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE suppliers (
@@ -1099,7 +1009,7 @@ ALTER SEQUENCE suppliers_id_seq OWNED BY suppliers.id;
 
 
 --
--- Name: units; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: units; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE units (
@@ -1130,7 +1040,7 @@ ALTER SEQUENCE units_id_seq OWNED BY units.id;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: users; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE users (
@@ -1165,7 +1075,7 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
--- Name: warehouses; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: warehouses; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE warehouses (
@@ -1175,7 +1085,9 @@ CREATE TABLE warehouses (
     address character varying,
     project_id integer,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    longitude double precision,
+    latitude double precision
 );
 
 
@@ -1415,7 +1327,7 @@ ALTER TABLE ONLY warehouses ALTER COLUMN id SET DEFAULT nextval('warehouses_id_s
 SET search_path = miempresa, pg_catalog;
 
 --
--- Name: accounts_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace:
+-- Name: accounts_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY accounts
@@ -1423,7 +1335,7 @@ ALTER TABLE ONLY accounts
 
 
 --
--- Name: category_products_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace:
+-- Name: category_products_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY category_products
@@ -1431,7 +1343,7 @@ ALTER TABLE ONLY category_products
 
 
 --
--- Name: classifications_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace:
+-- Name: classifications_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY classifications
@@ -1439,7 +1351,7 @@ ALTER TABLE ONLY classifications
 
 
 --
--- Name: descriptions_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace:
+-- Name: descriptions_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY descriptions
@@ -1447,7 +1359,7 @@ ALTER TABLE ONLY descriptions
 
 
 --
--- Name: items_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace:
+-- Name: items_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY items
@@ -1455,7 +1367,7 @@ ALTER TABLE ONLY items
 
 
 --
--- Name: movement_types_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace:
+-- Name: movement_types_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY movement_types
@@ -1463,7 +1375,7 @@ ALTER TABLE ONLY movement_types
 
 
 --
--- Name: movements_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace:
+-- Name: movements_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY movements
@@ -1471,7 +1383,7 @@ ALTER TABLE ONLY movements
 
 
 --
--- Name: organizations_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace:
+-- Name: organizations_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY organizations
@@ -1479,7 +1391,7 @@ ALTER TABLE ONLY organizations
 
 
 --
--- Name: products_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace:
+-- Name: products_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY products
@@ -1487,7 +1399,7 @@ ALTER TABLE ONLY products
 
 
 --
--- Name: projects_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace:
+-- Name: projects_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY projects
@@ -1495,7 +1407,7 @@ ALTER TABLE ONLY projects
 
 
 --
--- Name: skus_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace:
+-- Name: skus_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY skus
@@ -1503,7 +1415,7 @@ ALTER TABLE ONLY skus
 
 
 --
--- Name: suppliers_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace:
+-- Name: suppliers_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY suppliers
@@ -1511,7 +1423,7 @@ ALTER TABLE ONLY suppliers
 
 
 --
--- Name: units_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace:
+-- Name: units_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY units
@@ -1519,7 +1431,7 @@ ALTER TABLE ONLY units
 
 
 --
--- Name: users_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace:
+-- Name: users_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY users
@@ -1527,7 +1439,7 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: warehouses_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace:
+-- Name: warehouses_pkey; Type: CONSTRAINT; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY warehouses
@@ -1537,7 +1449,7 @@ ALTER TABLE ONLY warehouses
 SET search_path = public, pg_catalog;
 
 --
--- Name: accounts_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: accounts_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY accounts
@@ -1545,7 +1457,7 @@ ALTER TABLE ONLY accounts
 
 
 --
--- Name: category_products_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: category_products_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY category_products
@@ -1553,7 +1465,7 @@ ALTER TABLE ONLY category_products
 
 
 --
--- Name: classifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: classifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY classifications
@@ -1561,7 +1473,7 @@ ALTER TABLE ONLY classifications
 
 
 --
--- Name: descriptions_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: descriptions_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY descriptions
@@ -1569,7 +1481,7 @@ ALTER TABLE ONLY descriptions
 
 
 --
--- Name: items_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: items_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY items
@@ -1577,7 +1489,7 @@ ALTER TABLE ONLY items
 
 
 --
--- Name: movement_types_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: movement_types_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY movement_types
@@ -1585,24 +1497,15 @@ ALTER TABLE ONLY movement_types
 
 
 --
--- Name: movements_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: movements_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
-
-
--- Name: movements_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
 
 ALTER TABLE ONLY movements
     ADD CONSTRAINT movements_pkey PRIMARY KEY (id);
 
 
 --
-
--- Name: organizations_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
-
--- Name: organizations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
-
+-- Name: organizations_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY organizations
@@ -1610,7 +1513,7 @@ ALTER TABLE ONLY organizations
 
 
 --
--- Name: products_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: products_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY products
@@ -1618,7 +1521,7 @@ ALTER TABLE ONLY products
 
 
 --
--- Name: projects_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: projects_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY projects
@@ -1626,7 +1529,7 @@ ALTER TABLE ONLY projects
 
 
 --
--- Name: skus_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: skus_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY skus
@@ -1634,7 +1537,7 @@ ALTER TABLE ONLY skus
 
 
 --
--- Name: suppliers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: suppliers_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY suppliers
@@ -1642,7 +1545,7 @@ ALTER TABLE ONLY suppliers
 
 
 --
--- Name: units_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: units_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY units
@@ -1650,7 +1553,7 @@ ALTER TABLE ONLY units
 
 
 --
--- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY users
@@ -1658,7 +1561,7 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: warehouses_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: warehouses_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY warehouses
@@ -1668,63 +1571,63 @@ ALTER TABLE ONLY warehouses
 SET search_path = miempresa, pg_catalog;
 
 --
--- Name: index_items_on_movement_id; Type: INDEX; Schema: miempresa; Owner: -; Tablespace:
+-- Name: index_items_on_movement_id; Type: INDEX; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_items_on_movement_id ON items USING btree (movement_id);
 
 
 --
--- Name: index_items_on_sku_id; Type: INDEX; Schema: miempresa; Owner: -; Tablespace:
+-- Name: index_items_on_sku_id; Type: INDEX; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_items_on_sku_id ON items USING btree (sku_id);
 
 
 --
--- Name: index_movements_on_destinable_type_and_destinable_id; Type: INDEX; Schema: miempresa; Owner: -; Tablespace:
+-- Name: index_movements_on_destinable_type_and_destinable_id; Type: INDEX; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_movements_on_destinable_type_and_destinable_id ON movements USING btree (destinable_type, destinable_id);
 
 
 --
--- Name: index_movements_on_originable_type_and_originable_id; Type: INDEX; Schema: miempresa; Owner: -; Tablespace:
+-- Name: index_movements_on_originable_type_and_originable_id; Type: INDEX; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_movements_on_originable_type_and_originable_id ON movements USING btree (originable_type, originable_id);
 
 
 --
--- Name: index_skus_on_product_id; Type: INDEX; Schema: miempresa; Owner: -; Tablespace:
+-- Name: index_skus_on_product_id; Type: INDEX; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_skus_on_product_id ON skus USING btree (product_id);
 
 
 --
--- Name: index_skus_on_sku; Type: INDEX; Schema: miempresa; Owner: -; Tablespace:
+-- Name: index_skus_on_sku; Type: INDEX; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE UNIQUE INDEX index_skus_on_sku ON skus USING btree (sku);
 
 
 --
--- Name: index_skus_on_warehouse_id; Type: INDEX; Schema: miempresa; Owner: -; Tablespace:
+-- Name: index_skus_on_warehouse_id; Type: INDEX; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_skus_on_warehouse_id ON skus USING btree (warehouse_id);
 
 
 --
--- Name: index_users_on_email; Type: INDEX; Schema: miempresa; Owner: -; Tablespace:
+-- Name: index_users_on_email; Type: INDEX; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE UNIQUE INDEX index_users_on_email ON users USING btree (email);
 
 
 --
--- Name: unique_schema_migrations; Type: INDEX; Schema: miempresa; Owner: -; Tablespace:
+-- Name: unique_schema_migrations; Type: INDEX; Schema: miempresa; Owner: -; Tablespace: 
 --
 
 CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
@@ -1733,82 +1636,66 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 SET search_path = public, pg_catalog;
 
 --
--- Name: index_guides_on_destinable_type_and_destinable_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_guides_on_destinable_type_and_destinable_id ON movements USING btree (destinable_type, destinable_id);
-
-
---
--- Name: index_guides_on_originable_type_and_originable_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_guides_on_originable_type_and_originable_id ON movements USING btree (originable_type, originable_id);
-
-
---
--- Name: index_items_on_movement_id; Type: INDEX; Schema: public; Owner: -
+-- Name: index_items_on_movement_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_items_on_movement_id ON items USING btree (movement_id);
 
 
 --
--- Name: index_items_on_sku_id; Type: INDEX; Schema: public; Owner: -
+-- Name: index_items_on_sku_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_items_on_sku_id ON items USING btree (sku_id);
 
 
 --
--- Name: index_skus_on_product_id; Type: INDEX; Schema: public; Owner: -
+-- Name: index_movements_on_destinable_type_and_destinable_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_movements_on_destinable_type_and_destinable_id ON movements USING btree (destinable_type, destinable_id);
+
+
+--
+-- Name: index_movements_on_originable_type_and_originable_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_movements_on_originable_type_and_originable_id ON movements USING btree (originable_type, originable_id);
+
+
+--
+-- Name: index_skus_on_product_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_skus_on_product_id ON skus USING btree (product_id);
 
 
 --
--- Name: index_skus_on_sku; Type: INDEX; Schema: public; Owner: -
+-- Name: index_skus_on_sku; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE UNIQUE INDEX index_skus_on_sku ON skus USING btree (sku);
 
 
 --
--- Name: index_skus_on_warehouse_id; Type: INDEX; Schema: public; Owner: -
+-- Name: index_skus_on_warehouse_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_skus_on_warehouse_id ON skus USING btree (warehouse_id);
 
 
 --
--- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -
+-- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE UNIQUE INDEX index_users_on_email ON users USING btree (email);
 
 
 --
--- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
-
-
---
--- Name: fk_rails_5787417caf; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY skus
-    ADD CONSTRAINT fk_rails_5787417caf FOREIGN KEY (product_id) REFERENCES products(id);
-
-
---
--- Name: fk_rails_e6e19aee3c; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY skus
-    ADD CONSTRAINT fk_rails_e6e19aee3c FOREIGN KEY (warehouse_id) REFERENCES warehouses(id);
 
 
 --
@@ -1868,4 +1755,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160309052147');
 INSERT INTO schema_migrations (version) VALUES ('20160309165246');
 
 INSERT INTO schema_migrations (version) VALUES ('20160309170425');
+
+INSERT INTO schema_migrations (version) VALUES ('20160311170620');
 

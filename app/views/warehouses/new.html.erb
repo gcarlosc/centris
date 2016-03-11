@@ -15,7 +15,9 @@
                       <%= f.input :address %>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-5 col-lg-offset-2 col-lg-5">
-                      <%= f.input :location %>
+                      <%= f.input :location, input_html: {id: 'autocomplete', onFocus: 'geolocate();'} %>
+                      <%= f.input :longitude, input_html: {id: 'long'}, as: :hidden %>
+                      <%= f.input :latitude, input_html: {id: 'lat'}, as: :hidden %>
                       <%= f.association :project, collection: Project.all, include_blank: 'Elija el proyecto...', input_html: { class: 'js-example-basic-single' } %>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -25,4 +27,7 @@
             </div>
 		<% end %>
 	</div>
+
+
+
 
