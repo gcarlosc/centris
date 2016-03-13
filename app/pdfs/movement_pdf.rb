@@ -1,6 +1,6 @@
 class MovementPdf < Prawn::Document
   def initialize(movement)
-    super(top_margin: 80)
+    super(top_margin: 100)
     @movement = movement
     image "#{Prawn::DATADIR}/images/logo_centris.jpg", :at => [400, 720], :scale => 0.25
     id
@@ -15,19 +15,19 @@ class MovementPdf < Prawn::Document
   end
 
   def header
-    draw_text "Creado por: #{@movement.creator.fullname}", size: 12, at: [20, 620]
-    draw_text "Responsable: #{User.find(@movement.responsable_id).fullname.capitalize}", size: 12, at: [20, 590]
-    draw_text "Tipo: #{@movement.movement_type.name}", size: 12, at: [20, 560]
-    draw_text "Fecha de Creacion: #{@movement.created_at.to_date}", size: 12, at: [280, 620]
+    draw_text "Creado por: #{@movement.creator.fullname}", size: 12, at: [20, 600]
+    draw_text "Responsable: #{User.find(@movement.responsable_id).fullname.capitalize}", size: 12, at: [20, 570]
+    draw_text "Tipo: #{@movement.movement_type.name}", size: 12, at: [20, 540]
+    draw_text "Fecha de Creacion: #{@movement.created_at.to_date}", size: 12, at: [280, 600]
     if @movement.movement_type_id == 1
-      draw_text "Origen: #{Supplier.find(@movement.originable_id).name.capitalize}", size: 12, at: [280, 590]
+      draw_text "Origen: #{Supplier.find(@movement.originable_id).name.capitalize}", size: 12, at: [280, 570]
     else
-      draw_text "Origen: #{Warehouse.find(@movement.originable_id).name.capitalize}", size: 12, at: [280, 590]
+      draw_text "Origen: #{Warehouse.find(@movement.originable_id).name.capitalize}", size: 12, at: [280, 570]
     end
     if @movement.movement_type_id == 5
-      draw_text "Destino: #{Supplier.find(@movement.destinable_id).name.capitalize}", size: 12, at: [280, 560]
+      draw_text "Destino: #{Supplier.find(@movement.destinable_id).name.capitalize}", size: 12, at: [280, 540]
     else
-      draw_text "Destino: #{Warehouse.find(@movement.destinable_id).name.capitalize}", size: 12, at: [280, 560]
+      draw_text "Destino: #{Warehouse.find(@movement.destinable_id).name.capitalize}", size: 12, at: [280, 540]
     end
     # rounded_rectangle [20, 650], 500, 150, 40
   end
