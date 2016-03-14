@@ -29,15 +29,6 @@
 
 $(document).on('ready',function(){
 
-    var input = document.getElementById('autocomplete');
-    google.maps.event.addDomListener(input, 'keydown', function(e) {
-    if (e.keyCode == 13) {
-        e.preventDefault();
-    }
-    });
-
-    initAutocomplete(); //for google maps autocomplete
-
     $("select.js-example-basic-single").select2();
 
     $("#dropdown").select2({
@@ -69,6 +60,15 @@ $(document).on('ready',function(){
     setTimeout(function(){
         $('#flash').fadeOut("slow");
     }, 2000);   
+
+    var input = document.getElementById('autocomplete');
+    google.maps.event.addDomListener(input, 'keydown', function(e) {
+    if (e.keyCode == 13) {
+        e.preventDefault();
+    }
+    });
+
+    initAutocomplete(); //for google maps autocomplete
 
     // $('ola').bind('click',function(){
     //     console.log("hola");
