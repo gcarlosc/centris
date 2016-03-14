@@ -21,8 +21,6 @@ gem 'bootstrap-glyphicons'
 gem "select2-rails"
 gem "breadcrumbs_on_rails"
 gem 'ffaker'
-gem 'pry'
-gem 'pry-rails'
 gem 'simple_form'
 gem 'monban'
 gem 'monban-generators'
@@ -59,5 +57,14 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'pry-rails'
 end
 
+group :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem 'guard-rspec', require: false
+  gem 'fuubar'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+ end
