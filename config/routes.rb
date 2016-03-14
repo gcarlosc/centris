@@ -36,6 +36,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :accounts
-
+  root to: 'home#index', as: :home
 end
