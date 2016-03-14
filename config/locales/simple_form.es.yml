@@ -41,7 +41,7 @@ es:
         classification: 'Clasificación'
       movement:
         new:
-          creator: 'Creador'
+          creator: 'Creado por'
 
 
     # hints:
