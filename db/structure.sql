@@ -508,7 +508,7 @@ CREATE TABLE users (
     type character varying,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    password_digest character varying NOT NULL,
+    password_digest character varying,
     fullname character varying
 );
 
@@ -794,20 +794,6 @@ ALTER TABLE ONLY warehouses
 
 
 --
--- Name: index_guides_on_destinable_type_and_destinable_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_guides_on_destinable_type_and_destinable_id ON movements USING btree (destinable_type, destinable_id);
-
-
---
--- Name: index_guides_on_originable_type_and_originable_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_guides_on_originable_type_and_originable_id ON movements USING btree (originable_type, originable_id);
-
-
---
 -- Name: index_items_on_movement_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -819,6 +805,20 @@ CREATE INDEX index_items_on_movement_id ON items USING btree (movement_id);
 --
 
 CREATE INDEX index_items_on_sku_id ON items USING btree (sku_id);
+
+
+--
+-- Name: index_movements_on_destinable_type_and_destinable_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_movements_on_destinable_type_and_destinable_id ON movements USING btree (destinable_type, destinable_id);
+
+
+--
+-- Name: index_movements_on_originable_type_and_originable_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_movements_on_originable_type_and_originable_id ON movements USING btree (originable_type, originable_id);
 
 
 --
@@ -854,22 +854,6 @@ CREATE UNIQUE INDEX index_users_on_email ON users USING btree (email);
 --
 
 CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
-
-
---
--- Name: fk_rails_5787417caf; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY skus
-    ADD CONSTRAINT fk_rails_5787417caf FOREIGN KEY (product_id) REFERENCES products(id);
-
-
---
--- Name: fk_rails_e6e19aee3c; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY skus
-    ADD CONSTRAINT fk_rails_e6e19aee3c FOREIGN KEY (warehouse_id) REFERENCES warehouses(id);
 
 
 --
