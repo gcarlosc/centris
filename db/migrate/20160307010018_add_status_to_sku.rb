@@ -1,19 +1,6 @@
 class AddStatusToSku < ActiveRecord::Migration
-  def up
-    execute <<-SQL
-      CREATE TYPE statussku AS ENUM ('active', 'inactive', 'borrowed');
-    SQL
-
+  def change
     remove_column :skus, :status, :string
-    add_column :skus, :status, :statussku, index: true, default: 'active'
-  end
-
-  def down
-    remove_column :skus, :status
-    add_column :skus, :status, :string
-
-    execute <<-SQL
-      DROP TYPE statussku;
-    SQL
+    add_column :skus, :status, :integer, default: 0
   end
 end
