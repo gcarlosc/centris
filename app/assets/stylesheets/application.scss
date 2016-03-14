@@ -24,8 +24,8 @@
 @import 'styles/slidebars';
 @import 'bootstrap/glyphicons';
 @import 'styles/style-responsive';
-@import 'styles/DT_bootstrap.css';
-@import 'styles/demo_table.css';
+@import 'styles/DT_bootstrap';
+@import 'styles/demo_table';
 @import 'styles/table-responsive';
 @import 'styles/bootstrap-reset';
 
@@ -130,8 +130,19 @@ a, a:hover, a:focus {
 }
 
 .margin-form{
-    margin-top: 55px;
-    margin-bottom: 55px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.accounts-form{
+    margin-top: 25px;
+    margin-bottom: 30px;
+    border-radius: 18px;
+}
+
+.list-accounts{
+    padding: 40px;
+    background: white;
 }
 
 .border-form{
@@ -139,7 +150,7 @@ a, a:hover, a:focus {
     border-radius: 8px;
     padding: 40px;
     margin-top: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
 }
 
 .border-login{

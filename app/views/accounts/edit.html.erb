@@ -1,6 +1,9 @@
-<h1>Editing Account</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @account %> |
-<%= link_to 'Back', accounts_path %>
+<div class="accounts-form">
+	<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+        <div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 border-login text-center">
+        	<h1>Editar Cuenta</h1>
+        	<%= render 'form' %>
+			<%= link_to 'Regresar', accounts_path %>
+        </div>
+    </div>
+</div>
