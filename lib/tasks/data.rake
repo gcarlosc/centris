@@ -3,6 +3,24 @@ require "#{Rails.root}/app/helpers/application_helper"
 include ApplicationHelper
 
 namespace :centris do
+
+  desc 'Generate centris data'
+  task create_users: :environment do
+    User.destroy_all
+    ActiveRecord::Base.connection.reset_pk_sequence!('users')
+
+    2.times do |i|
+      User.create!(
+        fullname: FFaker::NameMX.full_name,
+        email: FFaker::Internet.safe_email,
+        phone: FFaker::PhoneNumber.short_phone_number,
+        password_digest: 'password'
+        )
+    end
+
+    puts "users created"
+  end
+
   desc 'Generate centris data'
   task data: :environment do
 
@@ -92,19 +110,5 @@ namespace :centris do
     end
 
     puts "suppliers created"
-
-    User.destroy_all
-    ActiveRecord::Base.connection.reset_pk_sequence!('users')
-
-    5.times do |i|
-      User.create!(
-        fullname: FFaker::NameMX.full_name,
-        email: FFaker::Internet.safe_email,
-        phone: FFaker::PhoneNumber.short_phone_number,
-        password_digest: 'password'
-        )
-    end
-
-    puts "users created"
   end
 end
