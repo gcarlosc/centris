@@ -42,6 +42,11 @@ es:
       movement:
         new:
           creator: 'Creado por'
+      account:
+        organization_name: Organización
+        subdomain: Subdominio
+      session:
+        password: 'Contraseña'
 
 
     # hints:

@@ -1,5 +1,5 @@
     <div class="col-xs-12 col-md-12 col-md-10 col-lg-10 size-adaptable">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 list-accounts">  
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 list-accounts">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
                 <p id="notice"><%= notice %></p>
@@ -21,9 +21,6 @@
                                 <th>Nombre de la organizacion</th>
                                 <th>Web</th>
                                 <th>Subdominio</th>
-                                <th>*</th>
-                                <th>*</th>
-                                <th>*</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -32,9 +29,6 @@
                                   <td><%= account.organization_name %></td>
                                   <td><%= account.web %></td>
                                   <td><%= account.subdomain %></td>
-                                  <td><%= link_to 'Ver', account, class: 'btn btn-info' %></td>
-                                  <td><%= link_to 'Editar', edit_account_path(account), class: 'btn btn-success' %></td>
-                                  <td><%= link_to 'Borrar', account, method: :delete, class: 'btn btn-danger', data: { confirm: 'Estas seguro?' } %></td>
                                 </tr>
                               <% end %>
                             </tbody><br>

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-  def authenticate
+  def authenticate_account
     authenticate_or_request_with_http_basic do |id, password|
         id == USER_ID && password == PASSWORD
     end
