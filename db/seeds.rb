@@ -1,7 +1,3 @@
-ActiveRecord::Base.connection.tables.each do |t|
-  ActiveRecord::Base.connection.reset_pk_sequence!(t)
-end
-
 Unit.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('units')
 Unit.create!([
@@ -23,12 +19,6 @@ Classification.create!([
   { name: 'Consumible' },
   { name: 'Servicio' },
   { name: 'Almacenable' }
-])
-
-Organization.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('organizations')
-Organization.create!([
-  { name: 'Mi Organizacion', address: 'mi direccion 123', web: 'www.walkant.com' }
 ])
 
 MovementType.destroy_all
