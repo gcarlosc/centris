@@ -3,14 +3,8 @@ ActiveRecord::Base.connection.reset_pk_sequence!('units')
 Unit.create!([
   { name: 'Unidad' },
   { name: 'Millar' },
-  { name: 'Kilometros' },
-  { name: 'Metros' },
   { name: 'Kilogramos' },
-  { name: 'Gramos' },
-  { name: 'Meses' },
-  { name: 'Semanas' },
-  { name: 'Dias' },
-  { name: 'Horas' }
+  { name: 'Gramos' }
 ])
 
 Classification.destroy_all

@@ -1,9 +1,9 @@
 class Sku < ActiveRecord::Base
 
     enum status: {
-    active: 'active',
-    inactive: 'inactive',
-    borrowed: 'borrowed'
+    active: 0,
+    inactive: 1,
+    borrowed: 2
   }
 
   belongs_to :product
