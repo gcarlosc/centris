@@ -1,0 +1,203 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require font-awesome
+ *= require animate
+ *= require_tree .
+ *= require_self
+ */
+
+
+@import "bootstrap";
+@import "font-awesome";
+@import "bootstrap-sprockets";
+
+
+/* Import fonts */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
+
+html{
+	height: 100%;	
+}
+
+body{
+	height: 100%;
+	font-size: 16px;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin-top: 0px;
+}
+
+.bgIndex{
+	background: linear-gradient(rgba(80, 227, 194, .7), rgba(80, 227, 194, .7)),url(image-path('warehouse-header.jpg'));
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	height: 90%;
+}
+
+.header-size{
+	margin-top: 12%;
+	margin-bottom: 15%;	
+	color: white;
+}
+
+.h1Size{
+	font-size: 42px;
+}
+
+.size-one{
+	margin-top: 40px;
+	margin-bottom: 65px;
+}
+
+.size-two{
+	margin-top: 40px;
+	margin-bottom: 100px;
+}
+
+.size-gif{
+	margin-top: 65px;
+	margin-bottom: 65px;
+}
+
+.color1{
+	color: #50E3C2;
+}
+
+.color2{
+	color: #FF6C60; 
+}
+
+#characters{
+	background-color: #f2f2f2;	
+}
+
+#contact{
+	background: linear-gradient(rgba(255, 108, 96, .7), rgba(255, 108, 96, .7)),url(image-path('warehouse-header.jpg'));
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	color: white;
+}
+
+.warehouseMN{
+	margin-top: -30px;
+
+}
+
+.text-padding{
+	padding: 20px;
+}
+
+.form-control{
+	height: 50px;	
+}
+
+.btn-centris{
+	color: #fff;
+    background-color: #FF6C60;
+    border-color: #FF6C60;	
+    height: 50px;
+}
+
+.btn-centris:hover{
+	color: #fff;
+}
+
+.btn-centris:focus{
+	color: #fff;	
+}
+
+.navbar-default{
+	margin-bottom: 0px;
+	background-color: white;
+	border-color: transparent;
+}
+
+.navbar-right{
+	margin-top: 5px;
+}
+
+#footer{
+	padding: 24px;
+	background: #FF6C60;
+	color: white;
+}
+
+/** media queries **/
+
+
+@media (max-width: 400px) {
+	.h1Size{
+		font-size: 40px;
+	}
+
+	.rsp1{
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	.rsp3{
+		margin-top: 15px;
+		margin-bottom: 50px;
+	}
+
+	.rsp2{
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+ }
+
+@media (max-width: 360px) {
+	.h1Size{
+		font-size: 40px;
+	}
+
+	.rsp1{
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	.rsp3{
+		margin-top: 15px;
+		margin-bottom: 50px;
+	}
+
+	.rsp2{
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+ }
+
+@media (max-width: 320px) {
+	.h1Size{
+		font-size: 40px;
+	}
+
+	.rsp1{
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	.rsp3{
+		margin-top: 15px;
+		margin-bottom: 50px;
+	}
+
+	.rsp2{
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+ }

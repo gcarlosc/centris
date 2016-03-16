@@ -14,6 +14,7 @@
 //= require bootstrap
 //= require jquery_ujs
 //= require select2
+//= require wow.js
 //= require jquery.dcjqaccordion.2.7.js
 //= require jsacordion.js
 //= require jquery.scrollTo.min.js
@@ -90,3 +91,5 @@ $(document).on('ready',function(){
     //   });
     // });
 })
+
+new WOW().init();
