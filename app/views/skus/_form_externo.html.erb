@@ -7,12 +7,12 @@
         </td>
         <td>
           <%= f.input :warehouse_id, :input_html => { value: @movement.destinable_id }, as: :hidden %>
-          <%= f.input :_destroy, as: :hidden %>
         </td>
         <td>
           <%= f.input :sku, label: false %>
         </td>
         <td>
+          <%= f.hidden_field :_destroy %>
           <%= link_to 'quitar', '#', class: "remove_fields" %>
         </td>
       </tr>

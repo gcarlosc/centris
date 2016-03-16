@@ -33,12 +33,12 @@ es:
         name: 'Nombre'
         ancestry: 'Categoria Principal'
       product:
-        unit: 'Unidad de medida'
+        unit_id: 'Unidad de medida'
         name: 'Nombre'
         code: 'Codigo'
-        category_product: 'Categoria'
-        description: 'Descripción'
-        classification: 'Clasificación'
+        category_product_id: 'Categoria'
+        description_id: 'Descripción'
+        classification_id: 'Clasificación'
       movement:
         new:
           creator: 'Creado por'

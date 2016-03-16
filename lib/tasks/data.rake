@@ -12,7 +12,7 @@ namespace :centris do
     2.times do |i|
       User.create!(
         fullname: FFaker::NameMX.full_name,
-        email: FFaker::Internet.safe_email,
+        email: "cliente#{i+1}@example.com",
         phone: FFaker::PhoneNumber.short_phone_number,
         password_digest: 'password'
         )
@@ -27,7 +27,7 @@ namespace :centris do
     CategoryProduct.destroy_all
     ActiveRecord::Base.connection.reset_pk_sequence!('category_products')
 
-    10.times do
+    3.times do
       CategoryProduct.create!(
         name: FFaker::Product.product_name,
         )
@@ -67,7 +67,7 @@ namespace :centris do
     Product.destroy_all
     ActiveRecord::Base.connection.reset_pk_sequence!('products')
 
-    5.times do |i|
+    3.times do |i|
       Product.create!(
         name: FFaker::Company.name,
         unit_id: 1,
@@ -99,7 +99,7 @@ namespace :centris do
     Supplier.destroy_all
     ActiveRecord::Base.connection.reset_pk_sequence!('suppliers')
 
-    5.times do |i|
+    3.times do |i|
       Supplier.create!(
         name: FFaker::Company.name,
         address: FFaker::Address.street_address,
