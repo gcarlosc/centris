@@ -20,7 +20,7 @@ class Product < ActiveRecord::Base
   validates :code, presence: true, uniqueness: true
 
   def stock(warehouse)
-    skus.by_warehouse(warehouse).by_status([:active, :borrowed]).size
+    skus.by_warehouse(warehouse).by_status(['active', 'borrowed']).size
   end
 
 end

@@ -7,7 +7,7 @@ end
 
 Rails.application.routes.draw do
 
-  # constraints SubdomainConstraint do
+  constraints SubdomainConstraint do
     resource :session, only: [:new, :create, :destroy]
     resources :users, only: [:new, :create]
     get "sign_up" => "users#new", :as => "sign_up"
@@ -34,8 +34,8 @@ Rails.application.routes.draw do
         put :update_status, on: :collection
       end
     end
-  # end
+  end
 
   resources :accounts
-
+  root to: 'home#index', as: :home
 end

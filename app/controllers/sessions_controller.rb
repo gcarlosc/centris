@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
 
   def create
     user = authenticate_session(session_params)
-
     if sign_in(user)
       redirect_to movements_path
     else

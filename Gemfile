@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
+ruby '2.3.0'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -22,13 +22,12 @@ gem "animate-rails"
 gem "select2-rails"
 gem "breadcrumbs_on_rails"
 gem 'ffaker'
-gem 'pry'
-gem 'pry-rails'
 gem 'simple_form'
 gem 'monban'
 gem 'monban-generators'
 gem 'apartment'
-# gem 'gmaps-autocomplete-rails', github: "kristianmandrup/gmaps-autocomplete-rails"
+gem 'prawn'
+gem 'prawn-table'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -59,5 +58,19 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'pry-rails'
 end
 
+group :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem 'guard-rspec', require: false
+  gem 'fuubar'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+ end
+
+group :production do
+  gem 'puma'
+  gem 'rails_12factor', group: :production
+end

@@ -1,8 +1,8 @@
 class Movement < ActiveRecord::Base
 
   enum status: {
-    pending: 'pending',
-    saved: 'saved'
+    pending: 0,
+    saved: 1
   }
 
   has_many :items, dependent: :destroy

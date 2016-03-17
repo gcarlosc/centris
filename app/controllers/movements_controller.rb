@@ -29,13 +29,22 @@ class MovementsController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = MovementPdf.new(@movement)
+        send_data pdf.render, filename: "guia_de_movimiento_#{@movement.id}.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
+    end
   end
 
   def edit
     @movement_type = MovementType.find(params[:type])
     @sku = @movement.skus.build
     @item = @movement.items.build
-    @skus = Sku.where(warehouse_id: @movement.originable_id).all.by_status(@movement_type.id == 4 ? [:borrowed] : [:active])
+    @skus = Sku.where(warehouse_id: @movement.originable_id).all.by_status(@movement_type.id == 4 ? ['borrowed'] : ['active'])
     add_breadcrumb "Editar Movimiento #{@movement.id}"
   end
 

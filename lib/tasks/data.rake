@@ -3,13 +3,31 @@ require "#{Rails.root}/app/helpers/application_helper"
 include ApplicationHelper
 
 namespace :centris do
+
+  desc 'Generate centris data'
+  task create_users: :environment do
+    User.destroy_all
+    ActiveRecord::Base.connection.reset_pk_sequence!('users')
+
+    2.times do |i|
+      User.create!(
+        fullname: FFaker::NameMX.full_name,
+        email: "cliente#{i+1}@example.com",
+        phone: FFaker::PhoneNumber.short_phone_number,
+        password_digest: 'password'
+        )
+    end
+
+    puts "users created"
+  end
+
   desc 'Generate centris data'
   task data: :environment do
 
     CategoryProduct.destroy_all
     ActiveRecord::Base.connection.reset_pk_sequence!('category_products')
 
-    10.times do
+    3.times do
       CategoryProduct.create!(
         name: FFaker::Product.product_name,
         )
@@ -49,7 +67,7 @@ namespace :centris do
     Product.destroy_all
     ActiveRecord::Base.connection.reset_pk_sequence!('products')
 
-    5.times do |i|
+    3.times do |i|
       Product.create!(
         name: FFaker::Company.name,
         unit_id: 1,
@@ -81,7 +99,7 @@ namespace :centris do
     Supplier.destroy_all
     ActiveRecord::Base.connection.reset_pk_sequence!('suppliers')
 
-    5.times do |i|
+    3.times do |i|
       Supplier.create!(
         name: FFaker::Company.name,
         address: FFaker::Address.street_address,
@@ -92,19 +110,5 @@ namespace :centris do
     end
 
     puts "suppliers created"
-
-    User.destroy_all
-    ActiveRecord::Base.connection.reset_pk_sequence!('users')
-
-    5.times do |i|
-      User.create!(
-        fullname: FFaker::NameMX.full_name,
-        email: FFaker::Internet.safe_email,
-        phone: FFaker::PhoneNumber.short_phone_number,
-        password_digest: 'password'
-        )
-    end
-
-    puts "users created"
   end
 end
