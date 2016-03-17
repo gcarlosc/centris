@@ -36,6 +36,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :suscriptions
   resources :accounts
   root to: 'welcome#index', as: :home
+
 end

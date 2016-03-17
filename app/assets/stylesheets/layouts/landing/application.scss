@@ -20,6 +20,7 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "bootstrap-sprockets";
+@import 'bootstrap/glyphicons';
 
 
 /* Import fonts */
@@ -52,6 +53,22 @@ h1,h2,h3,h4,h5,h6{
 	color: white;
 }
 
+.modal{
+    background: rgba(0, 0, 0, .6);
+}
+
+.modal-backdrop.in{
+    display: none;
+}
+
+.border-form{
+    border: 1px solid #e2e2e4;
+    border-radius: 8px;
+    padding: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .h1Size{
 	font-size: 42px;
 }
@@ -80,7 +97,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 #characters{
-	background-color: #f2f2f2;	
+	background-color: #f9f9f9;	
 }
 
 #contact{
@@ -102,6 +119,25 @@ h1,h2,h3,h4,h5,h6{
 
 .form-control{
 	height: 50px;	
+}
+
+.form-suscription{
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;	
 }
 
 .btn-centris{
