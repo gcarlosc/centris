@@ -10,11 +10,9 @@
 			<div class="form-group"><br><br>
 			    <div class="col-sm-9">
 			       <div class = "input-group">
-               			<input type = "text" class = "form-control" placeholder="Nombre de tu compania">
+               			<input id="organization_value" type = "text" class = "form-control" placeholder="Nombre de tu Compañía">
                			<span class = "input-group-btn">
-                  			<button class = "btn btn-centris" type = "button">
-                     		Enviar
-                  			</button>
+                  			<%= link_to "Enviar", new_suscription_path , remote: true, class: "btn btn-centris btn-send" %>
                			</span>
                
             		</div>

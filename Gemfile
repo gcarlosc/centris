@@ -28,6 +28,7 @@ gem 'monban-generators'
 gem 'apartment'
 gem 'prawn'
 gem 'prawn-table'
+gem "letter_opener"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
