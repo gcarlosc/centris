@@ -18,7 +18,7 @@
                         </thead>
                         <tbody>
                           <% @warehouses.each do |warehouse| %>
-                            <tr>                    
+                            <tr>
                               <td><%= warehouse.name %></td>
                               <td>
                                 <table>
@@ -42,28 +42,3 @@
         </section>
     </div>
 </div>
-
-<!-- 
-<% @warehouses.each do |warehouse| %>
-    <table class="display table table-bordered table-striped">
-      <tbody>
-        <tr>
-          <td>Almacen: <%= warehouse.name %></td>
-        </tr>
-        <% warehouse.products.each do |product| %>
-          <tr>
-            <td>
-              <%= product.name.upcase %> | Stock: <%= Sku.filtered_skus(warehouse, product).by_status([:active, :borrowed]).size %>
-            </td>
-          </tr>
-          <% Sku.filtered_skus(warehouse, product).by_status([:active, :borrowed]).each do |sku| %>
-            <tr>
-              <td><%= sku.sku %></td>
-              <td><%= sku.status %></td>
-            </tr>
-          <% end %>
-        <% end %>
-      </tbody>
-    </table>
-  <% end %> -->
-
