@@ -1,31 +1,43 @@
-<p id="notice"><%= notice %></p>
+    <div class="col-xs-12 col-md-12 col-md-10 col-lg-10 size-adaptable">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 list-accounts">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                <p id="notice"><%= notice %></p>
+                <h4>* Listado de Cuentas</h4>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                <%= link_to 'Nuevo', new_account_path, class: 'btn btn-success' %>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12">
+            <section class="panel">
+                <header class="panel-heading">
+                </header>
+                <div class="panel-body">
+                    <div class="adv-table">
+                        <table class="display table table-bordered table-striped" id="dynamic-table">
+                            <thead>
+                              <tr>
+                                <th>Nombre de la organizacion</th>
+                                <th>Web</th>
+                                <th>Subdominio</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <% @accounts.each do |account| %>
+                                <tr>
+                                  <td><%= account.organization_name %></td>
+                                  <td><%= account.web %></td>
+                                  <td><%= account.subdomain %></td>
+                                </tr>
+                              <% end %>
+                            </tbody><br>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+      </div>
+    </div>
 
-<h1>Listing Accounts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Organization name</th>
-      <th>Web</th>
-      <th>Subdomain</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @accounts.each do |account| %>
-      <tr>
-        <td><%= account.organization_name %></td>
-        <td><%= account.web %></td>
-        <td><%= account.subdomain %></td>
-        <td><%= link_to 'Show', account %></td>
-        <td><%= link_to 'Edit', edit_account_path(account) %></td>
-        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Account', new_account_path %>

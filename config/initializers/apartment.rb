@@ -33,6 +33,9 @@ Apartment.configure do |config|
   #
   config.use_schemas = true
 
+  #Ejecuta seeds.rb luego de crear una Tenant
+  config.seed_after_create = true
+
   # Apartment can be forced to use raw SQL dumps instead of schema.rb for creating new schemas.
   # Use this when you are using some extra features in PostgreSQL that can't be respresented in
   # schema.rb, like materialized views etc. (only applies with use_schemas set to true).

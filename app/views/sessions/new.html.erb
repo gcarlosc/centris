@@ -9,15 +9,9 @@
             <%= simple_form_for :session ,url: session_path do |f| %>
               <h2 class="form-signin-heading">Ingresa ahora</h2>
               <br>
-              <div class="form-group">
-                <%= f.input :email %>
-              </div>
-              <div class="form-group">
+                <%= f.input :email, autofocus: true %>
                 <%= f.input :password %>
-              </div>
-              <div class="form-group">
                 <%= submit_tag "Entrar", class: 'btn btn-block btn-success' %>
-              </div>
             <% end %>
           <% end %>
         </div>

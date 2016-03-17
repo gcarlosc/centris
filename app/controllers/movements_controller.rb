@@ -44,7 +44,7 @@ class MovementsController < ApplicationController
     @movement_type = MovementType.find(params[:type])
     @sku = @movement.skus.build
     @item = @movement.items.build
-    @skus = Sku.where(warehouse_id: @movement.originable_id).all.by_status(@movement_type.id == 4 ? [:borrowed] : [:active])
+    @skus = Sku.where(warehouse_id: @movement.originable_id).all.by_status(@movement_type.id == 4 ? ['borrowed'] : ['active'])
     add_breadcrumb "Editar Movimiento #{@movement.id}"
   end
 

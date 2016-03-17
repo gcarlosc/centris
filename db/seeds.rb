@@ -1,30 +1,10 @@
-ActiveRecord::Base.connection.tables.each do |t|
-  ActiveRecord::Base.connection.reset_pk_sequence!(t)
-end
-
-Movement.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('movements')
-
-Sku.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('skus')
-
-Item.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('items')
-
-
 Unit.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('units')
 Unit.create!([
   { name: 'Unidad' },
   { name: 'Millar' },
-  { name: 'Kilometros' },
-  { name: 'Metros' },
   { name: 'Kilogramos' },
-  { name: 'Gramos' },
-  { name: 'Meses' },
-  { name: 'Semanas' },
-  { name: 'Dias' },
-  { name: 'Horas' }
+  { name: 'Gramos' }
 ])
 
 Classification.destroy_all
@@ -33,12 +13,6 @@ Classification.create!([
   { name: 'Consumible' },
   { name: 'Servicio' },
   { name: 'Almacenable' }
-])
-
-Organization.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('organizations')
-Organization.create!([
-  { name: 'Mi Organizacion', address: 'mi direccion 123', web: 'www.walkant.com' }
 ])
 
 MovementType.destroy_all

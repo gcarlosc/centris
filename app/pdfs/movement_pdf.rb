@@ -2,7 +2,7 @@ class MovementPdf < Prawn::Document
   def initialize(movement)
     super(top_margin: 100)
     @movement = movement
-    image "#{Prawn::DATADIR}/images/logo_centris.jpg", :at => [400, 720], :scale => 0.25
+    image "#{Rails.root}/app/assets/images/logo_centris.jpg", :at => [400, 720], :scale => 0.25
     id
     header
     skus
@@ -29,7 +29,6 @@ class MovementPdf < Prawn::Document
     else
       draw_text "Destino: #{Warehouse.find(@movement.destinable_id).name.capitalize}", size: 12, at: [280, 540]
     end
-    # rounded_rectangle [20, 650], 500, 150, 40
   end
 
   def skus
