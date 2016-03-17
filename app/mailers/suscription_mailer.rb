@@ -3,6 +3,6 @@ class SuscriptionMailer < ApplicationMailer
 	def notification_email(suscriptor)
     	@user = suscriptor
    	 	@url  = 'http://example.com/login'
-    	mail(from: suscriptor.email, to: Suscription::EMAIL_OWNER, subject: 'KMGOLD CONTACTO')
+    	mail to: suscriptor.email, subject: 'Suscription wecentris'
   	end
 end
