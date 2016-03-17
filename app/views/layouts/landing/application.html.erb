@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Centris</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag 'layouts/landing/application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render 'layouts/landing/menu' %>
+  <%= render 'layouts/landing/header' %>
+  <%= yield %>
+  <%= render 'layouts/landing/footer' %>
+</body>
+</html>
