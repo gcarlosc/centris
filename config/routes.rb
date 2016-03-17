@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :users, only: [:new, :create]
     get "sign_up" => "users#new", :as => "sign_up"
     get "sign_in" => "session#new", :as => "sign_in"
-    root to: 'welcome#index'
+    root to: 'sessions#new'
 
     resources :products
     resources :category_products, only: [:new, :create, :index]
@@ -37,5 +37,5 @@ Rails.application.routes.draw do
   end
 
   resources :accounts
-  root to: 'home#index', as: :home
+  root to: 'welcome#index', as: :home
 end
