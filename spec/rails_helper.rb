@@ -5,6 +5,25 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'shoulda/matchers'
+require 'capybara/poltergeist'
+
+Capybara.default_max_wait_time = 15
+
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, {
+                                      timeout: 180,
+                                      phantomjs_options: ['--load-images=no']
+                                    })
+end
+
+
+Monban.test_mode!
+
+
+
+Capybara.javascript_driver = :poltergeist
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -54,4 +73,9 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  config.include Monban::Test::Helpers, type: :feature
+  config.after :each do
+    Monban.test_reset!
+  end
 end

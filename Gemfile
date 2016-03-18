@@ -66,6 +66,7 @@ group :test do
   gem 'fuubar'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'capybara'
+  gem 'poltergeist'
   gem 'factory_girl_rails'
  end
 

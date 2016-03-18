@@ -10,7 +10,7 @@
             </header>
             <div class="panel-body">
                 <div class="adv-table">
-                    <table class="display table table-bordered table-striped" id="dynamic-table">
+                    <table class="display table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>Almacen</th>
@@ -27,7 +27,7 @@
                                     <% warehouse.products.each do |product| %>
                                       <tr>
                                         <td>
-                                          <%= product.name.upcase %> | Stock: <%= Sku.filtered_skus(warehouse, product).by_status(['active', 'borrowed']).size %> | <%= link_to "ver skus", skus_show_warehouses_path(warehouse: warehouse,product:   product), remote: true, class: 'label label-success' %>
+                                          <%= product.name.upcase %> | Stock: <%= Sku.filtered_skus(warehouse, product).by_statuses([0, 1]).size %> | <%= link_to "ver skus", skus_show_warehouses_path(warehouse: warehouse,product:   product), remote: true, class: 'label label-success' %>
                                         </td>
                                       </tr>
                                     <% end %>
