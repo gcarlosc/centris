@@ -3,7 +3,7 @@
     <div class="modal-content">
        <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">SKU por producto</h4>
+        <h4 class="modal-title"><%= product.name.upcase %></h4>
       </div>
       <div class="modal-body">
         <div class="size-adaptable border-form">
@@ -15,10 +15,10 @@
           		</tr>
           	</thead>
           	<tbody>
-              <% Sku.filtered_skus(warehouse, product).by_status(['active', 'borrowed']).each do |sku| %>
+              <% Sku.filtered_skus(warehouse, product).by_statuses([0, 1]).each do |sku| %>
                 <tr>
                   <td><%= sku.sku %></td>
-                  <td><%= sku.status %></td>
+                  <td><%= t(sku.status) %></td>
                 </tr>
               <% end %>
           	</tbody>

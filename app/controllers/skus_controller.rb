@@ -5,7 +5,7 @@ class SkusController < ApplicationController
 
   def update_warehouse
     return redirect_to root_path unless @movement.pending?
-    @movement.sku_ids = params[:sku_ids]
+    @movement.add_skus(params[:sku_ids])
     @movement.change_warehouse
     @movement.saved!
     flash[:notice] = "Se guardo satisfactoriamente"
@@ -14,7 +14,7 @@ class SkusController < ApplicationController
 
   def update_status
     return redirect_to root_path unless @movement.pending?
-    @movement.sku_ids = params[:sku_ids]
+    @movement.add_skus(params[:sku_ids])
     @movement.change_status(params[:sku_ids])
     @movement.saved!
     flash[:notice] = "Se guardo satisfactoriamente"
