@@ -1,5 +1,7 @@
 class Sku < ActiveRecord::Base
 
+  before_save { |sku| sku.sku.upcase! }
+
   enum status: [:active, :borrowed, :inactive]
 
   belongs_to :product

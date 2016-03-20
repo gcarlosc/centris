@@ -12,21 +12,21 @@
                     <table class="display table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>Almacen</th>
-                                <th>Producto - Stock</th>
+                                <th>Producto</th>
+                                <th>Almancen - Stock</th>
                             </tr>
                         </thead>
                         <tbody>
-                          <% @warehouses.each do |warehouse| %>
+                          <% @products.each do |product| %>
                             <tr>
-                              <td><%= warehouse.name %></td>
+                              <td><%= product.name.upcase %></td>
                               <td>
                                 <table>
                                   <tbody>
-                                    <% warehouse.products.each do |product| %>
+                                    <% product.warehouses.each do |warehouse| %>
                                       <tr>
                                         <td>
-                                          <%= product.name.upcase %> | Stock: <%= Sku.filtered_skus(warehouse, product).by_statuses([0, 1]).size %> | <%= link_to "ver skus", skus_show_warehouses_path(warehouse: warehouse,product: product), remote: true, class: 'label label-success' %>
+                                          <%= warehouse.name.upcase %> | Stock: <%= Sku.filtered_skus(warehouse, product).by_statuses([0, 1]).size %> | <%= link_to "ver skus", skus_show_warehouses_path(warehouse: warehouse,product: product), remote: true, class: 'label label-success' %>
                                         </td>
                                       </tr>
                                     <% end %>

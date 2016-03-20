@@ -1,9 +1,8 @@
 class Product < ActiveRecord::Base
 
   before_save { |product| product.name.downcase! }
+  before_save { |product| product.code.upcase! }
 
-  has_many :skus
-  has_many :warehouses, through: :skus, dependent: :destroy
   belongs_to :description
   belongs_to :category_product
   belongs_to :classification
@@ -11,6 +10,8 @@ class Product < ActiveRecord::Base
   belongs_to :unit
   has_many :items
   has_many :movements, through: :items
+  has_many :skus
+  has_many :warehouses, -> { distinct }, through: :skus, dependent: :destroy
 
   validates :name, presence: true
   validates :unit_id, presence: true

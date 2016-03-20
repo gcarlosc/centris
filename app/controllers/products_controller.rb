@@ -37,6 +37,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def stock
+    @products = Product.all
+    add_breadcrumb "Stock Almacen", stock_warehouses_path
+  end
+
   private
 
   def product_params

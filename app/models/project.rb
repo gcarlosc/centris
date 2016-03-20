@@ -1,6 +1,7 @@
 class Project < ActiveRecord::Base
 
   before_save { |project| project.name.downcase! }
+  before_save { |project| project.code.upcase! }
 
   validates :name, presence: true
   validates :address, presence: true

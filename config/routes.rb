@@ -14,7 +14,9 @@ Rails.application.routes.draw do
     get "sign_in" => "session#new", :as => "sign_in"
     root to: 'sessions#new'
 
-    resources :products
+    resources :products do
+      get :stock, on: :collection
+    end
     resources :category_products, only: [:new, :create, :index]
     resources :descriptions, only: [:create, :new, :index]
     resources :skus, only: [:create, :new, :index]
