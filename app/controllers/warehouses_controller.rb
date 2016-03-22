@@ -30,6 +30,15 @@ class WarehousesController < ApplicationController
 
   def stock
     @warehouses = Warehouse.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = StockWarehousePdf.new(@warehouses)
+        send_data pdf.render, filename: "stock_almacenes.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
+    end
     add_breadcrumb "Stock Almacen", stock_warehouses_path
   end
 
