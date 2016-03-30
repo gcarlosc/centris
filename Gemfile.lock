@@ -94,6 +94,7 @@ GEM
       ruby-progressbar (~> 1.4)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    google_visualr (2.5.1)
     guard (2.13.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, <= 4.0)
@@ -292,6 +293,7 @@ DEPENDENCIES
   ffaker
   font-awesome-rails
   fuubar
+  google_visualr (~> 2.5, >= 2.5.1)
   guard-rspec
   jbuilder (~> 2.0)
   jquery-rails

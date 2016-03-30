@@ -29,6 +29,9 @@ gem 'apartment'
 gem 'prawn'
 gem 'prawn-table'
 gem "letter_opener"
+gem 'google_visualr', '~> 2.5', '>= 2.5.1'
+# gem "chartkick"
+# gem 'googlecharts'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -1,0 +1,37 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Tipo</th>
+    <th>Creador</th>
+    <th>Origen</th>
+    <th>Destino</th>
+    <th>Responsable</th>
+    <th>Fecha de Creacion</th>
+    <th>Estado</th>
+  </tr>
+  <% @movements.each do |movement| %>
+    <tr>
+      <td><%= movement.id %></td>
+      <td><%= movement.movement_type.name %></td>
+
+      <td><%= movement.creator.fullname %></td>
+      <td>
+        <% if movement.movement_type_id == 1 %>
+          <%= Supplier.find(movement.originable_id).name.capitalize %></td>
+        <% else %>
+          <%= Warehouse.find(movement.originable_id).name.capitalize %></td>
+        <% end %>
+      </td>
+      <td>
+        <% if movement.movement_type_id == 5 %>
+          <%= Supplier.find(movement.destinable_id).name.capitalize %></td>
+        <% else %>
+          <%= Warehouse.find(movement.destinable_id).name.capitalize %></td>
+        <% end %>
+      </td>
+      <td><%= User.find(movement.responsable_id).fullname.capitalize %></td>
+      <td><%= movement.created_at.to_date %></td>
+      <td><%= t(movement.status).capitalize %></td>
+    </tr>
+  <% end %>
+</table>

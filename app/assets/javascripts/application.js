@@ -27,8 +27,16 @@
 //= require common-scripts.js
 //= require movements.js.coffee
 //= require geolocation.js
+//= require charts.js
 
 $(document).on('ready',function(){
+
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  var Chartkick = {language: "de"};
+
+
 
     $("select.js-example-basic-single").select2();
 
@@ -60,7 +68,7 @@ $(document).on('ready',function(){
 
     setTimeout(function(){
         $('#flash').fadeOut("slow");
-    }, 2000);   
+    }, 2000);
 
     var input = document.getElementById('autocomplete');
     google.maps.event.addDomListener(input, 'keydown', function(e) {

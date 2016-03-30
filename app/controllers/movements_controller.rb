@@ -9,6 +9,11 @@ class MovementsController < ApplicationController
 
   def index
     @movements = Movement.all.order('id ASC')
+    respond_to do |format|
+      format.html
+      format.csv { send_data @movements.to_csv }
+      format.xls #{ send_data @movements.to_csv(col_sep: "\t") }
+    end
     add_breadcrumb "Historial de Movimientos"
   end
 

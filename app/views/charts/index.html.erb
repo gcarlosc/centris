@@ -1,0 +1,18 @@
+<div class="col-xs-12 col-md-12 col-md-12 col-lg-12 size-adaptable">
+  <h3>Productos por Categoria</h3>
+  <div>
+    <% @categories.each do |category| %>
+      <p>
+        <%= link_to category.name, chart_by_category_path(1, cat: category.id), class: 'btn btn-info' %>
+      </p>
+    <% end %>
+  </div>
+  <h3>Productos Por Almacen</h3>
+  <div>
+    <% @warehouses.each do |warehouse| %>
+      <p>
+        <%= link_to warehouse.name, chart_by_warehouse_path(1, warehouse: warehouse.id), class: 'btn btn-info' %>
+      </p>
+    <% end %>
+  </div>
+</div>

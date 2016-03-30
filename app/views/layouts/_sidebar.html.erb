@@ -2,26 +2,40 @@
   <div id="sidebar"  class="nav-collapse">
     <!-- sidebar menu start-->
       <ul class="sidebar-menu" id="nav-accordion">
+
         <li class="sub-menu active">
           <a href="javascript:;" class="active">
             <i class="fa fa-tasks"></i>
-            <span>Movimiento almacen</span>
+            <span>Reportes</span>
+          </a>
+          <ul class="sub">
+            <li class="<%= active_class(charts_path) %>">
+              <%= link_to 'Gráficos', charts_path %>
+            </li>
+          </ul>
+        </li>
+
+
+        <li class="sub-menu active">
+          <a href="javascript:;" class="active">
+            <i class="fa fa-tasks"></i>
+            <span>Movimiento Almacén</span>
           </a>
           <ul class="sub">
             <li class="<%= active_class(new_movement_type_movement_path(2)) %>">
               <%= link_to 'Transferencia Interna', new_movement_type_movement_path(2) %>
             </li>
             <li class="<%= active_class(new_movement_type_movement_path(3)) %>">
-              <%= link_to 'Prestamo Personal', new_movement_type_movement_path(3) %>
+              <%= link_to 'Préstamo Personal', new_movement_type_movement_path(3) %>
             </li>
             <li class="<%= active_class(new_movement_type_movement_path(4)) %>">
-              <%= link_to 'Devolucion Personal', new_movement_type_movement_path(4) %>
+              <%= link_to 'Devolución Personal', new_movement_type_movement_path(4) %>
             </li>
             <li class="<%= active_class(new_movement_type_movement_path(1)) %>">
               <%= link_to 'Ingreso Externo', new_movement_type_movement_path(1) %>
             </li>
             <li class="<%= active_class(new_movement_type_movement_path(5)) %>">
-              <%= link_to 'Devolucion Externa', new_movement_type_movement_path(5) %>
+              <%= link_to 'Devolución Externa', new_movement_type_movement_path(5) %>
             </li>
             <li class="<%= active_class(movements_path) %>">
               <%= link_to 'Historial de Movimientos', movements_path %>
@@ -37,7 +51,7 @@
         <ul class="sub">
             <li class="<%= active_main_class('category_products') %>"><%= link_to 'Categoria Producto', category_products_path %></li>
             <li class="<%= active_main_class('products') %> "><%= link_to 'Producto',products_path %></li>
-            <li class="<%= active_class(stock_warehouses_path) %> "><%= link_to 'Stock por Almacen',stock_warehouses_path %></li>
+            <li class="<%= active_class(stock_warehouses_path) %> "><%= link_to 'Stock por Almacén',stock_warehouses_path %></li>
             <li class="<%= active_class(stock_products_path) %> "><%= link_to 'Stock por Producto',stock_products_path %></li>
         </ul>
       </li>
@@ -61,7 +75,7 @@
          </a>
         <ul class="sub">
           <li class="<%= active_main_class('projects') %>"><%= link_to 'Crear Proyecto', projects_path %></li>
-          <li class="<%= active_main_class('warehouses') %> "><%= link_to 'Crear Almacen', warehouses_path %></li>
+          <li class="<%= active_main_class('warehouses') %> "><%= link_to 'Crear Almacén', warehouses_path %></li>
         </ul>
       </li>
     </ul>

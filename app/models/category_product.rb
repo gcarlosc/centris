@@ -17,4 +17,11 @@ class CategoryProduct < ActiveRecord::Base
     where(ancestry: category_products)
   end
 
+  def products_by_category(warehouse)
+    suma = 0
+    self.products.each do |product|
+      suma += product.skus.where(warehouse_id: warehouse.id).count
+    end
+    suma
+  end
 end
