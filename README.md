@@ -1,9 +1,11 @@
-# Project Centris
+# Project Centris #
 
-Ejecutar:
+** Ejecutar: **
 
-rake db:seed
-rake centris:data
-rake centris:create_users
+1. rake db:seed
+
+** Data de muestra: **
+1. rake centris:sample_data
+2. rake centris:create_users
 
 

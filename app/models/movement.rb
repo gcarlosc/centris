@@ -46,4 +46,13 @@ class Movement < ActiveRecord::Base
         Sku.where(id: skus).update_all(status: 2)
     end
   end
+
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |movement|
+        csv << movement.attributes.values_at(*column_names)
+      end
+    end
+  end
 end

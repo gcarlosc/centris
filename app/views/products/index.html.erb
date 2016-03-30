@@ -1,45 +1,45 @@
-    <div class="col-xs-12 col-md-12 col-md-12 col-lg-12 size-adaptable">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-                <%= link_to 'Nuevo', new_product_path, class: 'btn btn-success' %>
-            </div>
+<div class="col-xs-12 col-md-12 col-md-12 col-lg-12 size-adaptable">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
         </div>
-        <div class="col-sm-12 col-md-12">
-            <section class="panel">
-                <header class="panel-heading">
-                </header>
-                <div class="panel-body">
-                    <div class="adv-table">
-                        <table class="display table table-bordered table-striped" id="dynamic-table">
-                            <thead>
-                                <tr>
-                                    <th>Codigo</th>
-                                    <th>Nombre</th>
-                                    <th>Marca</th>
-                                    <th>Modelo</th>
-                                    <th>Unidad de Medida</th>
-                                    <th>Categoria</th>
-                                    <th>*</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                              <% @products.each do |product| %>
-                                  <tr>
-                                    <td><%= product.code %></td>
-                                    <td><%= product.name %></td>
-                                    <td><%= product.description.brand %></td>
-                                    <td><%= product.description.sub_brand %></td>
-                                    <td><%= product.unit.name %></td>
-                                    <td><%= product.category_product.name  %></td>
-                                    <td><%= link_to 'Editar', edit_product_path(product), class: 'btn btn-info' %></td>
-                                  </tr>
-                              <% end %>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
+        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+            <%= link_to 'Nuevo', new_product_path, class: 'btn btn-success' %>
         </div>
     </div>
+    <div class="col-sm-12 col-md-12">
+        <section class="panel">
+            <header class="panel-heading">
+            </header>
+            <div class="panel-body">
+                <div class="adv-table">
+                    <table class="display table table-bordered table-striped" id="dynamic-table">
+                        <thead>
+                            <tr>
+                                <th>Codigo</th>
+                                <th>Nombre</th>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Unidad de Medida</th>
+                                <th>Categoria</th>
+                                <th>*</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <% @products.each do |product| %>
+                              <tr>
+                                <td><%= product.code %></td>
+                                <td><%= product.name %></td>
+                                <td><%= product.description.brand %></td>
+                                <td><%= product.description.sub_brand %></td>
+                                <td><%= product.unit.name %></td>
+                                <td><%= product.category_product.name  %></td>
+                                <td><%= link_to 'Editar', edit_product_path(product), class: 'btn btn-info' %></td>
+                              </tr>
+                          <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

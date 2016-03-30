@@ -6,7 +6,6 @@ class SubdomainConstraint
 end
 
 Rails.application.routes.draw do
-
   constraints SubdomainConstraint do
     resource :session, only: [:new, :create, :destroy]
     resources :users, only: [:new, :create]
@@ -36,10 +35,13 @@ Rails.application.routes.draw do
         put :update_status, on: :collection
       end
     end
+    resources :charts, only: [:index] do
+      get :by_category
+      get :by_warehouse
+    end
   end
 
   resources :suscriptions
   resources :accounts
   root to: 'welcome#index', as: :home
-
 end

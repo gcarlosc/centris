@@ -4,8 +4,11 @@
   <title>Centris</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
   <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD0mYZ71rVMAT-FEjiVs4t15zkSdSZr6yo&libraries=places' %>
+  <%#= javascript_include_tag 'https://www.gstatic.com/charts/loader.js' %>
+  <%= javascript_include_tag 'http://www.google.com/jsapi' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
